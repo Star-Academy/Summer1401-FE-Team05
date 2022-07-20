@@ -20,7 +20,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/ng-store",
+                        "outputPath": "dist/Summer1401-FE-Team01",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
