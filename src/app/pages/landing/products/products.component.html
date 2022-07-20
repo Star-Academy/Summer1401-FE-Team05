@@ -10,7 +10,7 @@
             <div class="price-container">
                 <div class="prices">
                     <del>{{ card.price }}</del>
-                    <span>{{ card.price * (100 - card.percentOff) }}</span>
+                    <span>{{ (card.price * (100 - card.percentOff)) / 100 }}</span>
                 </div>
                 <span class="price-off">{{ card.percentOff }}%</span>
             </div>
