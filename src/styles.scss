@@ -1,16 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
-    font-family: "mikhak";
+    font-family: "Mikhak";
     src: url("assets/fonts/webfonts/Mikhak-Regular.woff2") format("woff2");
     font-weight: 400;
 }
 
 @font-face {
-    font-family: "mikhak";
+    font-family: "Mikhak";
     src: url("assets/fonts/webfonts/Mikhak-Bold.woff2") format("woff2");
-
     font-weight: 700;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "mikhak", sans-serif;
+    font-family: "Mikhak", -apple-system, sans-serif;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
 }
