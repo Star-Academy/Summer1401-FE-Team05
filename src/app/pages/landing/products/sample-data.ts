@@ -1,0 +1,68 @@
+import {Product} from './models/product';
+
+export const cards: Product[] = [
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+    {
+        title: 'ابجد هوز',
+        alt: 'عکسی از ابجد هوز',
+        price: 150000,
+        percentOff: 30,
+        imgSrc: 'https://via.placeholder.com/300x400',
+        points: 9.8,
+    },
+];

@@ -1,5 +1,5 @@
 .nav-container {
-    background-image: linear-gradient(45deg, rgba(24, 32, 79, 0.9) 0%, rgba(24, 32, 79, 0.85) 100%);
+    background-image: linear-gradient(45deg, hsla(231, 53%, 20%, 0.9) 0%, hsla(231, 53%, 20%, 0.85) 100%);
 
     height: 10rem;
     z-index: 1;
@@ -13,7 +13,7 @@
 }
 
 .nav {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -29,14 +29,14 @@
 
     li {
         a {
-            color: #fff;
-            border-radius: 14px;
+            color: hsl(0, 0%, 100%);
+            border-radius: 1.4rem;
             padding: 0.5rem 1.5rem;
             transition: all 0.3s ease;
             &:hover {
-                background: rgba(206, 206, 206, 0.2);
-                box-shadow: rgb(31 47 71 / 25%) 0px 20px 40px, rgb(0 0 0 / 10%) 0px 1px 5px,
-                    rgb(255 255 255 / 40%) 0px 0px 0px 0.5px inset;
+                background: hsla(0, 0%, 81%, 0.2);
+                box-shadow: hsla(216, 39%, 20%, 0.25) 0 2rem 4rem, hsla(0, 0%, 0%, 0.1) 0 0.1rem 0.5rem,
+                    hsla(0, 0%, 100%, 0.4) 0 0 0 0.1rem inset;
             }
         }
     }
@@ -52,28 +52,28 @@
     font-size: 2rem;
 
     border: none;
-    color: #fff;
+    color: hsl(0, 0%, 100%);
     background-color: transparent;
-    border-radius: 14px;
+    border-radius: 1.4rem;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover {
-        background: rgba(255, 255, 255, 0.2);
-        box-shadow: rgb(31 47 71 / 25%) 0px 20px 40px, rgb(0 0 0 / 10%) 0px 1px 5px,
-            rgb(255 255 255 / 40%) 0px 0px 0px 0.5px inset;
+        background: hsla(0, 0%, 100%, 0.2);
+        box-shadow: hsla(216, 39%, 20%, 0.25) 0 2rem 4rem, hsla(0, 0%, 0%, 0.1) 0 0.1rem 0.5rem,
+            hsla(0, 0%, 100%, 0.4) 0 0 0 0.1rem inset;
     }
 
     &:active {
-        transform: translateY(5px);
+        transform: translateY(0.5rem);
     }
 }
 .hamburger {
     display: none;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 73em) {
     .open .main-nav {
         transform: translate(0);
     }
@@ -87,8 +87,8 @@
         gap: 2rem;
         padding: 2rem 3rem;
         border-radius: 1rem;
-        background-color: #030130;
-        background-image: linear-gradient(45deg, rgb(3, 1, 50), rgb(0, 0, 0));
+        background-color: hsl(243, 96%, 10%);
+        background-image: linear-gradient(45deg, hsl(242, 96%, 10%), hsl(0, 0%, 0%));
         transform: translateY(-101vh);
         transition: all 0.3s ease;
     }

@@ -6,13 +6,9 @@ import {Component} from '@angular/core';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-    public mobileNav: string = 'nav';
+    public isMobileNavOpen: boolean = false;
 
     public navButtonHandler(): void {
-        if (this.mobileNav === 'nav open') {
-            this.mobileNav = 'nav';
-        } else {
-            this.mobileNav = 'nav open';
-        }
+        this.isMobileNavOpen = !this.isMobileNavOpen;
     }
 }

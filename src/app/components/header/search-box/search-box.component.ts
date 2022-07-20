@@ -6,13 +6,9 @@ import {Component} from '@angular/core';
     styleUrls: ['./search-box.component.scss'],
 })
 export class SearchBoxComponent {
-    public className: string = 'search-box';
+    public isOpen: boolean = false;
 
     public handleClick(): void {
-        if (this.className === 'search-box') {
-            this.className = 'search-box show';
-        } else {
-            this.className = 'search-box';
-        }
+        this.isOpen = !this.isOpen;
     }
 }

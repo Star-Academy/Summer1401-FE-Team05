@@ -7,5 +7,6 @@ import {ProductsModule} from './products/products.module';
 @NgModule({
     declarations: [LandingComponent],
     imports: [CommonModule, CarouselModule, ProductsModule],
+    exports: [LandingComponent],
 })
 export class LandingModule {}

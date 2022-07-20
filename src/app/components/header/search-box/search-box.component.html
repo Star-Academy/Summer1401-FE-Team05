@@ -1,7 +1,7 @@
 <button class="nav-btn" (click)="handleClick()">
     <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-<div [class]="className">
+<div class="search-box" [ngClass]="{show: isOpen}">
     <div class="search-label">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input

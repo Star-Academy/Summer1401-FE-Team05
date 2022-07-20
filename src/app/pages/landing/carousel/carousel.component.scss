@@ -15,10 +15,6 @@
     a {
         display: block;
         width: 100%;
-
-        img {
-            // object-fit: cover;
-        }
     }
 }
 
@@ -48,8 +44,8 @@
         height: 3rem;
         border: none;
         border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.7);
-        color: #000;
+        background-color: hsla(0, 0%, 100%, 0.7);
+        color: hsl(0, 0%, 0%);
         cursor: pointer;
     }
 }
@@ -61,7 +57,7 @@
     i {
         width: 0.8rem;
         height: 0.8rem;
-        background-color: #fff;
+        background-color: hsl(0, 0%, 100%);
         border-radius: 50%;
         margin-bottom: 1rem;
     }
