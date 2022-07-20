@@ -1,0 +1,21 @@
+.nav-btn {
+    font-size: 2rem;
+
+    border: none;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 14px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: rgb(31 47 71 / 25%) 0px 20px 40px, rgb(0 0 0 / 10%) 0px 1px 5px,
+            rgb(255 255 255 / 40%) 0px 0px 0px 0.5px inset;
+    }
+
+    &:active {
+        transform: translateY(5px);
+    }
+}

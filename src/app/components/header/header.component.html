@@ -1,12 +1,11 @@
 <div class="nav-container fixed">
-    <nav class="nav">
-        <div id="logo">
+    <nav [class]="mobileNav">
+        <div class="logo">
             <a href="#" aria-label="NG Store Logo">
-                <img src="assets/logos/game-controller-outline.svg" alt="" width="32" height="32" />
+                <img src="assets/logos/NG-Store-logo.png" alt="" width="160" />
             </a>
         </div>
         <ul class="main-nav">
-            <li><a href="#">همه بازی ها</a></li>
             <li><a href="#">بازی کامپیوتر</a></li>
             <li><a href="#">بازی کنسول</a></li>
             <li><a href="#">بازی موبایل</a></li>
@@ -15,29 +14,11 @@
             <li><a href="#">پشتیبانی</a></li>
         </ul>
         <div class="nav-btn-container">
-            <button class="nav-btn">
-                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <app-profile-btn></app-profile-btn>
+            <app-search-box></app-search-box>
+            <button class="hamburger nav-btn" (click)="navButtonHandler()">
+                <i class="fa-solid fa-bars"></i>
             </button>
-            <button class="nav-btn">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-            <div class="search-box">
-                <div class="search-label">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input
-                        type="text"
-                        name="search"
-                        id="search"
-                        class="search-input"
-                        placeholder="جست و جو"
-                        aria-label="جست و جو"
-                    />
-                </div>
-                <div class="divider">جست و جو های پر طرفدار</div>
-            </div>
         </div>
     </nav>
 </div>
-
-<app-search-box></app-search-box>
-<app-profile-btn></app-profile-btn>

@@ -5,4 +5,14 @@ import {Component} from '@angular/core';
     templateUrl: './search-box.component.html',
     styleUrls: ['./search-box.component.scss'],
 })
-export class SearchBoxComponent {}
+export class SearchBoxComponent {
+    public className: string = 'search-box';
+
+    public handleClick(): void {
+        if (this.className === 'search-box') {
+            this.className = 'search-box show';
+        } else {
+            this.className = 'search-box';
+        }
+    }
+}
