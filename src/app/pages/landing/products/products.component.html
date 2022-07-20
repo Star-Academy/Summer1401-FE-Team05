@@ -1,139 +1,18 @@
-<!-- <app-product-card></app-product-card> -->
-
 <div class="cards-container">
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
+    <a *ngFor="let card of cards" href="#" class="game-card" dir="ltr">
+        <img [src]="card.imgSrc" [alt]="card.alt" />
         <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
+            <h3>{{ card.title }}</h3>
+            <span class="green">{{ card.points }}</span>
         </div>
         <div class="overview">
-            <h3>Game Name</h3>
+            <h3>{{ card.title }}</h3>
             <div class="price-container">
                 <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
+                    <del>{{ card.price }}</del>
+                    <span>{{ card.price * (100 - card.percentOff) }}</span>
                 </div>
-                <span class="price-off">30%</span>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
-        <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
-        </div>
-        <div class="overview">
-            <h3>Game Name</h3>
-            <div class="price-container">
-                <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
-                </div>
-                <span class="price-off">30%</span>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
-        <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
-        </div>
-        <div class="overview">
-            <h3>Game Name</h3>
-            <div class="price-container">
-                <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
-                </div>
-                <span class="price-off">30%</span>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
-        <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
-        </div>
-        <div class="overview">
-            <h3>Game Name</h3>
-            <div class="price-container">
-                <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
-                </div>
-                <span class="price-off">30%</span>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
-        <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
-        </div>
-        <div class="overview">
-            <h3>Game Name</h3>
-            <div class="price-container">
-                <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
-                </div>
-                <span class="price-off">30%</span>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
-        <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
-        </div>
-        <div class="overview">
-            <h3>Game Name</h3>
-            <div class="price-container">
-                <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
-                </div>
-                <span class="price-off">30%</span>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
-        <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
-        </div>
-        <div class="overview">
-            <h3>Game Name</h3>
-            <div class="price-container">
-                <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
-                </div>
-                <span class="price-off">30%</span>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="game-card" dir="ltr">
-        <img src="https://via.placeholder.com/300x400" alt="" />
-        <div class="game-card-info">
-            <h3>Game Name</h3>
-            <span class="green">9.8</span>
-        </div>
-        <div class="overview">
-            <h3>Game Name</h3>
-            <div class="price-container">
-                <div class="prices">
-                    <del>150000</del>
-                    <span>105000</span>
-                </div>
-                <span class="price-off">30%</span>
+                <span class="price-off">{{ card.percentOff }}%</span>
             </div>
         </div>
     </a>
