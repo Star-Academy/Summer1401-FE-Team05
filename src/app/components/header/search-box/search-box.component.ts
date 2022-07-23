@@ -5,10 +5,4 @@ import {Component} from '@angular/core';
     templateUrl: './search-box.component.html',
     styleUrls: ['./search-box.component.scss'],
 })
-export class SearchBoxComponent {
-    public isOpen: boolean = false;
-
-    public handleClick(): void {
-        this.isOpen = !this.isOpen;
-    }
-}
+export class SearchBoxComponent {}

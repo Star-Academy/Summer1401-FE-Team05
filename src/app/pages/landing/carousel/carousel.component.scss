@@ -27,10 +27,11 @@
     width: 12rem;
     height: 8rem;
     transition: opacity 0.3s ease-in-out;
-    display: flex;
+    //display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    display: none;
 }
 
 .carousel-btns {

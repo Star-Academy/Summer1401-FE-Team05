@@ -9,6 +9,10 @@
     cursor: pointer;
     transition: all 0.3s ease;
 
+    i {
+        font-weight: 400;
+    }
+
     &:hover {
         background: hsla(0, 0%, 100%, 0.2);
         box-shadow: hsla(216, 39%, 20%, 0.25) 0 2rem 4rem, hsla(0, 0%, 0%, 0.1) 0 0.1rem 0.5rem,
@@ -20,17 +24,17 @@
     }
 }
 
+popper-content {
+    .ngxp__container{
+        border: none;
+    }
+}
+
 .search-box {
-    opacity: 0;
-    visibility: hidden;
     border: 0.1rem solid hsl(0, 0%, 100%);
-    position: absolute;
     border-radius: 2rem;
     padding: 2rem;
-    bottom: -2rem;
-    left: 0;
-    transform: translate(0, 100%);
-    transform-origin: center center;
+
     width: min(36rem, 80vw);
     min-height: 20rem;
     max-height: 70vh;
@@ -38,14 +42,14 @@
     overflow-x: hidden;
     background-image: linear-gradient(45deg, hsla(231, 53%, 20%, 0.9) 0%, hsla(231, 53%, 20%, 0.85) 100%);
     transition: opacity 0.3s ease;
-    &.show {
-        opacity: 1;
-        visibility: visible;
-    }
 }
 
 .search-label {
     position: relative;
+
+    i{
+        font-weight: 400;
+    }
 
     .search-icon {
         position: absolute;

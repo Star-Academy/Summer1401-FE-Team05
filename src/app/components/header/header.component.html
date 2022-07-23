@@ -1,17 +1,17 @@
 <div class="nav-container fixed">
     <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
         <div class="logo">
-            <a href="#" aria-label="NG Store Logo">
+            <a routerLink="/" aria-label="NG Store Logo">
                 <img src="assets/logos/NG-Store-logo.svg" alt="" width="160" />
             </a>
         </div>
         <ul class="main-nav">
-            <li><a href="#">بازی کامپیوتر</a></li>
-            <li><a href="#">بازی کنسول</a></li>
-            <li><a href="#">بازی موبایل</a></li>
-            <li><a href="#">فروش اکانت</a></li>
-            <li><a href="#">گیفت کارت</a></li>
-            <li><a href="#">پشتیبانی</a></li>
+            <li><a routerLink="/" class="current-page">خانه</a></li>
+            <li><a routerLink="/">بازی کامپیوتر</a></li>
+            <li><a routerLink="/">بازی کنسول</a></li>
+            <li><a routerLink="/">بازی موبایل</a></li>
+            <li><a routerLink="/">گیفت کارت</a></li>
+            <li><a routerLink="/">پشتیبانی</a></li>
         </ul>
         <div class="nav-btn-container">
             <app-profile-btn></app-profile-btn>

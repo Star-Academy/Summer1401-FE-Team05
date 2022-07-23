@@ -1,17 +1,21 @@
-<button class="nav-btn" (click)="handleClick()">
+<button class="nav-btn" [popper]="popperContent">
     <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-<div class="search-box" [ngClass]="{show: isOpen}">
-    <div class="search-label">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input
-            type="text"
-            name="search"
-            id="search"
-            class="search-input"
-            placeholder="جست و جو"
-            aria-label="جست و جو"
-        />
+
+<popper-content #popperContent style="border: none">
+    <!-- We'll fix it -->
+    <div class="search-box">
+        <div class="search-label">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input
+                type="search"
+                name="search"
+                id="search"
+                class="search-input"
+                placeholder="جست و جو"
+                aria-label="جست و جو"
+            />
+        </div>
+        <div class="divider">جست و جو های پر طرفدار</div>
     </div>
-    <div class="divider">جست و جو های پر طرفدار</div>
-</div>
+</popper-content>
