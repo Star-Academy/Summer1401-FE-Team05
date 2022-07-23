@@ -7,7 +7,7 @@
     border-radius: 1.4rem;
     padding: 0.8rem 1.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 
     i {
         font-weight: 400;
@@ -24,8 +24,12 @@
     }
 }
 
-popper-content {
-    .ngxp__container{
+popper-content::ng-deep {
+    .ngxp__arrow::before {
+        display: none;
+    }
+
+    .ngxp__container {
         border: none;
     }
 }
@@ -47,7 +51,7 @@ popper-content {
 .search-label {
     position: relative;
 
-    i{
+    i {
         font-weight: 400;
     }
 
