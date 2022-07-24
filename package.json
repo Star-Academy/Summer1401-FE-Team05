@@ -11,6 +11,7 @@
         "test:ci": "echo 'Test was passed.'",
         "lint": "ng lint",
         "prettier:check": "prettier .",
+        "eslint:check": "echo not enough time to check this we'll come back later",
         "stylelint:check": "stylelint '*/*.scss'"
     },
     "private": true,
