@@ -7,14 +7,14 @@
     border-radius: 1.4rem;
     padding: 0.8rem 1.5rem;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease , background-color 0.2s ease;
 
     i {
         font-weight: 400;
     }
 
     &:hover {
-        background: hsla(0, 0%, 100%, 0.2);
+        background-color: hsla(0, 0%, 100%, 0.2);
         box-shadow: hsla(216, 39%, 20%, 0.25) 0 2rem 4rem, hsla(0, 0%, 0%, 0.1) 0 0.1rem 0.5rem,
             hsla(0, 0%, 100%, 0.4) 0 0 0 0.1rem inset;
     }
