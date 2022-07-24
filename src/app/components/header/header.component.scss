@@ -7,9 +7,8 @@
 
     &.fixed {
         position: sticky;
-        top: 0;
-        right: 0;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline: 0;
     }
 }
 
@@ -24,32 +23,35 @@
     margin: 0 auto;
 
     font-size: 1.8rem;
+
+    .logo {
+        img {
+            width: 16rem;
+        }
+    }
 }
 
 .main-nav {
     display: flex;
     gap: 1rem;
 
-    .current-page {
-        background: hsl(0deg 0% 81% / 20%);
-        box-shadow: hsl(216deg 39% 20% / 25%) 0 2rem 4rem, hsl(0deg 0% 0% / 10%) 0 0.1rem 0.5rem,
-            hsl(0deg 0% 100% / 40%) 0 0 0 0.1rem inset;
-    }
-
     li {
         a {
             color: hsl(0deg 0% 100%);
+            opacity: 0.75;
 
             padding: 0.5rem 1.5rem;
 
             border-radius: 1.4rem;
 
-            transition: background-color 0.2s ease;
+            transition: opacity 200ms ease;
 
             &:hover {
-                background-color: hsl(0deg 0% 81% / 20%);
-                box-shadow: hsl(216deg 39% 20% / 25%) 0 2rem 4rem, hsl(0deg 0% 0% / 10%) 0 0.1rem 0.5rem,
-                    hsl(0deg 0% 100% / 40%) 0 0 0 0.1rem inset;
+                opacity: 1;
+            }
+
+            &.current-page {
+                opacity: 1;
             }
         }
     }
@@ -74,14 +76,12 @@
 
     font-size: 2rem;
 
-    transition: transform 0.3s ease, background-color 0.2s ease;
+    transition: transform 200ms ease, opacity 0.2s ease;
 
     cursor: pointer;
 
     &:hover {
-        background-color: hsl(0deg 0% 100% / 20%);
-        box-shadow: hsl(216deg 39% 20% / 25%) 0 2rem 4rem, hsl(0deg 0% 0% / 10%) 0 0.1rem 0.5rem,
-            hsl(0deg 0% 100% / 40%) 0 0 0 0.1rem inset;
+        opacity: 0.75;
     }
 
     &:active {
@@ -120,7 +120,7 @@
 
         transform: translateY(-101vh);
 
-        transition: transform 0.3s ease;
+        transition: transform 300ms ease;
     }
 
     .hamburger {

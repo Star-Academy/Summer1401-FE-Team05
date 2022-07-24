@@ -1,6 +1,7 @@
 .nav-btn {
     background-color: transparent;
     color: hsl(0deg 0% 100%);
+    opacity: 0.75;
 
     padding: 0.8rem 1.5rem;
 
@@ -9,14 +10,12 @@
 
     font-size: 2rem;
 
-    transition: transform 0.3s ease, background-color 0.2s ease;
+    transition: transform 300ms ease, opacity 200ms ease;
 
     cursor: pointer;
 
     &:hover {
-        background-color: hsl(0deg 0% 100% / 20%);
-        box-shadow: hsl(216deg 39% 20% / 25%) 0 2rem 4rem, hsl(0deg 0% 0% / 10%) 0 0.1rem 0.5rem,
-            hsl(0deg 0% 100% / 40%) 0 0 0 0.1rem inset;
+        opacity: 1;
     }
 
     &:active {
