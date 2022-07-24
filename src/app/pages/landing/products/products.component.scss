@@ -79,6 +79,10 @@
     inset-inline: 0;
     overflow-y: auto;
 
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
     max-height: 100%;
 
     padding: 2rem;
@@ -88,10 +92,6 @@
     font-size: 1.2rem;
 
     transition: transform 300ms ease-out;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 }
 
 .price-container {
