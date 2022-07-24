@@ -1,11 +1,11 @@
 <div class="nav-container fixed">
     <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
-        <div class="logo">
+        <div class="nav__logo">
             <a routerLink="/" aria-label="NG Store Logo">
                 <img src="assets/logos/NG-Store-logo.svg" alt="" />
             </a>
         </div>
-        <ul class="main-nav">
+        <ul class="nav__main">
             <li><a routerLink="/" class="current-page">خانه</a></li>
             <li><a routerLink="/">بازی کامپیوتر</a></li>
             <li><a routerLink="/">بازی کنسول</a></li>
@@ -13,7 +13,7 @@
             <li><a routerLink="/">گیفت کارت</a></li>
             <li><a routerLink="/">پشتیبانی</a></li>
         </ul>
-        <div class="nav-btn-container">
+        <div class="nav__btn-container">
             <app-profile-btn></app-profile-btn>
             <app-search-box></app-search-box>
             <button class="hamburger nav-btn" (click)="navButtonHandler()">

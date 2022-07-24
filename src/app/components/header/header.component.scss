@@ -26,68 +26,68 @@
 
     font-size: 1.8rem;
 
-    .logo {
+    &__logo {
         img {
             width: 16rem;
         }
     }
-}
 
-.main-nav {
-    display: flex;
-    gap: 1rem;
+    &__main {
+        display: flex;
+        gap: 1rem;
 
-    li {
-        a {
-            color: hsl(0deg 0% 100%);
-            opacity: 0.75;
+        li {
+            a {
+                color: hsl(0deg 0% 100%);
+                opacity: 0.75;
 
-            padding: 0.5rem 1.5rem;
+                padding: 0.5rem 1.5rem;
 
-            border-radius: 1.4rem;
+                border-radius: 1.4rem;
 
-            transition: opacity 200ms ease;
+                transition: opacity 200ms ease;
 
-            &:hover {
-                opacity: 1;
-            }
+                &:hover {
+                    opacity: 1;
+                }
 
-            &.current-page {
-                opacity: 1;
+                &.current-page {
+                    opacity: 1;
+                }
             }
         }
     }
-}
 
-.nav-btn-container {
-    position: relative;
+    &__btn-container {
+        position: relative;
 
-    display: flex;
-    gap: 0.5rem;
-}
+        display: flex;
+        gap: 0.5rem;
 
-.nav-btn {
-    background-color: transparent;
+        .nav-btn {
+            background-color: transparent;
 
-    color: hsl(0deg 0% 100%);
+            color: hsl(0deg 0% 100%);
 
-    padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1.5rem;
 
-    border: none;
-    border-radius: 1.4rem;
+            border: none;
+            border-radius: 1.4rem;
 
-    font-size: 2rem;
+            font-size: 2rem;
 
-    transition: transform 200ms ease, opacity 0.2s ease;
+            transition: transform 200ms ease, opacity 0.2s ease;
 
-    cursor: pointer;
+            cursor: pointer;
 
-    &:hover {
-        opacity: 0.75;
-    }
+            &:hover {
+                opacity: 0.75;
+            }
 
-    &:active {
-        transform: translateY(0.5rem);
+            &:active {
+                transform: translateY(0.5rem);
+            }
+        }
     }
 }
 
@@ -96,36 +96,40 @@
 }
 
 @media (max-width: 73em) {
-    .open .main-nav {
-        transform: translate(0);
+    .open .nav {
+        &__main {
+            transform: translate(0);
+        }
     }
 
-    .main-nav {
-        background-color: hsl(243deg 96% 10%);
-        background-image: linear-gradient(45deg, hsl(242deg 98% 20%), hsl(0deg 0% 0%));
+    .nav {
+        &__main {
+            background-color: hsl(243deg 96% 10%);
+            background-image: linear-gradient(45deg, hsl(242deg 98% 20%), hsl(0deg 0% 0%));
 
-        position: fixed;
-        inset-block-start: 10rem;
-        inset-inline-start: 0;
+            position: fixed;
+            inset-block-start: 10rem;
+            inset-inline-start: 0;
 
-        z-index: 10;
+            z-index: 10;
 
-        flex-direction: column;
+            flex-direction: column;
 
-        gap: 2rem;
+            gap: 2rem;
 
-        width: 100%;
+            width: 100%;
 
-        padding: 2rem 3rem;
+            padding: 2rem 3rem;
 
-        border-radius: 1rem;
+            border-radius: 1rem;
 
-        transform: translateY(-101vh);
+            transform: translateY(-101vh);
 
-        transition: transform 300ms ease;
-    }
+            transition: transform 300ms ease;
+        }
 
-    .hamburger {
-        display: block;
+        .hamburger {
+            display: block;
+        }
     }
 }

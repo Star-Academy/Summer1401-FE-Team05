@@ -37,7 +37,7 @@ popper-content::ng-deep {
     }
 }
 
-.search-box {
+.search {
     background-image: linear-gradient(45deg, hsl(231deg 53% 20% / 90%) 0%, hsl(231deg 53% 20% / 85%) 100%);
 
     overflow-x: hidden;
@@ -53,71 +53,71 @@ popper-content::ng-deep {
     border-radius: 2rem;
 
     transition: opacity 300ms ease;
-}
 
-.search-label {
-    position: relative;
+    &__box {
+        position: relative;
 
-    i {
-        font-weight: 400;
+        i {
+            font-weight: 400;
+        }
+
+        &__icon {
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: 1.2rem;
+            right: 1.2rem;
+
+            transform: translateY(-50%);
+        }
+
+        &__input {
+            background: linear-gradient(45deg, hsl(232deg 20% 49% / 10%) 0%, hsl(233deg 28% 78% / 15%) 100%);
+            color: hsl(0deg 0% 100% / 80%);
+            opacity: 0.6;
+
+            width: 100%;
+            height: 100%;
+
+            padding-inline-start: 4.2rem;
+
+            padding: 1rem 4.2rem;
+
+            border-radius: 3rem;
+
+            font-family: inherit;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: normal;
+
+            line-height: 130%;
+
+            transition: opacity 300ms ease-in-out;
+
+            &:focus {
+                opacity: 1;
+            }
+
+            &::placeholder {
+                font-family: inherit;
+            }
+        }
     }
 
-    .search-icon {
-        position: absolute;
-        inset-block-start: 50%;
-        inset-inline-start: 1.2rem;
-        right: 1.2rem;
+    &__divider {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
 
-        transform: translateY(-50%);
-    }
-}
+        padding: 0.8rem;
 
-.search-input {
-    background: linear-gradient(45deg, hsl(232deg 20% 49% / 10%) 0%, hsl(233deg 28% 78% / 15%) 100%);
-    color: hsl(0deg 0% 100% / 80%);
-    opacity: 0.6;
+        &::after {
+            content: "";
 
-    width: 100%;
-    height: 100%;
+            flex-grow: 1;
 
-    padding-inline-start: 4.2rem;
+            background-image: linear-gradient(to left, transparent, hsl(0deg 0% 100%));
 
-    padding: 1rem 4.2rem;
-
-    border-radius: 3rem;
-
-    font-family: inherit;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: normal;
-
-    line-height: 130%;
-
-    transition: opacity 300ms ease-in-out;
-
-    &:focus {
-        opacity: 1;
-    }
-
-    &::placeholder {
-        font-family: inherit;
-    }
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    padding: 0.8rem;
-
-    &::after {
-        content: "";
-
-        flex-grow: 1;
-
-        background-image: linear-gradient(to left, transparent, hsl(0deg 0% 100%));
-
-        height: 0.1rem;
+            height: 0.1rem;
+        }
     }
 }

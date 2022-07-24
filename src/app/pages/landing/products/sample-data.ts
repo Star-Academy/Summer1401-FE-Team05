@@ -4,7 +4,7 @@ export const cards: Product[] = [
     {
         title: 'RDR2',
         alt: 'Red Dead Redemption 2 cover',
-        price: 150000,
+        price: 150_000,
         percentOff: 30,
         imgSrc: 'assets/images/cards/rdr2.webp',
         points: 9.3,
@@ -12,7 +12,7 @@ export const cards: Product[] = [
     {
         title: 'Dota 2',
         alt: 'Dota 2 cover',
-        price: 200000,
+        price: 200_000,
         percentOff: 50,
         imgSrc: 'assets/images/cards/dota2.webp',
         points: 9.5,
@@ -20,7 +20,7 @@ export const cards: Product[] = [
     {
         title: 'God of War',
         alt: 'God of War cover',
-        price: 1500000,
+        price: 1_500_000,
         percentOff: 20,
         imgSrc: 'assets/images/cards/god-of-war.webp',
         points: 10,
@@ -28,7 +28,7 @@ export const cards: Product[] = [
     {
         title: 'RDR2',
         alt: 'عکسی RDR2',
-        price: 150000,
+        price: 150_000,
         percentOff: 30,
         imgSrc: 'assets/images/cards/rdr2.webp',
         points: 9.3,
@@ -36,7 +36,7 @@ export const cards: Product[] = [
     {
         title: 'Horizon Zero Down',
         alt: 'Horizon Zero Down cover',
-        price: 110000,
+        price: 110_000,
         percentOff: 35,
         imgSrc: 'assets/images/cards/horizon.webp',
         points: 8,
@@ -44,7 +44,7 @@ export const cards: Product[] = [
     {
         title: 'God of War',
         alt: 'God of War cover',
-        price: 1500000,
+        price: 1_500_000,
         percentOff: 20,
         imgSrc: 'assets/images/cards/god-of-war.webp',
         points: 10,
@@ -52,7 +52,7 @@ export const cards: Product[] = [
     {
         title: 'Dota 2',
         alt: 'Dota 2 cover',
-        price: 200000,
+        price: 200_000,
         percentOff: 50,
         imgSrc: 'assets/images/cards/dota2.webp',
         points: 9.5,
@@ -60,7 +60,7 @@ export const cards: Product[] = [
     {
         title: 'Horizon Zero Down',
         alt: 'Horizon Zero Down cover',
-        price: 110000,
+        price: 110_000,
         percentOff: 35,
         imgSrc: 'assets/images/cards/horizon.webp',
         points: 8,
