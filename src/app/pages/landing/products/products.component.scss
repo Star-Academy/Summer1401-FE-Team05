@@ -70,7 +70,7 @@
     }
 
     &__title {
-        margin-top: 0;
+        margin-block-start: 0;
     }
 }
 
@@ -95,7 +95,7 @@
     transition: transform 300ms ease-out;
 
     &__title {
-        margin-bottom: 0.5rem;
+        margin-block-end: 0.5rem;
     }
 }
 
