@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+
 import {cards} from './sample-data';
 import {Product} from './models/product';
 

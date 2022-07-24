@@ -11,7 +11,6 @@ import {FooterModule} from './components/footer/footer.module';
 @NgModule({
     declarations: [AppComponent],
     imports: [BrowserModule, AppRoutingModule, NotFoundModule, LandingModule, HeaderModule, FooterModule],
-    providers: [],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

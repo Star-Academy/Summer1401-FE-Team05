@@ -1,23 +1,31 @@
 .footer-links {
-    padding: 0 2rem;
-    max-width: 100%;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    font-size: 1.6rem;
-    margin-bottom: 4rem;
+    justify-content: space-around;
     gap: 6rem;
+
+    max-width: 100%;
+
+    margin-bottom: 4rem;
+    padding: 0 2rem;
+
+    font-size: 1.6rem;
 
     li {
         margin-bottom: 1rem;
     }
 }
+
 .enamad {
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0deg 0% 100%);
+
     border-radius: 1.8rem;
 }
+
 .footer-note {
-    text-align: center;
-    font-size: 1.6rem;
     margin-bottom: 2rem;
+
+    font-size: 1.6rem;
+
+    text-align: center;
 }

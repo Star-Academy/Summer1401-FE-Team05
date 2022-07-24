@@ -1,23 +1,39 @@
 # NgStore
 
-this is a angular app for selling video games online
+![NG Store](src/assets/logos/NG-Store-logo.svg)
 
-## how to use
+## درباره پروژه
 
-in the project directory enter this line in the command line
+این یک فروشگاه آنلاین بازی های کامپیوتری است
+
+---
+
+## اهداف پروژه
+
+هدف این فروشگاه رساندن بازی ها با کمترین قیمت به گیمر های عزیز ایرانی است
+
+---
+
+## چگونه استفاده کنیم
+
+### پیشنیاز های اجرای پروژه
+
+ما در پروژه از نُد و انگولار 12.2.1 استفاده کرده ایم لذا برای اجرای پروژه نیاز به نصب آن ها وجود دارد
+
+### اجرای پروژه
+
+برای این کار باید پروژه از گیت هاب دانلود کنید
+
+ابتدا باید کد زیر را در ترمینال بزنیم
 
 ```bash
 git clone https://github.com/Star-Academy/Summer1401-FE-Team05.git
+```
 
+سپس کد های یر را بزنیم تا پروژه اجرا شود
+
+```bash
 npm i
 
 npm start
 ```
-
-## Development server
-
-Run `npm start` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Build
-
-Run `npm run build` to build the project. The built project will be saved in the dist/ directory.
