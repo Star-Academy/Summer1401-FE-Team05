@@ -2,10 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 4rem;
 
     max-width: 80%;
 
-    margin: 0 auto 10rem;
+    padding-block: 12rem;
 }
 
 .game-card {
@@ -17,8 +18,6 @@
     display: block;
 
     width: 36rem;
-
-    margin: 1rem 1rem 2rem;
 
     border: 0.1rem solid hsl(226deg 37% 54% / 60%);
     border-radius: 0.7rem;
@@ -68,10 +67,6 @@
             }
         }
     }
-
-    &__title {
-        margin-block-start: 0;
-    }
 }
 
 .overview {
@@ -94,9 +89,9 @@
 
     transition: transform 300ms ease-out;
 
-    &__title {
-        margin-block-end: 0.5rem;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .price-container {
