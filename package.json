@@ -8,11 +8,13 @@
         "build:prod": "ng build --base-href=/Summer1401-FE-Team05/",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "test:ci": "echo 'Test was passed.'",
-        "lint": "ng lint",
-        "prettier:check": "prettier .",
-        "eslint:check": "echo not enough time to check this we'll come back later",
-        "stylelint:check": "stylelint '*/*.scss'"
+        "test:ci": "ng test --browsers=ChromeHeadless --watch=false",
+        "eslint:check": "ng lint",
+        "eslint:fix": "ng lint --fix",
+        "stylelint:check": "stylelint \"**/*.scss\"",
+        "stylelint:fix": "stylelint \"**/*.scss\" --fix",
+        "prettier:check": "prettier . --check",
+        "prettier:fix": "prettier . --write"
     },
     "private": true,
     "dependencies": {

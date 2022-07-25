@@ -27,13 +27,16 @@
     }
 }
 
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
 popper-content::ng-deep {
-    .ngxp__arrow::before {
-        display: none;
-    }
+    .ngxp {
+        &__arrow::before {
+            display: none;
+        }
 
-    .ngxp__container {
-        border: none;
+        &__container {
+            border: none;
+        }
     }
 }
 

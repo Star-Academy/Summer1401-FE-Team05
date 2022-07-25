@@ -9,8 +9,8 @@ import {HeaderModule} from './components/header/header.module';
 import {FooterModule} from './components/footer/footer.module';
 
 @NgModule({
-    declarations: [AppComponent],
     imports: [BrowserModule, AppRoutingModule, NotFoundModule, LandingModule, HeaderModule, FooterModule],
+    declarations: [AppComponent],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
