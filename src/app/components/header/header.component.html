@@ -1,0 +1,24 @@
+<div class="nav-container fixed">
+    <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
+        <div class="nav__logo">
+            <a routerLink="/" aria-label="NG Store Logo">
+                <img src="assets/logos/NG-Store-logo.svg" alt="" />
+            </a>
+        </div>
+        <ul class="nav__main">
+            <li><a routerLink="/" class="current-page">خانه</a></li>
+            <li><a routerLink="/">بازی کامپیوتر</a></li>
+            <li><a routerLink="/">بازی کنسول</a></li>
+            <li><a routerLink="/">بازی موبایل</a></li>
+            <li><a routerLink="/">گیفت کارت</a></li>
+            <li><a routerLink="/">پشتیبانی</a></li>
+        </ul>
+        <div class="nav__btn-container">
+            <app-profile-btn></app-profile-btn>
+            <app-search-box></app-search-box>
+            <button class="hamburger nav-btn" (click)="navButtonHandler()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+</div>

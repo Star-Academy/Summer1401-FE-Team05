@@ -1,0 +1,21 @@
+<div class="conteiner-center">
+    <div class="cards-container">
+        <a *ngFor="let card of cards" href="#" class="game-card">
+            <img class="game-card__img" [src]="card.imgSrc" [alt]="card.alt" />
+            <div class="game-card__info">
+                <h3>{{ card.title }}</h3>
+                <span class="green">{{ card.points }}</span>
+            </div>
+            <div class="overview">
+                <h3 class="overview__title">{{ card.title }}</h3>
+                <div class="price-container">
+                    <div class="prices">
+                        <del>{{ card.price }}</del>
+                        <span>{{ (card.price * (100 - card.percentOff)) / 100 }}</span>
+                    </div>
+                    <span class="price-off">{{ card.percentOff }}%</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

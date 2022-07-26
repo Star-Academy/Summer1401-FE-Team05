@@ -1,0 +1,135 @@
+.nav-container {
+    background-image: linear-gradient(45deg, hsl(231deg 53% 20% / 90%) 0%, hsl(231deg 53% 20% / 85%) 100%);
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 10rem;
+
+    &.fixed {
+        position: sticky;
+        inset-block-start: 0;
+        inset-inline: 0;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 80vw;
+    height: 100%;
+
+    font-size: 1.8rem;
+
+    &__logo {
+        img {
+            width: 16rem;
+        }
+    }
+
+    &__main {
+        display: flex;
+        gap: 1rem;
+
+        li {
+            a {
+                color: hsl(0deg 0% 100%);
+                opacity: 0.75;
+
+                padding: 0.5rem 1.5rem;
+
+                border-radius: 1.4rem;
+
+                transition: opacity 200ms ease;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &.current-page {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__btn-container {
+        position: relative;
+
+        display: flex;
+        gap: 0.5rem;
+
+        .nav-btn {
+            background-color: transparent;
+
+            color: hsl(0deg 0% 100%);
+
+            padding: 0.75rem 1.5rem;
+
+            border: none;
+            border-radius: 1.4rem;
+
+            font-size: 2rem;
+
+            transition: transform 200ms ease, opacity 0.2s ease;
+
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.75;
+            }
+
+            &:active {
+                transform: translateY(0.5rem);
+            }
+        }
+    }
+}
+
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 73em) {
+    .open .nav {
+        &__main {
+            transform: translate(0);
+        }
+    }
+
+    .nav {
+        &__main {
+            background-color: hsl(243deg 96% 10%);
+            background-image: linear-gradient(45deg, hsl(242deg 98% 20%), hsl(0deg 0% 0%));
+
+            position: fixed;
+            inset-block-start: 10rem;
+            inset-inline-start: 0;
+
+            z-index: 10;
+
+            flex-direction: column;
+
+            gap: 2rem;
+
+            width: 100%;
+
+            padding: 2rem 3rem;
+
+            border-radius: 1rem;
+
+            transform: translateY(-101vh);
+
+            transition: transform 300ms ease;
+        }
+
+        .hamburger {
+            display: block;
+        }
+    }
+}

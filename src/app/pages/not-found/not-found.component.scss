@@ -1,0 +1,12 @@
+:host {
+    display: grid;
+    place-items: center;
+
+    min-height: 100vh;
+}
+
+h1 {
+    color: hsl(340deg 100% 50%);
+
+    font-size: 6.4rem;
+}

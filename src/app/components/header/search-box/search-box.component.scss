@@ -1,0 +1,126 @@
+.nav-btn {
+    background-color: transparent;
+    color: hsl(0deg 0% 100%);
+    opacity: 0.75;
+
+    padding: 0.8rem 1.5rem;
+
+    border: none;
+    border-radius: 1.4rem;
+
+    font-size: 2rem;
+
+    transition: transform 300ms ease, opacity 200ms ease;
+
+    cursor: pointer;
+
+    i {
+        font-weight: 400;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        transform: translateY(0.5rem);
+    }
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+popper-content::ng-deep {
+    .ngxp {
+        &__arrow::before {
+            display: none;
+        }
+
+        &__container {
+            border: none;
+        }
+    }
+}
+
+.search {
+    background-image: linear-gradient(45deg, hsl(231deg 53% 20% / 90%) 0%, hsl(231deg 53% 20% / 85%) 100%);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    width: min(36rem, 80vw);
+    min-height: 20rem;
+    max-height: 70vh;
+
+    padding: 2rem;
+
+    border: 0.1rem solid hsl(0deg 0% 100%);
+    border-radius: 2rem;
+
+    transition: opacity 300ms ease;
+
+    &__box {
+        position: relative;
+
+        i {
+            font-weight: 400;
+        }
+
+        &__icon {
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: 1.2rem;
+            right: 1.2rem;
+
+            transform: translateY(-50%);
+        }
+
+        &__input {
+            background: linear-gradient(45deg, hsl(232deg 20% 49% / 10%) 0%, hsl(233deg 28% 78% / 15%) 100%);
+            color: hsl(0deg 0% 100% / 80%);
+            opacity: 0.6;
+
+            width: 100%;
+            height: 100%;
+
+            padding-inline-start: 4.2rem;
+
+            padding: 1rem 4.2rem;
+
+            border-radius: 3rem;
+
+            font-family: inherit;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: normal;
+
+            line-height: 130%;
+
+            transition: opacity 300ms ease-in-out;
+
+            &:focus {
+                opacity: 1;
+            }
+
+            &::placeholder {
+                font-family: inherit;
+            }
+        }
+    }
+
+    &__divider {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        padding: 0.8rem;
+
+        &::after {
+            content: "";
+
+            flex-grow: 1;
+
+            background-image: linear-gradient(to left, transparent, hsl(0deg 0% 100%));
+
+            height: 0.1rem;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<button class="nav-btn" [popper]="popperContent" [popperPlacement]="NgxPopperjsPlacements.BOTTOMSTART">
+    <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+
+<popper-content #popperContent style="border: none">
+    <div class="search">
+        <div class="search__box">
+            <i class="fa-solid fa-magnifying-glass search__box__icon"></i>
+            <input
+                type="search"
+                name="search"
+                id="search"
+                class="search__box__input"
+                placeholder="جست و جو"
+                aria-label="جست و جو"
+            />
+        </div>
+        <div class="search__divider">جست و جو های پر طرفدار</div>
+    </div>
+</popper-content>
