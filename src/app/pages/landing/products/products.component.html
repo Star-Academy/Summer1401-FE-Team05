@@ -1,7 +1,7 @@
 <div class="container-center">
     <div class="cards-container">
         <a *ngFor="let card of cards" href="#" class="game-card">
-            <img class="game-card__img" [src]="card.imgSrc" [alt]="card.alt"/>
+            <img class="game-card__img" [src]="card.imgSrc" [alt]="card.alt" />
             <div class="game-card__info">
                 <h3>{{ card.title }}</h3>
                 <span class="green">{{ card.points }}</span>

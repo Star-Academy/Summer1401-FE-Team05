@@ -1,25 +1,26 @@
 .sign-in-btn {
-  display: block;
-  background-color: transparent;
-  color: hsl(0deg 0% 100%);
-  opacity: 0.75;
+    background-color: transparent;
+    color: hsl(0deg 0% 100%);
+    opacity: 0.75;
 
-  padding: 0.8rem 1.5rem;
+    display: block;
 
-  border: none;
-  border-radius: 1.4rem;
+    padding: 0.8rem 1.5rem;
 
-  font-size: 2rem;
+    border: none;
+    border-radius: 1.4rem;
 
-  transition: transform 300ms ease, opacity 200ms ease;
+    font-size: 2rem;
 
-  cursor: pointer;
+    transition: transform 300ms ease, opacity 200ms ease;
 
-  &:hover {
-    opacity: 1;
-  }
+    cursor: pointer;
 
-  &:active {
-    transform: translateY(0.5rem);
-  }
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        transform: translateY(0.5rem);
+    }
 }
