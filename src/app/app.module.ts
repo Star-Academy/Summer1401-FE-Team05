@@ -7,9 +7,22 @@ import {NotFoundModule} from './pages/not-found/not-found.module';
 import {LandingModule} from './pages/landing/landing.module';
 import {HeaderModule} from './components/header/header.module';
 import {FooterModule} from './components/footer/footer.module';
+import {SignInModule} from './pages/sign-in/sign-in.module';
+import {ProfileModule} from './pages/profile/profile.module';
+import {SignUpModule} from './pages/sign-up/sign-up.module';
 
 @NgModule({
-    imports: [BrowserModule, AppRoutingModule, NotFoundModule, LandingModule, HeaderModule, FooterModule],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NotFoundModule,
+        LandingModule,
+        HeaderModule,
+        FooterModule,
+        SignInModule,
+        ProfileModule,
+        SignUpModule,
+    ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],
 })

@@ -1,0 +1,24 @@
+<div class="sign-up-container">
+    <form class="form" (submit)="handleSubmit()">
+        <p class="form-login">برای دیدن حساب کاربری خود ابتدا وارد شوید</p>
+        <label class="sign-up-input-label">
+            نام کاربری
+            <input type="text" name="username" [(ngModel)]="user.username" />
+        </label>
+        <label class="sign-up-input-label">
+            ایمیل
+            <input dir="ltr" type="email" name="email" [(ngModel)]="user.email" />
+        </label>
+        <label class="sign-up-input-label">
+            رمز عبور
+            <input type="password" name="password" [(ngModel)]="user.password" />
+        </label>
+
+        <button class="sign-up-submit-btn" type="submit">ثبت نام</button>
+
+        <span class="sign-up-link">
+            اکانت دارید؟
+            <a routerLink="/sign-in">اینجا وارد شوید !</a>
+        </span>
+    </form>
+</div>

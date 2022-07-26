@@ -2,7 +2,7 @@
     <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
         <div class="nav__logo">
             <a routerLink="/" aria-label="NG Store Logo">
-                <img src="assets/logos/NG-Store-logo.svg" alt="" />
+                <img src="assets/logos/NG-Store-logo.svg" alt=""/>
             </a>
         </div>
         <ul class="nav__main">
@@ -14,7 +14,14 @@
             <li><a routerLink="/">پشتیبانی</a></li>
         </ul>
         <div class="nav__btn-container">
-            <app-profile-btn></app-profile-btn>
+            <ng-container *ngIf="isLoggedIn; else notLoggedInTemplate">
+                <app-profile-btn></app-profile-btn>
+            </ng-container>
+
+            <ng-template #notLoggedInTemplate>
+                <app-sign-in-up></app-sign-in-up>
+            </ng-template>
+
             <app-search-box></app-search-box>
             <button class="hamburger nav-btn" (click)="navButtonHandler()">
                 <i class="fa-solid fa-bars"></i>
