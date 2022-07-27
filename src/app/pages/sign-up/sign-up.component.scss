@@ -2,7 +2,7 @@
     display: grid;
     place-items: center;
 
-    height: 100vh;
+    block-size: 100vh;
 
     .form {
         background-color: hsl(221deg 33% 19%);
@@ -61,36 +61,31 @@
 
             cursor: pointer;
 
-            &::after {
-                content: "";
-
-                background-color: hsl(221deg 33% 19%);
-
-                position: absolute;
-                inset-block-end: 0;
-                inset-inline-start: 0;
-
-                width: 2rem;
-                height: 1.5rem;
-
-                transform: translate(70%, 70%) rotate(45deg);
-                border-inline-end: 0.2rem solid hsl(261deg 56% 51%);
-            }
-
+            &::after,
             &::before {
                 content: "";
 
                 background-color: hsl(221deg 33% 19%);
 
                 position: absolute;
-                inset-block-start: 0;
-                inset-inline-end: 0;
 
                 width: 2rem;
                 height: 1.5rem;
+            }
+
+            &::after {
+                inset-block-end: 0;
+                inset-inline-start: 0;
+
+                transform: translate(70%, 70%) rotate(45deg);
+                border-inline-end: 0.2rem solid hsl(261deg 56% 51%);
+            }
+
+            &::before {
+                inset-block-start: 0;
+                inset-inline-end: 0;
 
                 border-inline-start: 0.2rem solid hsl(261deg 56% 51%);
-
                 transform: translate(-70%, -70%) rotate(45deg);
             }
         }
