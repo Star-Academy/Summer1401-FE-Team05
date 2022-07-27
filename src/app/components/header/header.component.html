@@ -6,7 +6,7 @@
             </a>
         </div>
         <ul class="nav__main">
-            <li><a routerLink="/" class="current-page">خانه</a></li>
+            <li><a routerLink="/" (click)="homePageHandler()" class="current-page">خانه</a></li>
             <li><a routerLink="/">بازی کامپیوتر</a></li>
             <li><a routerLink="/">بازی کنسول</a></li>
             <li><a routerLink="/">بازی موبایل</a></li>
@@ -14,7 +14,14 @@
             <li><a routerLink="/">پشتیبانی</a></li>
         </ul>
         <div class="nav__btn-container">
-            <app-profile-btn></app-profile-btn>
+            <ng-container *ngIf="isLoggedIn; else notLoggedInTemplate">
+                <app-profile-btn></app-profile-btn>
+            </ng-container>
+
+            <ng-template #notLoggedInTemplate>
+                <app-sign-in-up></app-sign-in-up>
+            </ng-template>
+
             <app-search-box></app-search-box>
             <button class="hamburger nav-btn" (click)="navButtonHandler()">
                 <i class="fa-solid fa-bars"></i>

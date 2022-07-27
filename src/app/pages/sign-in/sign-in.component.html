@@ -1,0 +1,24 @@
+<div class="sign-in-container">
+    <form class="form" #SignInForm (submit)="handleSubmit()">
+        <p class="form-login">برای دیدن حساب کاربری خود ابتدا وارد شوید</p>
+        <label class="input-label">
+            نام کاربری
+            <input type="text" name="username" [(ngModel)]="user.username" required />
+        </label>
+        <label class="input-label">
+            رمز عبور
+            <input type="password" name="password" [(ngModel)]="user.password" required />
+        </label>
+
+        <ng-container *ngIf="!SignInForm.checkValidity()">
+            <span class="validation-error">مقادیر معتبر وارد کنید</span>
+        </ng-container>
+
+        <button class="submit-btn" type="submit">ورود</button>
+
+        <span class="sign-up-link">
+            اکانت ندارید؟
+            <a routerLink="/sign-up">اینجا بسازید!</a>
+        </span>
+    </form>
+</div>

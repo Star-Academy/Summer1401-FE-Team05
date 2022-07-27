@@ -1,12 +1,10 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {ProfileBtnComponent} from './profile-btn.component';
+import {ProfileComponent} from './profile.component';
 import {RouterModule} from '@angular/router';
 
 @NgModule({
-    declarations: [ProfileBtnComponent],
+    declarations: [ProfileComponent],
     imports: [CommonModule, RouterModule],
-    exports: [ProfileBtnComponent],
 })
-export class ProfileBtnModule {}
+export class ProfileModule {}
