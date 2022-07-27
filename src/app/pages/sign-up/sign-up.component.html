@@ -14,6 +14,10 @@
             <input type="password" name="password" [(ngModel)]="user.password" />
         </label>
 
+        <ng-container *ngIf="isValidate(user)">
+            <span class="validation-error">مقادیر معتبر وارد کنید</span>
+        </ng-container>
+
         <button class="sign-up-submit-btn" type="submit">ثبت نام</button>
 
         <span class="sign-up-link">

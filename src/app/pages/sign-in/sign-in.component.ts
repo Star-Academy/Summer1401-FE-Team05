@@ -13,8 +13,6 @@ import {AuthService} from '../../services/auth.service';
 export class SignInComponent {
     public constructor(private router: Router, private authService: AuthService) {}
 
-    public isSignUp: boolean = false;
-
     public user: User = {
         username: '',
         password: '',
@@ -24,5 +22,9 @@ export class SignInComponent {
     public async handleSubmit(): Promise<void> {
         const isLoggedIn = await this.authService.login(this.user);
         if (isLoggedIn) location.replace('profile');
+    }
+
+    public isValidate(_user: User): boolean {
+        return !!_user.username && !!_user.password;
     }
 }

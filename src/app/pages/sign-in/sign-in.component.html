@@ -5,7 +5,7 @@
             نام کاربری
             <input type="text" name="username" [(ngModel)]="user.username" />
         </label>
-        <label *ngIf="isSignUp" class="input-label">
+        <label class="input-label">
             ایمیل
             <input type="email" name="email" [(ngModel)]="user.email" />
         </label>
@@ -13,6 +13,10 @@
             رمز عبور
             <input type="password" name="password" [(ngModel)]="user.password" />
         </label>
+
+        <ng-container *ngIf="isValidate(user)">
+            <span class="validation-error">مقادیر معتبر وارد کنید</span>
+        </ng-container>
 
         <button class="submit-btn" type="submit">ورود</button>
 

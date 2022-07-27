@@ -40,7 +40,7 @@
                 padding: 1rem 2rem;
 
                 border: 0.2rem solid hsl(261deg 70% 90%);
-                border-radius: 1px;
+                border-radius: 0.1rem;
 
                 font-size: 1.6rem;
             }
@@ -93,6 +93,10 @@
 
                 transform: translate(-70%, -70%) rotate(45deg);
             }
+        }
+
+        .validation-error {
+            color: hsl(0, 100%, 50%);
         }
 
         .sign-up-link {

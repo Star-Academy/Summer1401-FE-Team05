@@ -19,7 +19,6 @@ export class ApiService {
 
         if (response.status === 200 || response.status === 201) return data as T;
 
-        console.log(data);
         return null;
     }
 }

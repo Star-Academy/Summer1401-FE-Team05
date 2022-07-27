@@ -17,7 +17,11 @@
     padding-block-end: 8rem;
     padding-inline: 10rem;
 
-    border-radius: 3px;
+    border-radius: 0.3rem;
+
+    .validation-error {
+        color: hsl(0, 100%, 50%);
+    }
 }
 
 .form-login {
@@ -42,7 +46,7 @@
         padding: 1rem 2rem;
 
         border: 0.2rem solid hsl(261deg 70% 90%);
-        border-radius: 1px;
+        border-radius: 0.1rem;
 
         font-size: 1.6rem;
     }

@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-// import {Router} from '@angular/router';
 
 import {User} from '../../models/user.model';
 
@@ -22,7 +21,7 @@ export class SignUpComponent {
 
     public async handleSubmit(): Promise<void> {
         const validation = this.isValidate(this.user);
-        if (/\S+@\S+\.\S+/.test(this.user.email) && this.user.username && this.user.password) {
+        if (validation) {
             const isInfoOK = await this.authService.signUp(this.user);
             if (isInfoOK) location.replace('profile');
         } else {
@@ -31,6 +30,6 @@ export class SignUpComponent {
     }
 
     public isValidate(_user: User): boolean {
-        return true;
+        return /\S+@\S+\.\S+/.test(_user.email) && !!_user.username && !!_user.password;
     }
 }
