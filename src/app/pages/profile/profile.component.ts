@@ -8,6 +8,6 @@ import {Component} from '@angular/core';
 export class ProfileComponent {
     public logout(): void {
         localStorage.removeItem('token');
-        location.replace('/');
+        location.reload();
     }
 }

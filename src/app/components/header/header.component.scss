@@ -7,8 +7,6 @@
     flex-direction: column;
     align-items: center;
 
-    height: 10rem;
-
     &.fixed {
         position: sticky;
         inset-block-start: 0;
@@ -21,15 +19,13 @@
     align-items: center;
     justify-content: space-between;
 
-    block-size: 100%;
-
     inline-size: 80vw;
 
     font-size: 1.8rem;
 
     &__logo {
         img {
-            width: 16rem;
+            inline-size: 16rem;
         }
     }
 

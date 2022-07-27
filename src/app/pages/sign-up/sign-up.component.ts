@@ -23,8 +23,8 @@ export class SignUpComponent {
 
     public async handleSubmit(): Promise<void> {
         if (this.signUpForm.nativeElement.checkValidity()) {
-            const isInfoOK = await this.authService.signUp(this.user);
-            if (isInfoOK) location.replace('profile');
+            const result = await this.authService.signUp(this.user);
+            if (result) location.replace('profile');
         }
     }
 }

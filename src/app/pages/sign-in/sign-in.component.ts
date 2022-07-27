@@ -21,6 +21,6 @@ export class SignInComponent {
 
     public async handleSubmit(): Promise<void> {
         const isLoggedIn = await this.authService.login(this.user);
-        if (isLoggedIn) location.replace('profile');
+        if (isLoggedIn) await this.router.navigateByUrl('/');
     }
 }

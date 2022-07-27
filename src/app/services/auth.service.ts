@@ -17,7 +17,7 @@ export class AuthService {
         const data = await this.apiService.post<Token>(URLS.API_USER_LOGIN, user);
 
         if (data?.token) {
-            localStorage.setItem('token', data?.token);
+            localStorage.setItem('token', data.token);
         }
 
         return !!data;
@@ -34,7 +34,7 @@ export class AuthService {
         const data = await this.apiService.post<Token>(URLS.API_USER_REGISTER, user);
 
         if (data?.token) {
-            localStorage.setItem('token', data?.token);
+            localStorage.setItem('token', data.token);
         }
 
         return !!data;
