@@ -1,6 +1,6 @@
 <div class="container-center">
     <div class="cards-container">
-        <a *ngFor="let card of cards" href="#" class="game-card">
+        <a *ngFor="let card of cards" routerLink="/" class="game-card">
             <img class="game-card__img" [src]="card.imgSrc" [alt]="card.alt" />
             <div class="game-card__info">
                 <h3>{{ card.title }}</h3>

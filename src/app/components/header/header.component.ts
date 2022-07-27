@@ -13,6 +13,10 @@ export class HeaderComponent {
         this.isMobileNavOpen = !this.isMobileNavOpen;
     }
 
+    public homePageHandler(): void {
+        this.isMobileNavOpen = false;
+    }
+
     public isLoggedIn: boolean = false;
 
     public constructor(private authService: AuthService) {
