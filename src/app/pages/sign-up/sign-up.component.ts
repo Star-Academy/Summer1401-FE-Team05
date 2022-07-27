@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 import {User} from '../../models/user.model';
 
@@ -11,6 +11,8 @@ import {Router} from '@angular/router';
     styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent {
+    @ViewChild('SignUpForm') private signUpForm!: ElementRef<HTMLFormElement>;
+
     public constructor(private router: Router, private authService: AuthService) {}
 
     public user: User = {
@@ -20,16 +22,9 @@ export class SignUpComponent {
     };
 
     public async handleSubmit(): Promise<void> {
-        const validation = this.isValidate(this.user);
-        if (validation) {
+        if (this.signUpForm.nativeElement.checkValidity()) {
             const isInfoOK = await this.authService.signUp(this.user);
             if (isInfoOK) location.replace('profile');
-        } else {
-            console.log('email is not validate', this.user.email);
         }
-    }
-
-    public isValidate(_user: User): boolean {
-        return /\S+@\S+\.\S+/.test(_user.email) && !!_user.username && !!_user.password;
     }
 }

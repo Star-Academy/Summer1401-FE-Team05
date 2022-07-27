@@ -1,20 +1,20 @@
 <div class="sign-up-container">
-    <form class="form" (submit)="handleSubmit()">
+    <form class="form" #SignUpForm (submit)="handleSubmit()">
         <p class="form-login">برای دیدن حساب کاربری خود ابتدا وارد شوید</p>
         <label class="sign-up-input-label">
             نام کاربری
-            <input type="text" name="username" [(ngModel)]="user.username" />
+            <input type="text" name="username" [(ngModel)]="user.username" required />
         </label>
         <label class="sign-up-input-label">
             ایمیل
-            <input dir="ltr" type="email" name="email" [(ngModel)]="user.email" />
+            <input dir="ltr" type="email" name="email" [(ngModel)]="user.email" required />
         </label>
         <label class="sign-up-input-label">
             رمز عبور
-            <input type="password" name="password" [(ngModel)]="user.password" />
+            <input type="password" name="password" [(ngModel)]="user.password" required />
         </label>
 
-        <ng-container *ngIf="isValidate(user)">
+        <ng-container *ngIf="!SignUpForm.checkValidity()">
             <span class="validation-error">مقادیر معتبر وارد کنید</span>
         </ng-container>
 

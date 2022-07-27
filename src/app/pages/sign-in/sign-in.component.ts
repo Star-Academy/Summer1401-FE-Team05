@@ -23,8 +23,4 @@ export class SignInComponent {
         const isLoggedIn = await this.authService.login(this.user);
         if (isLoggedIn) location.replace('profile');
     }
-
-    public isValidate(_user: User): boolean {
-        return !!_user.username && !!_user.password;
-    }
 }
