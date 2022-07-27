@@ -14,10 +14,6 @@
 
     cursor: pointer;
 
-    i {
-        font-weight: 400;
-    }
-
     &:hover {
         opacity: 1;
     }
@@ -60,10 +56,6 @@ popper-content::ng-deep {
     &__box {
         position: relative;
 
-        i {
-            font-weight: 400;
-        }
-
         &__icon {
             position: absolute;
             inset-block-start: 50%;
@@ -89,8 +81,6 @@ popper-content::ng-deep {
 
             font-family: inherit;
             font-size: 1.6rem;
-            font-style: normal;
-            font-weight: normal;
 
             line-height: 130%;
 

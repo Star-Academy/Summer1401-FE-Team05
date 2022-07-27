@@ -106,7 +106,7 @@
 
             position: fixed;
             inset-block-start: 10rem;
-            inset-inline-start: 0;
+            inset-inline-end: 0;
 
             z-index: 10;
 
@@ -114,13 +114,11 @@
 
             gap: 2rem;
 
-            inline-size: 100%;
-
             padding: 2rem 3rem;
 
             border-radius: 1rem;
 
-            transform: translateY(-101vh);
+            transform: translateX(-101vw);
 
             transition: transform 300ms ease;
         }

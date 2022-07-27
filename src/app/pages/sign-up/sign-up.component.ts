@@ -24,7 +24,7 @@ export class SignUpComponent {
     public async handleSubmit(): Promise<void> {
         if (this.signUpForm.nativeElement.checkValidity()) {
             const result = await this.authService.signUp(this.user);
-            if (result) location.replace('profile');
+            if (result) await this.router.navigateByUrl('/');
         }
     }
 }
