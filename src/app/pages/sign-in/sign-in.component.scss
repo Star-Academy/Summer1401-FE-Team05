@@ -20,7 +20,7 @@
     border-radius: 0.3rem;
 
     .validation-error {
-        color: hsl(0, 100%, 50%);
+        color: hsl(0deg 100% 50%);
     }
 }
 
@@ -74,6 +74,7 @@
         background-color: hsl(221deg 33% 19%);
 
         position: absolute;
+
         width: 2rem;
         height: 1.5rem;
     }

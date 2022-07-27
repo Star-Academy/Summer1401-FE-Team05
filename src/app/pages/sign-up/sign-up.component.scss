@@ -86,12 +86,13 @@
                 inset-inline-end: 0;
 
                 border-inline-start: 0.2rem solid hsl(261deg 56% 51%);
+
                 transform: translate(-70%, -70%) rotate(45deg);
             }
         }
 
         .validation-error {
-            color: hsl(0, 100%, 50%);
+            color: hsl(0deg 100% 50%);
         }
 
         .sign-up-link {
