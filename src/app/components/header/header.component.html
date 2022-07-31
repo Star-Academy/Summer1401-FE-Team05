@@ -8,14 +8,14 @@
             <input type="search" name="search" placeholder="جست و جو" /> <i class="fa-regular fa-magnifying-glass"></i>
         </div>
         <ul class="main-nav">
-            <li class="current-page" (click)="homePageHandler()"><a routerLink="/">خانه</a></li>
+            <li (click)="homePageHandler()" class="current-page"><a routerLink="/">خانه</a></li>
             <li (click)="homePageHandler()"><a routerLink="/">دسته بندی ها</a></li>
             <li (click)="homePageHandler()"><a routerLink="/">پشتیبانی</a></li>
         </ul>
     </nav>
 
     <div class="header-end">
-        <ng-container *ngIf="isLoggedIn; else notLoggedInTemplate">
+        <ng-container *ngIf="authService.isUserLoggedIn; else notLoggedInTemplate">
             <app-profile-btn></app-profile-btn>
         </ng-container>
 
