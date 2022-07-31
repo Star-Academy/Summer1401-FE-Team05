@@ -1,31 +1,27 @@
-<div class="nav-container fixed">
+<header class="header">
+    <div class="logo">
+        <a routerLink="/"><img src="assets/logos/NG-Store-logo.svg" alt="NG Store logo" /></a>
+    </div>
+
     <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
-        <div class="nav__logo">
-            <a routerLink="/" aria-label="NG Store Logo">
-                <img src="assets/logos/NG-Store-logo.svg" alt="" />
-            </a>
+        <div class="search">
+            <input type="search" name="search" placeholder="جست و جو" /> <i class="fa-regular fa-magnifying-glass"></i>
         </div>
-        <ul class="nav__main">
-            <li><a routerLink="/" (click)="homePageHandler()" class="current-page">خانه</a></li>
-            <li><a routerLink="/">بازی کامپیوتر</a></li>
-            <li><a routerLink="/">بازی کنسول</a></li>
-            <li><a routerLink="/">بازی موبایل</a></li>
-            <li><a routerLink="/">گیفت کارت</a></li>
-            <li><a routerLink="/">پشتیبانی</a></li>
+        <ul class="main-nav">
+            <li class="current-page" (click)="homePageHandler()"><a routerLink="/">خانه</a></li>
+            <li (click)="homePageHandler()"><a routerLink="/">دسته بندی ها</a></li>
+            <li (click)="homePageHandler()"><a routerLink="/">پشتیبانی</a></li>
         </ul>
-        <div class="nav__btn-container">
-            <ng-container *ngIf="isLoggedIn; else notLoggedInTemplate">
-                <app-profile-btn></app-profile-btn>
-            </ng-container>
-
-            <ng-template #notLoggedInTemplate>
-                <app-sign-in-up></app-sign-in-up>
-            </ng-template>
-
-            <app-search-box></app-search-box>
-            <button class="hamburger nav-btn" (click)="navButtonHandler()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
     </nav>
-</div>
+
+    <div class="header-end">
+        <ng-container *ngIf="isLoggedIn; else notLoggedInTemplate">
+            <app-profile-btn></app-profile-btn>
+        </ng-container>
+
+        <ng-template #notLoggedInTemplate>
+            <app-sign-in-up></app-sign-in-up>
+        </ng-template>
+        <button class="hamburger" (click)="navButtonHandler()"><i class="fa-regular fa-bars"></i></button>
+    </div>
+</header>
