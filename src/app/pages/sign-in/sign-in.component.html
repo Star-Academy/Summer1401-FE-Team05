@@ -10,7 +10,7 @@
             <input type="password" name="password" [(ngModel)]="user.password" required />
         </label>
 
-        <ng-container *ngIf="!SignInForm.checkValidity()">
+        <ng-container *ngIf="!validity">
             <span class="validation-error">مقادیر معتبر وارد کنید</span>
         </ng-container>
 
