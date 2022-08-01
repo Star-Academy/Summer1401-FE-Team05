@@ -15,7 +15,9 @@ export class HeaderComponent {
         this.isMobileNavOpen = !this.isMobileNavOpen;
     }
 
-    public homePageHandler(): void {
+    public homePageHandler(e: Event): void {
+        console.log(e);
+
         this.isMobileNavOpen = false;
     }
 }
