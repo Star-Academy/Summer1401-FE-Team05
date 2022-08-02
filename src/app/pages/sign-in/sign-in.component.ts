@@ -31,7 +31,7 @@ export class SignInComponent {
         if (this.checkIsValid()) {
             const isLoggedIn = await this.authService.login(this.user);
             await this.authService.isLoggedIn();
-            await this.router.navigateByUrl('/');
+            if (isLoggedIn) await this.router.navigateByUrl('/');
         } else {
             this.validity = false;
         }

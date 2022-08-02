@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
+import {AuthService} from 'src/app/services/auth.service';
 
 import {SignInComponent} from './sign-in.component';
 
@@ -8,6 +9,7 @@ describe('SignInComponent', () => {
     let component: SignInComponent;
     let fixture: ComponentFixture<SignInComponent>;
     let host: HTMLElement;
+    let authService: AuthService;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -21,6 +23,7 @@ describe('SignInComponent', () => {
         component = fixture.componentInstance;
         fixture.detectChanges();
         host = fixture.nativeElement as HTMLElement;
+        authService = TestBed.inject(AuthService);
     });
 
     it('should create the component', () => {
@@ -40,10 +43,16 @@ describe('SignInComponent', () => {
         usernameInput?.setAttribute('value', 'BijanProgrammer');
         passwordInput?.setAttribute('value', '1234');
 
+        const loginMethodSpy = spyOn(authService, 'login');
+
         component.handleSubmit();
+
+        expect(loginMethodSpy).toHaveBeenCalled();
     });
 
     it('should handle submit with empty inputs', async () => {
         component.handleSubmit();
+
+        expect(component.validity).toBeFalse();
     });
 });

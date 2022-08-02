@@ -1,8 +1,10 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 import {FetchMock} from 'src/app/mocks/fetch';
 import {LocalStorageMock} from 'src/app/mocks/local-storage';
+import {AuthService} from 'src/app/services/auth.service';
 
 import {SignUpComponent} from './sign-up.component';
 
@@ -12,11 +14,13 @@ describe('SignUpComponent', () => {
     let host: HTMLElement;
     let localStorageMock: LocalStorageMock;
     let fetchMock: FetchMock;
+    let authService: AuthService;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [SignUpComponent],
             imports: [FormsModule, RouterTestingModule],
+            providers: [AuthService],
         }).compileComponents();
     });
 
@@ -33,6 +37,8 @@ describe('SignUpComponent', () => {
 
         fetchMock = new FetchMock();
         spyOn(window, 'fetch').and.callFake(fetchMock.fetch.bind(fetchMock));
+
+        authService = TestBed.inject(AuthService);
     });
 
     it('should create the component', () => {
@@ -57,10 +63,16 @@ describe('SignUpComponent', () => {
         passwordInput?.setAttribute('value', '12345');
         emailInput?.setAttribute('value', 'sina.programmer@gmail.com');
 
+        const signUpMethodSpy = spyOn(authService, 'signUp');
+
         component.handleSubmit();
+
+        expect(signUpMethodSpy).toHaveBeenCalled();
     });
 
     it('should handle submit with empty inputs', async () => {
         component.handleSubmit();
+
+        expect(component.validity).toBeFalse();
     });
 });
