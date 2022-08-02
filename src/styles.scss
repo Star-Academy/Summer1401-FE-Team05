@@ -62,7 +62,7 @@ img,
 picture {
     display: block;
 
-    max-width: 100%;
+    max-inline-size: 100%;
 }
 
 a {
@@ -81,5 +81,5 @@ ol {
     flex-direction: column;
     align-items: center;
 
-    width: 100%;
+    inline-size: 100%;
 }

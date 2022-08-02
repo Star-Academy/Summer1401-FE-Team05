@@ -72,8 +72,8 @@
 
                 position: absolute;
 
-                width: 2rem;
-                height: 1.5rem;
+                inline-size: 2rem;
+                block-size: 1.5rem;
             }
 
             &::after {
