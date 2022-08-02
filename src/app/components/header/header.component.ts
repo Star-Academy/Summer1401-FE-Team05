@@ -14,10 +14,4 @@ export class HeaderComponent {
     public navButtonHandler(): void {
         this.isMobileNavOpen = !this.isMobileNavOpen;
     }
-
-    public homePageHandler(e: Event): void {
-        console.log(e);
-
-        this.isMobileNavOpen = false;
-    }
 }

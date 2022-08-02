@@ -67,6 +67,7 @@ describe('AuthService', () => {
         expect(localStorageMock.getItem('token')).toEqual(VALID_TOKEN);
         expect(response).toBeTrue();
     });
+
     it('tests logout', async () => {
         localStorageMock.setItem('token', VALID_TOKEN);
         service.logout().then();

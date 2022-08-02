@@ -12,7 +12,7 @@ export const VALID_USER_LOGIN_DATA: User = {
 export const VALID_USER_SIGNUP_DATA: User = {
     username: 'SinaProgrammer',
     password: '12345',
-    email: '',
+    email: 'sina.programmer@gmail.com',
 };
 
 export class FetchMock {

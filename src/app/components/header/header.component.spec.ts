@@ -21,9 +21,11 @@ describe('HeaderComponent', () => {
         fixture.detectChanges();
         host = fixture.nativeElement as HTMLElement;
     });
+
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
     it('should have header tag', () => {
         const headerElement = host.querySelector('header');
         expect(headerElement).toBeTruthy();

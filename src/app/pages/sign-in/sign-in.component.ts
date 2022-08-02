@@ -15,6 +15,10 @@ export class SignInComponent {
 
     public constructor(private router: Router, private authService: AuthService) {}
 
+    private checkIsValid(): boolean {
+        return this.signInForm.nativeElement.checkValidity();
+    }
+
     public validity: boolean = true;
 
     public user: User = {
@@ -24,12 +28,12 @@ export class SignInComponent {
     };
 
     public async handleSubmit(): Promise<void> {
-        if (this.signInForm.nativeElement.checkValidity()) {
+        if (this.checkIsValid()) {
             const isLoggedIn = await this.authService.login(this.user);
             await this.authService.isLoggedIn();
-            if (isLoggedIn) await this.router.navigateByUrl('/');
+            await this.router.navigateByUrl('/');
         } else {
-            this.validity = this.signInForm.nativeElement.checkValidity();
+            this.validity = false;
         }
     }
 }

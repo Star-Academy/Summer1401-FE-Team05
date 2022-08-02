@@ -1,12 +1,8 @@
 import {Injectable} from '@angular/core';
-
 import * as URLS from '../utils/urls';
-
 import {ApiService} from './api.service';
-
 import {User} from '../models/user.model';
 import {Token} from '../models/token.model';
-
 import {Router} from '@angular/router';
 
 @Injectable({
