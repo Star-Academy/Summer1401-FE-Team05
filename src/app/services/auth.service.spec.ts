@@ -29,46 +29,46 @@ describe('AuthService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('tests isLoggedIn - no token', async () => {
+    it('should not Log in - with no token', async () => {
         const response = await service.isLoggedIn();
         expect(service.isUserLoggedIn).toBeFalse();
         expect(response).toBeFalse();
     });
 
-    it('tests isLoggedIn - with wrong token', async () => {
+    it('should not log in - with wrong token', async () => {
         localStorageMock.setItem('token', 'some wrong token');
         const response = await service.isLoggedIn();
         expect(service.isUserLoggedIn).toBeFalse();
         expect(response).toBeFalse();
     });
 
-    it('tests isLoggedIn - with correct token', async () => {
+    it('should log in - with correct token', async () => {
         localStorageMock.setItem('token', VALID_TOKEN);
         const response = await service.isLoggedIn();
         expect(service.isUserLoggedIn).toBeTrue();
         expect(response).toBeTrue();
     });
 
-    it('tests login - with wrong username and password', async () => {
+    it('should not log in - with wrong username and password', async () => {
         const INVALID_USER_LOGIN_DATA: User = {username: 'BijanProgrammer', password: '12345', email: ''};
         const response = await service.login(INVALID_USER_LOGIN_DATA);
         expect(localStorageMock.getItem('token')).toBeFalsy();
         expect(response).toBeFalse();
     });
 
-    it('tests login - with correct username and password', async () => {
+    it('should log in - with correct username and password', async () => {
         const response = await service.login(VALID_USER_LOGIN_DATA);
         expect(localStorageMock.getItem('token')).toEqual(VALID_TOKEN);
         expect(response).toBeTrue();
     });
 
-    it('tests signUp', async () => {
+    it('should sign up', async () => {
         const response = await service.signUp(VALID_USER_SIGNUP_DATA);
         expect(localStorageMock.getItem('token')).toEqual(VALID_TOKEN);
         expect(response).toBeTrue();
     });
 
-    it('tests logout', async () => {
+    it('should log out', async () => {
         localStorageMock.setItem('token', VALID_TOKEN);
         service.logout().then();
         expect(localStorageMock.getItem('token')).toBeFalsy();

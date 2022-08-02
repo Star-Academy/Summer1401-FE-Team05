@@ -33,7 +33,7 @@ describe('SignInComponent', () => {
         expect(passwordInput).toBeTruthy();
     });
 
-    it('tests handleSubmit with correct username and password', async () => {
+    it('should handle submit with correct username and password', async () => {
         const usernameInput = host.querySelector('[name="username"]');
         const passwordInput = host.querySelector('[type="password"]');
 
@@ -43,7 +43,7 @@ describe('SignInComponent', () => {
         component.handleSubmit();
     });
 
-    it('test handleSubmit with empty inputs', async () => {
+    it('should handle submit with empty inputs', async () => {
         component.handleSubmit();
     });
 });

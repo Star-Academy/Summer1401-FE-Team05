@@ -27,6 +27,8 @@
 
     --mobile-header-block-padding: 1.5rem;
     --mobile-nav-block-padding: 3rem;
+
+    --default-border-radius: 0.3rem;
 }
 
 * {
@@ -52,6 +54,8 @@ button,
 textarea,
 select {
     font: inherit;
+    border: none;
+    outline: none;
 }
 
 img,

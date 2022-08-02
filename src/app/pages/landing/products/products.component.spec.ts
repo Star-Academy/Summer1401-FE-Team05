@@ -40,7 +40,7 @@ describe('ProductsComponent', () => {
         expect(imageElement?.getAttribute('alt')).toBeTruthy();
     });
 
-    it('should only one h3 tag per card', () => {
+    it('should only have one h3 tag per card', () => {
         const titleElement = host.querySelectorAll('h3');
         expect(titleElement.length).toEqual(cards.length);
     });

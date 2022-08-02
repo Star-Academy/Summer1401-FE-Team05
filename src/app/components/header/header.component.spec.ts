@@ -37,17 +37,17 @@ describe('HeaderComponent', () => {
         expect(navbar?.classList.contains('open')).toBeFalse();
     });
 
-    it('should open and close mobile navbar properly', () => {
-        const navbar = host.querySelector('.nav');
-        component.isMobileNavOpen = true;
-        fixture.detectChanges();
-        expect(navbar?.classList.contains('open')).toBeTrue();
-    });
+    const states = [true, false];
 
-    it('should open and close mobile navbar properly', () => {
+    for (const state of states) {
+        it('should open and close mobile navbar properly', () => {
+            checkMobileNavbar(state);
+        });
+    }
+    const checkMobileNavbar = (open: boolean): void => {
         const navbar = host.querySelector('.nav');
-        component.isMobileNavOpen = false;
+        component.isMobileNavOpen = open;
         fixture.detectChanges();
-        expect(navbar?.classList.contains('open')).toBeFalse();
-    });
+        expect(navbar?.classList.contains('open')).toBe(open);
+    };
 });

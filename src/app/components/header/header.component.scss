@@ -24,8 +24,8 @@
         background-color: var(--surface1-dark);
 
         position: absolute;
-        top: 100%;
-        left: -100%;
+        inset-block-start: 100%;
+        inset-inline-start: -100%;
 
         z-index: 1;
 
@@ -33,24 +33,24 @@
         flex-direction: column;
         gap: var(--mobile-nav-block-padding);
 
-        width: 100%;
-        min-height: calc(100vh - 100%);
+        inline-size: 100%;
+        min-block-size: calc(100vh - 100%);
 
         padding-block: var(--mobile-nav-block-padding);
 
         padding-inline: var(--mobile-inline-padding);
 
-        transition: transform 0.3s ease;
+        transition: transform 300ms ease;
 
         .search {
             position: relative;
 
-            max-width: 60rem;
+            max-inline-size: 60rem;
 
             i {
                 position: absolute;
-                top: 50%;
-                right: 0;
+                inset-block-start: 50%;
+                inset-inline-start: 0;
 
                 transform: translate(-50%, -50%);
             }
@@ -58,14 +58,11 @@
             input {
                 background-color: var(--surface4-dark);
 
-                width: 100%;
+                inline-size: 100%;
 
                 padding: 1rem 4rem 1rem 2rem;
 
-                border: none;
-                border-radius: 0.3rem;
-
-                outline: none;
+                border-radius: var(--default-border-radius);
 
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1.6rem 100%, 0% calc(100% - 1.6rem));
             }
@@ -80,13 +77,11 @@
             flex-direction: column;
             gap: 2rem;
 
-            max-width: 60rem;
-
             li {
                 a {
                     opacity: 0.8;
 
-                    transition: opacity ease 300ms;
+                    transition: opacity 300ms ease;
 
                     &:hover {
                         opacity: 1;
@@ -152,7 +147,7 @@
             .search {
                 flex-grow: 1;
 
-                max-width: 75rem;
+                max-inline-size: 75rem;
             }
 
             .main-nav {
@@ -174,48 +169,19 @@
     }
 }
 
-.sign-in-btn {
+.sign-in-btn,
+.nav-btn {
     background-color: transparent;
-    color: hsl(0deg 0% 100%);
+    color: var(--text1-dark);
     opacity: 0.75;
 
     display: block;
 
     padding: 0.8rem 1.5rem;
-
-    border: none;
-    border-radius: 1.4rem;
 
     font-size: 2rem;
 
     white-space: nowrap;
-
-    transition: transform 300ms ease, opacity 200ms ease;
-
-    cursor: pointer;
-
-    &:hover {
-        opacity: 1;
-    }
-
-    &:active {
-        transform: translateY(0.5rem);
-    }
-}
-
-.nav-btn {
-    background-color: transparent;
-    color: hsl(0deg 0% 100%);
-    opacity: 0.75;
-
-    display: block;
-
-    padding: 0.8rem 1.5rem;
-
-    border: none;
-    border-radius: 1.4rem;
-
-    font-size: 2rem;
 
     transition: transform 300ms ease, opacity 200ms ease;
 

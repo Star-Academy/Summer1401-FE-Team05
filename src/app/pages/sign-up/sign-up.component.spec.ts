@@ -48,7 +48,7 @@ describe('SignUpComponent', () => {
         expect(emailInput).toBeTruthy();
     });
 
-    it('tests handleSubmit with correct username and password', async () => {
+    it('should handle submit with correct username and password', async () => {
         const usernameInput = host.querySelector('[name="username"]');
         const passwordInput = host.querySelector('[type="password"]');
         const emailInput = host.querySelector('[type="email"]');
@@ -60,7 +60,7 @@ describe('SignUpComponent', () => {
         component.handleSubmit();
     });
 
-    it('test handleSubmit with empty inputs', async () => {
+    it('should handle submit with empty inputs', async () => {
         component.handleSubmit();
     });
 });

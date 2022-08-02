@@ -5,11 +5,12 @@
 
     <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
         <div class="search">
-            <input type="search" name="search" placeholder="جست و جو" /> <i class="fa-regular fa-magnifying-glass"></i>
+            <input type="search" name="search" placeholder="جست&zwnj;و&zwnj;جو" />
+            <i class="fa-regular fa-magnifying-glass"></i>
         </div>
         <ul class="main-nav">
             <li class="current-page"><a routerLink="/">خانه</a></li>
-            <li><a routerLink="/">دسته بندی ها</a></li>
+            <li><a routerLink="/">دسته&zwnj;بندی&zwnj;ها</a></li>
             <li><a routerLink="/">پشتیبانی</a></li>
         </ul>
     </nav>
@@ -17,12 +18,12 @@
     <div class="header-end">
         <ng-container *ngIf="authService.isUserLoggedIn; else notLoggedInTemplate">
             <a routerLink="/profile" class="nav-btn">
-                <i class="fa-solid fa-user-large"></i>
+                <i class="fa-regular fa-user-large"></i>
             </a>
         </ng-container>
 
         <ng-template #notLoggedInTemplate>
-            <a routerLink="sign-in" class="sign-in-btn">ورود/ثبت‌نام</a>
+            <a routerLink="/sign-in" class="sign-in-btn">ورود/ثبت‌نام</a>
         </ng-template>
         <button class="hamburger" (click)="navButtonHandler()"><i class="fa-regular fa-bars"></i></button>
     </div>
