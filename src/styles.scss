@@ -53,9 +53,11 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
     border: none;
+
     outline: none;
+
+    font: inherit;
 }
 
 img,

@@ -7,8 +7,9 @@
     align-items: center;
     justify-content: center;
 
-    inline-size: 100%;
     min-block-size: 100vh;
+
+    inline-size: 100%;
 
     &__container {
         display: flex;
