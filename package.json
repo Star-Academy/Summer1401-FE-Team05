@@ -11,7 +11,7 @@
         "test:ci": "ng test --browsers=ChromeHeadless --watch=false",
         "check:coverage": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
         "check:coverage-export": "ng test --code-coverage",
-        "TestSpecInclude": "ng test --include=**/profile/*.spec.ts",
+        "TestSpecInclude": "ng test --include=**/services/*.spec.ts",
         "eslint:check": "ng lint",
         "eslint:fix": "ng lint --fix",
         "stylelint:check": "stylelint \"**/*.scss\"",
