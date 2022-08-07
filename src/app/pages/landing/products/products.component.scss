@@ -1,115 +1,57 @@
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1.8rem;
-
-    max-inline-size: 80%;
-
-    padding-block: 12rem;
-}
-
-.game-card {
-    box-shadow: 0 0.4rem 0.5rem hsl(0deg 0% 0% / 20%);
-
     position: relative;
-    overflow: hidden;
-
-    display: block;
-
-    inline-size: 36rem;
-
-    border: 0.1rem solid hsl(226deg 37% 54% / 60%);
-    border-radius: 0.7rem;
-
-    cursor: pointer;
-
-    &:hover {
-        .overview {
-            transform: translateY(0);
-        }
+    padding-block: 10rem;
+    .cards-left,
+    .cards-right {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        background-color: var(--surface4-dark);
+        font-size: 2rem;
+        color: var(--text2-dark);
+        border: 0.2rem solid var(--text2-dark);
+        z-index: 1;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        bottom: 20%;
+        right: 2rem;
     }
 
-    &__img {
-        block-size: 80%;
-        inline-size: 100%;
-        object-fit: cover;
-        object-position: center;
+    .cards-left {
+        left: 2rem;
+        right: initial;
     }
 
-    &__info {
+    .scroll-cards {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.2rem;
+        gap: 2rem;
+        padding-inline: calc((100% - 25rem) / 2);
 
-        padding: 0.5rem 1rem 1rem;
-
-        letter-spacing: 0.1rem;
-
-        span {
-            padding: 0.3rem 0.5rem;
-
-            border-radius: 0.3rem;
-
-            font-weight: 700;
-
-            &.green {
-                color: hsl(120deg 73% 75%);
-            }
-
-            &.orange {
-                color: hsl(39deg 100% 50%);
-            }
-
-            &.red {
-                color: hsl(0deg 100% 50%);
-            }
-        }
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
     }
 }
 
-.overview {
-    background-color: hsl(231deg 53% 20%);
-    color: hsl(0deg 0% 91%);
+@media (min-width: 30em) {
+    .cards-container {
+        padding-inline: max(calc((100% - 120rem) / 2), 5rem);
 
-    position: absolute;
-    inset-block-end: 0;
+        .cards-left,
+        .cards-right {
+            top: 50%;
+        }
+        .cards-left {
+            left: max(calc((100% - 120rem) / 2 - 2.5rem), 2rem);
+        }
+        .cards-right {
+            right: max(calc((100% - 120rem) / 2 - 2.5rem), 2rem);
+        }
 
-    inset-inline: 0;
-    overflow-y: auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    max-block-size: 100%;
-
-    padding: 2rem;
-
-    transform: translateY(101%);
-
-    font-size: 1.2rem;
-
-    transition: transform 300ms ease-out;
-}
-
-.price-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .prices {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .price-off {
-        background-color: hsl(9deg 100% 64%);
-        color: hsl(0deg 0% 100%);
-
-        padding: 1rem;
-
-        border-radius: 0.7rem;
+        .scroll-cards {
+            padding-inline: 0rem;
+            gap: calc(20rem / 3);
+        }
     }
 }

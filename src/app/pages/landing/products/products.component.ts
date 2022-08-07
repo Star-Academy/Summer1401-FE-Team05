@@ -9,5 +9,5 @@ import {Product} from './models/product';
     styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-    public cards: Product[] = cards;
+    // public cards: Product[] = cards;
 }
