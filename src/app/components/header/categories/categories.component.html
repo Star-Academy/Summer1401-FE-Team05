@@ -1,0 +1,36 @@
+<span
+    class="bold"
+    [popper]="popperContent"
+    [popperPlacement]="NgxPopperjsPlacements.BOTTOMEND"
+    [popperTrigger]="NgxPopperjsTriggers.hover"
+    [popperModifiers]="popperModifiers"
+>
+    دسته‌بندی&zwnj;ها
+</span>
+
+<popper-content #popperContent class="no-arrow">
+    <div class="mega-nav">
+        <ul class="categories">
+            <li
+                *ngFor="let category of categories"
+                [class.active]="category === activeCategory"
+                (mouseenter)="activeCategory = category"
+            >
+                <!--<i [class]="category.icon"></i>-->
+                <div>{{ category.title }}</div>
+            </li>
+        </ul>
+
+        <div class="sub-categories">
+            <ng-container *ngIf="activeCategory">
+                <ul>
+                    <li *ngFor="let subCategory of activeCategory.subCategories">
+                        <a [routerLink]="subCategory.name">
+                            {{ subCategory.name }}
+                        </a>
+                    </li>
+                </ul>
+            </ng-container>
+        </div>
+    </div>
+</popper-content>

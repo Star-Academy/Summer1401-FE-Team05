@@ -3,10 +3,12 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 import {HeaderComponent} from './header.component';
+import {CategoriesComponent} from './categories/categories.component';
+import {NgxPopperjsModule} from "ngx-popperjs";
 
 @NgModule({
-    declarations: [HeaderComponent],
-    imports: [CommonModule, RouterModule],
+    declarations: [HeaderComponent, CategoriesComponent],
+    imports: [CommonModule, RouterModule, NgxPopperjsModule],
     exports: [HeaderComponent],
 })
 export class HeaderModule {}

@@ -49,6 +49,34 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    popper-content {
+        /* stylelint-disable selector-class-pattern */
+        .ngxp__container {
+            box-shadow: none;
+
+            z-index: 1;
+
+            padding: 0;
+
+            border: 0;
+
+            > .ngxp__arrow {
+                &::before {
+                    background-color: var(--color-body-background);
+                }
+            }
+        }
+
+        &.no-arrow {
+            .ngxp__container > .ngxp__arrow {
+                display: none;
+            }
+        }
+        /* stylelint-enable selector-class-pattern */
+    }
+}
+
 input,
 button,
 textarea,
