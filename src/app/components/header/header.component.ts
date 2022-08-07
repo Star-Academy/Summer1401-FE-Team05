@@ -7,23 +7,11 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+    public constructor(public authService: AuthService) {}
+
     public isMobileNavOpen: boolean = false;
 
     public navButtonHandler(): void {
         this.isMobileNavOpen = !this.isMobileNavOpen;
-    }
-
-    public homePageHandler(): void {
-        this.isMobileNavOpen = false;
-    }
-
-    public isLoggedIn: boolean = false;
-
-    public constructor(private authService: AuthService) {
-        this.initializeVariables().then();
-    }
-
-    private async initializeVariables(): Promise<void> {
-        this.isLoggedIn = await this.authService.isLoggedIn();
     }
 }

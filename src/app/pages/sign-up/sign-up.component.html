@@ -1,5 +1,5 @@
 <div class="sign-up-container">
-    <form class="form" #SignUpForm (submit)="handleSubmit()">
+    <form class="form" #signUpForm (submit)="handleSubmit()">
         <p class="form-login">برای دیدن حساب کاربری خود ابتدا وارد شوید</p>
         <label class="sign-up-input-label">
             نام کاربری
@@ -14,7 +14,7 @@
             <input type="password" name="password" [(ngModel)]="user.password" required />
         </label>
 
-        <ng-container *ngIf="!SignUpForm.checkValidity()">
+        <ng-container *ngIf="!validity">
             <span class="validation-error">مقادیر معتبر وارد کنید</span>
         </ng-container>
 

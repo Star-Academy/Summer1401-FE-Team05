@@ -1,130 +1,198 @@
-.nav-container {
-    background-image: linear-gradient(45deg, hsl(231deg 53% 20% / 90%) 0%, hsl(231deg 53% 20% / 85%) 100%);
+.header {
+    background-color: var(--surface1-dark);
+    color: var(--text1-dark);
 
-    z-index: 1;
+    position: relative;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &.fixed {
-        position: sticky;
-        inset-block-start: 0;
-        inset-inline: 0;
-    }
-}
-
-.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
 
-    inline-size: 80vw;
+    padding-block: var(--mobile-header-block-padding);
+    padding-inline: var(--mobile-inline-padding);
 
-    font-size: 1.8rem;
+    font-size: 2rem;
 
-    &__logo {
-        img {
-            inline-size: 16rem;
-        }
-    }
+    .logo {
+        flex: 12rem 0 0;
 
-    &__main {
-        display: flex;
-        gap: 1rem;
-
-        li {
-            a {
-                color: hsl(0deg 0% 100%);
-                opacity: 0.75;
-
-                padding: 0.5rem 1.5rem;
-
-                border-radius: 1.4rem;
-
-                transition: opacity 200ms ease;
-
-                &:hover {
-                    opacity: 1;
-                }
-
-                &.current-page {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-
-    &__btn-container {
-        position: relative;
-
-        display: flex;
-        gap: 0.5rem;
-
-        .nav-btn {
-            background-color: transparent;
-
-            color: hsl(0deg 0% 100%);
-
-            padding: 0.75rem 1.5rem;
-
-            border: none;
-            border-radius: 1.4rem;
-
-            font-size: 2rem;
-
-            transition: transform 200ms ease, opacity 0.2s ease;
-
-            cursor: pointer;
-
-            &:hover {
-                opacity: 0.75;
-            }
-
-            &:active {
-                transform: translateY(0.5rem);
-            }
-        }
-    }
-}
-
-.hamburger {
-    display: none;
-}
-
-@media (max-width: 80em) {
-    .open .nav {
-        &__main {
-            transform: translate(0);
-        }
+        z-index: 2;
     }
 
     .nav {
-        &__main {
-            background-color: hsl(243deg 96% 10%);
-            background-image: linear-gradient(45deg, hsl(242deg 98% 20%), hsl(0deg 0% 0%));
+        background-color: var(--surface1-dark);
 
-            position: fixed;
-            inset-block-start: 10rem;
-            inset-inline-end: 0;
+        position: absolute;
+        inset-block-start: 100%;
+        inset-inline-start: -100%;
 
-            z-index: 10;
+        z-index: 1;
 
+        display: flex;
+        flex-direction: column;
+        gap: var(--mobile-nav-block-padding);
+
+        min-block-size: calc(100vh - 100%);
+
+        inline-size: 100%;
+
+        padding-block: var(--mobile-nav-block-padding);
+
+        padding-inline: var(--mobile-inline-padding);
+
+        transition: transform 300ms ease;
+
+        .search {
+            position: relative;
+
+            max-inline-size: 60rem;
+
+            i {
+                position: absolute;
+                inset-block-start: 50%;
+                inset-inline-start: 0;
+
+                transform: translate(-50%, -50%);
+            }
+
+            input {
+                background-color: var(--surface4-dark);
+
+                inline-size: 100%;
+
+                padding: 1rem 4rem 1rem 2rem;
+
+                border-radius: var(--default-border-radius);
+
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1.6rem 100%, 0% calc(100% - 1.6rem));
+            }
+        }
+
+        &.open {
+            transform: translateX(100%);
+        }
+
+        .main-nav {
+            display: flex;
             flex-direction: column;
-
             gap: 2rem;
 
-            padding: 2rem 3rem;
+            li {
+                a {
+                    opacity: 0.8;
 
-            border-radius: 1rem;
+                    transition: opacity 300ms ease;
 
-            transform: translateX(-101vw);
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
 
-            transition: transform 300ms ease;
+                &.current-page {
+                    a {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-end {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+
+        .account {
+            background-color: var(--surface2-dark);
+
+            padding: 0.5rem 2rem;
+
+            border: 0.1rem solid var(--text1-dark);
+            border-radius: 0.5rem;
+
+            cursor: pointer;
+        }
+
+        .account:active {
+            transform: translateY(2%);
         }
 
         .hamburger {
-            display: block;
+            background-color: transparent;
+
+            z-index: 2;
+
+            display: grid;
+            place-items: center;
+
+            border: 0;
+
+            cursor: pointer;
         }
+    }
+}
+
+@media (min-width: 60em) {
+    .header {
+        .nav {
+            position: static;
+
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 4rem;
+
+            padding: 0 4rem;
+
+            .search {
+                flex-grow: 1;
+
+                max-inline-size: 75rem;
+            }
+
+            .main-nav {
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            &.open {
+                transform: translate(0);
+            }
+        }
+
+        .header-end {
+            .hamburger {
+                display: none;
+            }
+        }
+    }
+}
+
+.sign-in-btn,
+.nav-btn {
+    background-color: transparent;
+    color: var(--text1-dark);
+    opacity: 0.75;
+
+    display: block;
+
+    padding: 0.8rem 1.5rem;
+
+    font-size: 2rem;
+
+    white-space: nowrap;
+
+    transition: transform 300ms ease, opacity 200ms ease;
+
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:active {
+        transform: translateY(0.5rem);
     }
 }

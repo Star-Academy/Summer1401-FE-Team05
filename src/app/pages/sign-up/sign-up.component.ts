@@ -11,7 +11,13 @@ import {Router} from '@angular/router';
     styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent {
-    @ViewChild('SignUpForm') private signUpForm!: ElementRef<HTMLFormElement>;
+    @ViewChild('signUpForm') private signUpForm!: ElementRef<HTMLFormElement>;
+
+    private checkIsValid(): boolean {
+        return this.signUpForm.nativeElement.checkValidity();
+    }
+
+    public validity: boolean = true;
 
     public constructor(private router: Router, private authService: AuthService) {}
 
@@ -22,9 +28,11 @@ export class SignUpComponent {
     };
 
     public async handleSubmit(): Promise<void> {
-        if (this.signUpForm.nativeElement.checkValidity()) {
+        if (this.checkIsValid()) {
             const result = await this.authService.signUp(this.user);
             if (result) await this.router.navigateByUrl('/');
+        } else {
+            this.validity = false;
         }
     }
 }
