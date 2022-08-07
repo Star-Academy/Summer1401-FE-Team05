@@ -38,7 +38,6 @@ describe('HeaderComponent', () => {
     });
 
     const states = [true, false];
-
     for (const state of states) {
         it('should open and close mobile navbar properly', () => {
             checkMobileNavbar(state);

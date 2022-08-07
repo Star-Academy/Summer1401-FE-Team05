@@ -1,6 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormsModule} from '@angular/forms';
-import {Router} from '@angular/router';
 import {RouterTestingModule} from '@angular/router/testing';
 import {FetchMock} from 'src/app/mocks/fetch';
 import {LocalStorageMock} from 'src/app/mocks/local-storage';
@@ -46,9 +45,9 @@ describe('SignUpComponent', () => {
     });
 
     it('should have username and password inputs', () => {
-        const usernameInput = host.querySelector('[type="text"][name="username"]');
-        const passwordInput = host.querySelector('[type="password"][name="password"]');
-        const emailInput = host.querySelector('[type="email"][name="email"]');
+        const usernameInput = host.querySelector('[name="username"]');
+        const passwordInput = host.querySelector('[name="password"]');
+        const emailInput = host.querySelector('[name="email"]');
         expect(usernameInput).toBeTruthy();
         expect(passwordInput).toBeTruthy();
         expect(emailInput).toBeTruthy();
@@ -56,8 +55,8 @@ describe('SignUpComponent', () => {
 
     it('should handle submit with correct username and password', async () => {
         const usernameInput = host.querySelector('[name="username"]');
-        const passwordInput = host.querySelector('[type="password"]');
-        const emailInput = host.querySelector('[type="email"]');
+        const passwordInput = host.querySelector('[name="password"]');
+        const emailInput = host.querySelector('[name="email"]');
 
         usernameInput?.setAttribute('value', 'SinaProgrammer');
         passwordInput?.setAttribute('value', '12345');

@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
 
 import {AuthService} from '../../services/auth.service';
-import {InjectionToken} from '@angular/core';
 
-export const WINDOW = new InjectionToken('Window');
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',

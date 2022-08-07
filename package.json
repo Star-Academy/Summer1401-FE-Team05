@@ -15,7 +15,9 @@
         "stylelint:check": "stylelint \"**/*.scss\"",
         "stylelint:fix": "stylelint \"**/*.scss\" --fix",
         "prettier:check": "prettier . --check",
-        "prettier:fix": "prettier . --write"
+        "prettier:fix": "prettier . --write",
+        "all:check": "npm run eslint:check & npm run stylelint:check & npm run prettier:check",
+        "all:fix": "npm run eslint:fix & npm run stylelint:fix & npm run prettier:fix"
     },
     "private": true,
     "dependencies": {

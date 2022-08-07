@@ -11,7 +11,7 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent {
-    @ViewChild('SignInForm') private signInForm!: ElementRef<HTMLFormElement>;
+    @ViewChild('signInForm') private signInForm!: ElementRef<HTMLFormElement>;
 
     public constructor(private router: Router, private authService: AuthService) {}
 

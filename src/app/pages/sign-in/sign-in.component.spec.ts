@@ -29,16 +29,17 @@ describe('SignInComponent', () => {
     it('should create the component', () => {
         expect(component).toBeTruthy();
     });
+
     it('should have username and password inputs', () => {
-        const usernameInput = host.querySelector('[type="text"][name="username"]');
-        const passwordInput = host.querySelector('[type="password"][name="password"]');
+        const usernameInput = host.querySelector('[name="username"]');
+        const passwordInput = host.querySelector('[name="password"]');
         expect(usernameInput).toBeTruthy();
         expect(passwordInput).toBeTruthy();
     });
 
     it('should handle submit with correct username and password', async () => {
         const usernameInput = host.querySelector('[name="username"]');
-        const passwordInput = host.querySelector('[type="password"]');
+        const passwordInput = host.querySelector('[name="password"]');
 
         usernameInput?.setAttribute('value', 'BijanProgrammer');
         passwordInput?.setAttribute('value', '1234');

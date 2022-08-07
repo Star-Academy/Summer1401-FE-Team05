@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
     styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent {
-    @ViewChild('SignUpForm') private signUpForm!: ElementRef<HTMLFormElement>;
+    @ViewChild('signUpForm') private signUpForm!: ElementRef<HTMLFormElement>;
 
     private checkIsValid(): boolean {
         return this.signUpForm.nativeElement.checkValidity();
