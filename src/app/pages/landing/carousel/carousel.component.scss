@@ -1,55 +1,87 @@
-.hero {
-    background-image: linear-gradient(45deg, hsl(242deg 98% 20% / 50%), hsl(0deg 0% 0% / 50%)), url("horizon.webp");
-    background-size: cover;
-    color: hsl(0deg 0% 100%);
-
+.carousel-container {
+    position: relative;
+    padding-block-start: 2rem;
+    padding-inline: max(calc((100% - 120rem) / 2), 5rem);
+    font-family: Brutal, Shabnam, sans-serif;
+}
+.scroll-area {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 
-    min-block-size: 100vh;
+    // -ms-overflow-style: none; /* Internet Explorer 10+ */
+    // scrollbar-width: none; /* Firefox */
+}
+// .scroll-area::-webkit-scrollbar {
+//     display: none; /* Safari and Chrome */
+// }
+.banner {
+    position: relative;
+    scroll-snap-align: center;
+    // direction: ltr;
+    flex: 100% 0 0;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.bg-img img {
+    aspect-ratio: 16/9;
+}
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translate(0, -50%);
+    border-radius: 50%;
+    background-color: var(--text1-dark);
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    color: var(--brand-dark);
+    width: 5rem;
+    height: 5rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.carousel-prev {
+    right: calc(((100% - 120rem) / 2) + 2rem);
+}
 
-    inline-size: 100%;
+.carousel-prev:hover {
+    opacity: 1;
+    transform: translate(1rem, -50%);
+}
+.carousel-next {
+    left: calc(((100% - 120rem) / 2) + 2rem);
+}
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4rem;
+.carousel-next:hover {
+    opacity: 1;
+    transform: translate(-1rem, -50%);
+}
+.overlay {
+    position: absolute;
+    inset: 0;
 
-        inline-size: 80%;
+    padding: 4rem;
+    // background-image: linear-gradient(to right, transparent, hsla(0, 0%, 10%, 0.4));
 
-        h1 {
-            inline-size: 50%;
-
-            font-size: clamp(2.4rem, calc(1rem + 2.4vw), 5.2rem);
-
-            line-height: 1;
-        }
-
-        .btn:link,
-        .btn:visited {
-            background-color: hsl(28deg 80% 52%);
-            color: hsl(0deg 0% 100%);
-
-            display: inline-block;
-
-            padding: 1.6rem 3.2rem;
-
-            border-radius: 0.9rem;
-
-            font-size: 2rem;
-            font-weight: 700;
-
-            text-decoration: none;
-        }
-
-        p {
-            inline-size: 50%;
-
-            font-size: 2rem;
-
-            line-height: 1.6;
-        }
-    }
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    gap: 2.5rem;
+}
+.description {
+    inline-size: 50%;
+    font-size: 1.8rem;
+}
+.wishlist {
+    font-size: 1.4rem;
+    background-color: var(--brand-dark);
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1.6rem 100%, 0% calc(100% - 1.6rem));
 }

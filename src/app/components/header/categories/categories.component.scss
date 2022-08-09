@@ -10,13 +10,14 @@ span {
 }
 
 .mega-nav {
+    font-family: Brutal, sans-serif;
     display: grid;
     grid-template-columns: auto 1fr;
 
     background-color: var(--surface1-dark);
 
     inline-size: 90vw;
-    max-inline-size: 160rem;
+    max-inline-size: 100rem;
 
     padding: 1rem;
     border-radius: 0.5rem;
@@ -26,6 +27,8 @@ span {
     .categories {
         display: flex;
         flex-direction: column;
+
+        padding-block: 2rem;
 
         li {
             padding: 1rem;

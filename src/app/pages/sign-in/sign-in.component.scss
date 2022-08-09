@@ -5,8 +5,10 @@
     block-size: 100vh;
 
     .form {
-        background-color: hsl(221deg 33% 19%);
-        color: hsl(261deg 90% 95%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 5rem 100%, 0% calc(100% - 5rem));
+
+        background-color: var(--surface1-dark);
+        color: var(--text2-dark);
 
         display: flex;
         flex-direction: column;
@@ -38,61 +40,30 @@
             font-size: 1.6rem;
 
             input {
-                background-color: hsl(221deg 33% 19%);
+                background-color: transparent;
                 color: inherit;
 
                 padding: 1rem 2rem;
 
-                border: 0.2rem solid hsl(261deg 70% 90%);
-                border-radius: 0.1rem;
+                border: 0.2rem solid var(--text2-dark);
+                border-radius: 0.3rem;
 
                 font-size: 1.6rem;
             }
         }
 
         .submit-btn {
-            background-color: hsl(0deg 0% 0% / 0%);
-            color: hsl(261deg 56% 51%);
-
-            position: relative;
+            color: var(--text1-dark);
+            background-color: var(--brand-dark);
+            border-radius: 0.3rem;
 
             padding-block: 1rem;
-
-            border: 0.2rem solid hsl(261deg 70% 51%);
 
             font-size: 2rem;
 
             cursor: pointer;
 
-            &::after,
-            &::before {
-                content: "";
-
-                background-color: hsl(221deg 33% 19%);
-
-                position: absolute;
-
-                block-size: 1.5rem;
-
-                inline-size: 2rem;
-            }
-
-            &::after {
-                inset-block-end: 0;
-                inset-inline-start: 0;
-
-                transform: translate(70%, 70%) rotate(45deg);
-                border-inline-end: 0.2rem solid hsl(261deg 56% 51%);
-            }
-
-            &::before {
-                inset-block-start: 0;
-                inset-inline-end: 0;
-
-                border-inline-start: 0.2rem solid hsl(261deg 56% 51%);
-
-                transform: translate(-70%, -70%) rotate(45deg);
-            }
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
         }
 
         .sign-up-link {
@@ -101,8 +72,14 @@
 
             font-size: 1.6rem;
 
-            a:hover {
-                color: hsl(261deg 56% 51%);
+            a {
+                padding-block-end: 0.3rem;
+                border-block-end: 0.2rem solid var(--text2-dark);
+
+                &:hover {
+                    color: var(--brand-dark);
+                    border-block-end: 0.2rem solid var(--brand-dark);
+                }
             }
         }
     }
