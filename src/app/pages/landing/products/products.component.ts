@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 
 import {cards} from './sample-data';
 import {Product} from './models/product';
@@ -9,5 +9,12 @@ import {Product} from './models/product';
     styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-    // public cards: Product[] = cards;
+    @ViewChild('scrollCards') private scrollCards!: ElementRef<HTMLElement>;
+
+    public next(): void {
+        this.scrollCards.nativeElement.scrollBy(-250, 0);
+    }
+    public prev(): void {
+        this.scrollCards.nativeElement.scrollBy(250, 0);
+    }
 }

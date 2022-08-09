@@ -1,11 +1,11 @@
 <div class="cards-container">
-    <div class="cards-left">
+    <button class="cards-left" (click)="next()">
         <i class="fa-regular fa-angle-left"></i>
-    </div>
-    <div class="cards-right">
+    </button>
+    <button class="cards-right" (click)="prev()">
         <i class="fa-regular fa-angle-right"></i>
-    </div>
-    <div class="scroll-cards">
+    </button>
+    <div class="scroll-cards" #scrollCards>
         <app-card></app-card>
     </div>
 </div>
