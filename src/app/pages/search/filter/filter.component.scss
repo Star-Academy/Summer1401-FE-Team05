@@ -35,7 +35,7 @@
     .filters {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        column-gap: 1rem;
+        column-gap: 2.5rem;
         align-items: start;
 
         .year-filter {
@@ -59,6 +59,7 @@
 
             .filter-title {
                 grid-column: -1/1;
+
             }
         }
 
@@ -74,7 +75,11 @@
         .filter-title {
             font-size: 1.6rem;
             padding-block: 1rem;
-            background-color: var(--surface4-dark);
+            background-color: var(--surface3-dark);
+
+            padding-inline: 2rem;
+
+            justify-self: center;
         }
 
         .label {
