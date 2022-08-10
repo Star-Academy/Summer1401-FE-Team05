@@ -4,9 +4,9 @@
     </div>
 
     <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
-        <form class="search">
-            <input type="search" name="search" placeholder="جست&zwnj;و&zwnj;جو" />
-            <i class="fa-regular fa-magnifying-glass"></i>
+        <form class="search" (submit)="handleSubmit()">
+            <input type="search" name="search" placeholder="جست&zwnj;و&zwnj;جو" [(ngModel)]="searchText" />
+            <i class="fa-regular fa-magnifying-glass" (click)="handleSubmit()"></i>
         </form>
         <ul class="main-nav">
             <li class="current-page"><a routerLink="/">خانه</a></li>

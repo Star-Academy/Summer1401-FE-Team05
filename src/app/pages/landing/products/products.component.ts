@@ -48,6 +48,5 @@ export class ProductsComponent {
         );
 
         this.someGame = data.games;
-        console.log(this.someGame);
     }
 }

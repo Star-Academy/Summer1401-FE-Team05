@@ -1,9 +1,9 @@
-<a class="card" routerLink="/games/{{ game.id }}">
+<a class="card" routerLink="/games/{{ game?.id }}">
     <div class="card-img">
-        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{ game.cover?.id }}.png" alt="" />
+        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{ game?.cover?.id }}.png" alt="" />
     </div>
-    <h3 class="card-title">{{ game.name }}</h3>
-    <div class="card-rating">{{ game.rating }}%</div>
+    <h3 class="card-title">{{ game?.name }}</h3>
+    <div class="card-rating">{{ game?.rating }}%</div>
     <button class="favorite-btn" title="افزودن به علاقه مندی ها">
         <i class="fa-regular fa-heart-circle-plus"></i>
     </button>
