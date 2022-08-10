@@ -2,7 +2,7 @@ import {Product} from './models/product';
 
 export const cards: Product[] = [
     {
-        title: 'RDR2',
+        name: 'RDR2',
         alt: 'Red Dead Redemption 2 cover',
         price: 150_000,
         percentOff: 30,
@@ -10,7 +10,7 @@ export const cards: Product[] = [
         points: 9.3,
     },
     {
-        title: 'Dota 2',
+        name: 'Dota 2',
         alt: 'Dota 2 cover',
         price: 200_000,
         percentOff: 50,
@@ -18,7 +18,7 @@ export const cards: Product[] = [
         points: 9.5,
     },
     {
-        title: 'God of War',
+        name: 'God of War',
         alt: 'God of War cover',
         price: 1_500_000,
         percentOff: 20,
@@ -26,7 +26,7 @@ export const cards: Product[] = [
         points: 10,
     },
     {
-        title: 'RDR2',
+        name: 'RDR2',
         alt: 'عکسی RDR2',
         price: 150_000,
         percentOff: 30,
@@ -34,7 +34,7 @@ export const cards: Product[] = [
         points: 9.3,
     },
     {
-        title: 'Horizon Zero Down',
+        name: 'Horizon Zero Down',
         alt: 'Horizon Zero Down cover',
         price: 110_000,
         percentOff: 35,
@@ -42,7 +42,7 @@ export const cards: Product[] = [
         points: 8,
     },
     {
-        title: 'God of War',
+        name: 'God of War',
         alt: 'God of War cover',
         price: 1_500_000,
         percentOff: 20,
@@ -50,7 +50,7 @@ export const cards: Product[] = [
         points: 10,
     },
     {
-        title: 'Dota 2',
+        name: 'Dota 2',
         alt: 'Dota 2 cover',
         price: 200_000,
         percentOff: 50,
@@ -58,7 +58,7 @@ export const cards: Product[] = [
         points: 9.5,
     },
     {
-        title: 'Horizon Zero Down',
+        name: 'Horizon Zero Down',
         alt: 'Horizon Zero Down cover',
         price: 110_000,
         percentOff: 35,

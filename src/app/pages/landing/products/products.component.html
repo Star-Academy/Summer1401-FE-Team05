@@ -6,6 +6,8 @@
         <i class="fa-regular fa-angle-right"></i>
     </button>
     <div class="scroll-cards" #scrollCards>
-        <app-card></app-card>
+        <ng-container *ngFor="let game of someGame">
+            <app-card [game]="game"></app-card>
+        </ng-container>
     </div>
 </div>

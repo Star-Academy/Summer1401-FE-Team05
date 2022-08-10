@@ -28,7 +28,6 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
             this.scrollCards.nativeElement.scrollBy(scrollTo * this.scrollWidth, 0);
             this.activeScroll -= scrollTo;
         }
-        console.log(this.activeScroll);
     }
     private resetInterval(): void {
         if (this.paused === false) {
