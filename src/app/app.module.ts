@@ -11,6 +11,7 @@ import {SignInModule} from './pages/sign-in/sign-in.module';
 import {ProfileModule} from './pages/profile/profile.module';
 import {SignUpModule} from './pages/sign-up/sign-up.module';
 import {SearchModule} from './pages/search/search.module';
+import {GameModule} from './pages/game/game.module';
 
 @NgModule({
     imports: [
@@ -24,6 +25,7 @@ import {SearchModule} from './pages/search/search.module';
         ProfileModule,
         SignUpModule,
         SearchModule,
+        GameModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],
