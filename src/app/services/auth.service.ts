@@ -51,4 +51,14 @@ export class AuthService {
 
         await this.router.navigateByUrl('/');
     }
+
+    public async auth(): Promise<{id: number} | null> {
+        const token = localStorage.getItem('token') || '';
+
+        return await this.apiService.postRequest<{id: number}>(URLS.API_USER_AUTH, {token: token});
+    }
+
+    public async getUserData(id: number): Promise<User | null> {
+        return await this.apiService.getRequest<User>(URLS.API_USER_ONE + `/${id}`);
+    }
 }

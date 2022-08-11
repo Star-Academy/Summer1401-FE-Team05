@@ -3,7 +3,7 @@
         <div class="game-cover">
             <img
                 src="https://images.igdb.com/igdb/image/upload/t_screenshot_med_2x/{{
-                    currentGame?.screenshots[0]?.id ? currentGame?.screenshots[0].id : currentGame?.cover.id
+                    currentGame?.screenshots[0]?.id ? currentGame?.screenshots[0].id : currentGame?.cover?.id
                 }}.webp"
                 alt=""
             />
@@ -16,8 +16,11 @@
             <p class="genres" *ngFor="let genre of currentGame?.genres"><span>ژانر: </span>{{ genre?.name }}</p>
             <p class="release-date"><span>تاریخ انتشار: </span>10/26/2018</p>
             <!--  new Date(1540512000000).toLocaleDateString() -->
-            <p class="platform" *ngFor="let platform of currentGame?.platforms">
-                <span>پلتفرم: </span>{{ platform?.name }}
+            <span>پلتفرم: </span>
+            <p class="platform">
+                <ng-container *ngFor="let platform of currentGame?.platforms">
+                    {{ platform?.name }}
+                </ng-container>
             </p>
             <button class="add-to-wishlist" (click)="addToWishlist()">اضافه کردن به سبد خرید</button>
         </div>

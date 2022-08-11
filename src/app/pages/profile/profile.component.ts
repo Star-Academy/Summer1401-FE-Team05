@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 
 import {AuthService} from '../../services/auth.service';
 import {ApiService} from '../../services/api.service';
+import {User} from '../../models/user.model';
 
 @Component({
     selector: 'app-profile',
@@ -9,9 +10,12 @@ import {ApiService} from '../../services/api.service';
     styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
-    public constructor(public authService: AuthService, private apiService: ApiService) {
+    public constructor(private authService: AuthService, private apiService: ApiService) {
         this.getAllWishlist().then();
+        this.getUser().then();
     }
+
+    public user?: User;
 
     public async logout(): Promise<void> {
         await this.authService.logout();
@@ -31,5 +35,15 @@ export class ProfileComponent {
 
     public refreshWishlist(): void {
         this.getAllWishlist().then();
+    }
+
+    private async getUser(): Promise<void> {
+        // @ts-ignore
+        const {id} = await this.authService.auth();
+
+        // @ts-ignore
+        const {user} = await this.authService.getUserData(id);
+
+        this.user = user;
     }
 }

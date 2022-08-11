@@ -1,6 +1,9 @@
 <div class="card">
     <div class="card-img">
-        <img src="https://via.placeholder.com/100" alt="" />
+        <img
+            src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{ cardGame?.cover?.id }}.png"
+            alt="کاور {{ cardGame?.name }}"
+        />
     </div>
     <div class="card-data">
         <span>نام بازی</span>
@@ -8,7 +11,7 @@
         <span>قیمت اولیه</span>
         <p class="init-price">{{ cardGame?.price }}</p>
         <span>مقدار تخفیف</span>
-        <p class="card-sale">{{ cardGame?.priceOnSale === cardGame?.price ? 0 : 100 *(1 - (+cardGame?.priceOnSale)/(+cardGame?.price)) }}%</p>
+        <p class="card-sale">{{ sale }}%</p>
         <span>قیمت نهایی</span>
         <p class="final-price">{{ cardGame?.priceOnSale }}</p>
     </div>

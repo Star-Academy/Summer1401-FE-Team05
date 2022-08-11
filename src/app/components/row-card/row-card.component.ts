@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {ApiService} from '../../services/api.service';
     templateUrl: './row-card.component.html',
     styleUrls: ['./row-card.component.scss'],
 })
-export class RowCardComponent {
+export class RowCardComponent implements OnInit {
     public constructor(private apiService: ApiService) {}
 
     // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
@@ -22,5 +22,15 @@ export class RowCardComponent {
         });
 
         this.newRefreshWishlistEventEmitter.emit();
+    }
+
+    public sale: number = 0;
+
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-member-accessibility
+    ngOnInit() {
+        this.sale =
+            this.cardGame?.priceOnSale === this.cardGame?.price
+                ? 0
+                : Math.round(100 * (1 - Number(this.cardGame?.priceOnSale) / Number(this.cardGame?.price)));
     }
 }
