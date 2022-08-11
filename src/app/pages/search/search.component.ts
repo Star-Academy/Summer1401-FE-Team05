@@ -7,7 +7,7 @@ import {ApiService} from '../../services/api.service';
     styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-    private order: any = null;
+    public order: any = null;
 
     public constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) {
         this.router.routeReuseStrategy.shouldReuseRoute = function (): boolean {
@@ -20,36 +20,46 @@ export class SearchComponent implements OnInit {
             this.order = {...params.keys, ...params};
         });
 
-        this.searchForData(this.order.params.order).then();
+        console.log(this.order.params.order);
+
+        this.searchForData().then();
     }
 
     public gamesData: any;
 
-    private async searchForData(_order: string | null): Promise<void> {
-        const searchSetting = {
-            searchPhrase: _order ? _order : '',
-            pageSize: 20,
-            offset: 0,
-            sort: 2,
-            filters: {
-                gameModes: [],
-                genres: [],
-                keywords: [],
-                platforms: [],
-                playerPerspectives: [],
-                themes: [],
-                minimumRating: 20,
-                maximumRating: 99,
-            },
-        };
+    public searchSetting: object = {
+        searchPhrase: this.order?.params?.order ? this.order.params.order : '',
+        pageSize: 20,
+        offset: 0,
+        sort: 2,
+        filters: {
+            gameModes: [],
+            genres: [],
+            keywords: [],
+            platforms: [],
+            playerPerspectives: [],
+            themes: [],
+            minimumRating: 20,
+            maximumRating: 99,
+        },
+    };
 
+    private async searchForData(): Promise<void> {
         const data = await this.apiService.postRequest<any>(
             'https://api.bijanprogrammer.com/games/search',
-            searchSetting
+            this.searchSetting
         );
 
         this.gamesData = await data.games;
 
         console.log(this.gamesData);
+    }
+
+    public updateSearch(newSetting: any): void {
+        this.searchSetting = JSON.parse(JSON.stringify(newSetting));
+    }
+
+    public async doSearch(): Promise<void> {
+        await this.searchForData();
     }
 }

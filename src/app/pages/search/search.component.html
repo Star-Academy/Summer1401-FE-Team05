@@ -1,2 +1,7 @@
-<app-filter></app-filter>
+<app-filter
+    [searchSetting]="searchSetting"
+    [order]="order"
+    (newSearchSettingEventEmitter)="updateSearch($event)"
+    (newDoSearchEventEmitter)="doSearch()"
+></app-filter>
 <app-card-grid [gamesData]="gamesData"></app-card-grid>

@@ -1,8 +1,8 @@
-<form class="filter-container">
+<div class="filter-container">
     <section class="filter-heading">
         <h1>فیلتر ها</h1>
-        <button>اعمال فیلتر ها</button>
-        <button>پاک کردن فیلتر ها</button>
+        <button (click)="doSearch()">اعمال فیلتر ها</button>
+        <button (click)="resetFilters()">پاک کردن فیلتر ها</button>
     </section>
 
     <section class="filters">
@@ -21,7 +21,12 @@
         <div class="genre-filter">
             <h3 class="filter-title">Genre</h3>
             <label class="label" *ngFor="let filter of filters[0].subCategories">
-                <input class="checkbox" type="checkbox" [name]="filter.name" />
+                <input
+                    class="checkbox"
+                    type="checkbox"
+                    [name]="filter?.id"
+                    (change)="checkboxChange($event, 'genres')"
+                />
                 {{ filter.name }}
                 <span class="checkmark"></span>
             </label>
@@ -30,7 +35,12 @@
         <div class="platform-filter">
             <h3 class="filter-title">Game Mode</h3>
             <label class="label" *ngFor="let filter of filters[1].subCategories">
-                <input class="checkbox" type="checkbox" name="" />
+                <input
+                    class="checkbox"
+                    type="checkbox"
+                    [name]="filter.id"
+                    (change)="checkboxChange($event, 'gameModes')"
+                />
                 {{ filter.name }}
                 <span class="checkmark"></span>
             </label>
@@ -39,7 +49,12 @@
         <div class="game-mode-filter">
             <h3 class="filter-title">Perspective</h3>
             <label class="label" *ngFor="let filter of filters[2].subCategories">
-                <input class="checkbox" type="checkbox" name="" />
+                <input
+                    class="checkbox"
+                    type="checkbox"
+                    [name]="filter.id"
+                    (change)="checkboxChange($event, 'playerPerspectives')"
+                />
                 {{ filter.name }}
                 <span class="checkmark"></span>
             </label>
@@ -48,10 +63,10 @@
         <div class="player-perspective-filter">
             <h3 class="filter-title">Platform</h3>
             <label class="label" *ngFor="let filter of filters[3].subCategories">
-                <input class="checkbox" type="checkbox" name="" />
+                <input class="checkbox" type="checkbox" [name]="filter.id" (change)="platformCheckboxChange($event)" />
                 {{ filter.name }}
                 <span class="checkmark"></span>
             </label>
         </div>
     </section>
-</form>
+</div>

@@ -20,5 +20,7 @@ export class HeaderComponent {
 
     public handleSubmit(): void {
         this.router.navigate(['/search'], {queryParams: {order: this.searchText}}).then();
+
+        console.log(this.searchText);
     }
 }
