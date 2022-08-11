@@ -21,7 +21,7 @@ export class GameComponent implements OnInit {
     private getGameId(): void {
         this.gameId = Number(this.route.snapshot.paramMap.get('id'));
 
-        this.getGameData(this.gameId);
+        this.getGameData(this.gameId).then();
     }
 
     private async getGameData(_id: number): Promise<void> {
@@ -30,6 +30,13 @@ export class GameComponent implements OnInit {
         const response = await fetch(`https://api.bijanprogrammer.com/games/one/${_id}`);
         const data = await response.json();
 
+        this.currentGame = data.game;
+
         await console.log(data.game);
     }
+
+    // public async addToWishList(): Promise<void> {
+    //     const response = await fetch('https://api.bijanprogrammer.com/games/wishlist/add');
+    //     const data = await response.json();
+    // }
 }
