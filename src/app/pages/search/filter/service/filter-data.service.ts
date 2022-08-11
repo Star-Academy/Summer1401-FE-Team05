@@ -169,19 +169,19 @@ export class FilterDataService {
             title: 'Platform',
             subCategories: [
                 {
-                    id: 1,
+                    id: 6,
                     name: 'PC',
                 },
                 {
-                    id: 2,
+                    id: 48,
                     name: 'Playstation',
                 },
                 {
-                    id: 3,
+                    id: 11,
                     name: 'Xbox',
                 },
                 {
-                    id: 4,
+                    id: 34,
                     name: 'Mobile',
                 },
             ],

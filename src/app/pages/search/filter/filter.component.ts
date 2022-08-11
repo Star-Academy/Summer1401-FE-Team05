@@ -33,62 +33,6 @@ export class FilterComponent {
         this.updateSearchSetting(this.searchSetting);
     }
 
-    public platformCheckboxChange(e: any): void {
-        if (e.target.checked) {
-            switch (Number.parseInt(e.target.name)) {
-                case 1:
-                    this.searchSetting.filters['platforms'].push(3, 6, 14);
-                    break;
-                case 2:
-                    this.searchSetting.filters['platforms'].push(7, 8, 9, 38, 46, 48, 131, 165, 167, 390);
-                    break;
-                case 3:
-                    this.searchSetting.filters['platforms'].push(11, 12, 49, 169);
-                    break;
-                case 4:
-                    this.searchSetting.filters['platforms'].push(34, 39);
-                    break;
-            }
-        } else {
-            switch (Number.parseInt(e.target.name)) {
-                case 1:
-                    this.searchSetting.filters['platforms'] = this.searchSetting.filters['platforms'].filter(
-                        (x: number) => !(x === 3 || x === 6 || x === 14)
-                    );
-                    break;
-                case 2:
-                    this.searchSetting.filters['platforms'] = this.searchSetting.filters['platforms'].filter(
-                        (x: number) =>
-                            !(
-                                x === 7 ||
-                                x === 8 ||
-                                x === 9 ||
-                                x === 38 ||
-                                x === 46 ||
-                                x === 48 ||
-                                x === 131 ||
-                                x === 165 ||
-                                x === 167 ||
-                                x === 390
-                            )
-                    );
-                    break;
-                case 3:
-                    this.searchSetting.filters['platforms'].push(11, 12, 49, 169);
-                    this.searchSetting.filters['platforms'] = this.searchSetting.filters['platforms'].filter(
-                        (x: number) => !(x === 11 || x === 12 || x === 49 || x === 169)
-                    );
-                    break;
-                case 4:
-                    this.searchSetting.filters['platforms'] = this.searchSetting.filters['platforms'].filter(
-                        (x: number) => !(x === 34 || x === 39)
-                    );
-                    break;
-            }
-        }
-        this.updateSearchSetting(this.searchSetting);
-    }
-
     public updateSearchSetting(newSearchSetting: any): void {
         this.newSearchSettingEventEmitter.emit(newSearchSetting);
     }

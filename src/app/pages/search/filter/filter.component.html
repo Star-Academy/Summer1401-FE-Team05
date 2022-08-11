@@ -63,7 +63,12 @@
         <div class="player-perspective-filter">
             <h3 class="filter-title">Platform</h3>
             <label class="label" *ngFor="let filter of filters[3].subCategories">
-                <input class="checkbox" type="checkbox" [name]="filter.id" (change)="platformCheckboxChange($event)" />
+                <input
+                    class="checkbox"
+                    type="checkbox"
+                    [name]="filter.id"
+                    (change)="checkboxChange($event, 'platforms')"
+                />
                 {{ filter.name }}
                 <span class="checkmark"></span>
             </label>
