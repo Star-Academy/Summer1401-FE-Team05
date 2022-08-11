@@ -3,8 +3,9 @@
     flex-direction: column;
     gap: 2rem;
 
-    padding-inline: max(calc((100% - 120rem) / 2), 5rem);
     padding-block: 10rem;
+
+    padding-inline: max(calc((100% - 120rem) / 2), 5rem);
 
     .filter-heading {
         display: flex;
@@ -17,49 +18,50 @@
         }
 
         button {
-            font-size: 1.6rem;
+            background-color: var(--brand-dark);
 
             padding: 1rem 2rem;
+
             border-radius: 0.3rem;
+
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1rem 100%, 0% calc(100% - 1rem));
-            background-color: var(--brand-dark);
+
+            font-size: 1.6rem;
 
             cursor: pointer;
         }
 
         button:active {
-            transform: scale(.98);
+            transform: scale(0.98);
         }
     }
 
     .filters {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        column-gap: 2.5rem;
         align-items: start;
+        column-gap: 2.5rem;
 
         .year-filter {
             display: grid;
-            grid-template-columns: repeat(1,1fr);
+            grid-template-columns: repeat(1, 1fr);
             column-gap: 1rem;
-            row-gap: .8rem;
+            row-gap: 0.8rem;
 
-            label{
+            label {
                 font-size: 1.2rem;
             }
         }
 
         .genre-filter {
-            grid-column: span 2;
-
             display: grid;
+            grid-column: span 2;
             grid-template-columns: repeat(2, 1fr);
             column-gap: 1rem;
             row-gap: 0.7rem;
 
             .filter-title {
                 grid-column: -1/1;
-
             }
         }
 
@@ -73,55 +75,63 @@
         }
 
         .filter-title {
-            font-size: 1.6rem;
-            padding-block: 1rem;
+            justify-self: center;
+
             background-color: var(--surface3-dark);
+
+            padding-block: 1rem;
 
             padding-inline: 2rem;
 
-            justify-self: center;
+            font-size: 1.6rem;
         }
 
         .label {
-            font-size: 1.4rem;
-
             position: relative;
+
+            font-size: 1.4rem;
 
             .checkbox {
                 opacity: 0;
 
-                cursor: pointer;
-
                 block-size: 1.5rem;
                 inline-size: 1.5rem;
+
+                cursor: pointer;
             }
 
             .checkmark {
                 position: absolute;
+                inset-block-start: 0;
+
+                inset-inline-start: 0;
                 z-index: -1;
 
                 block-size: 1.5rem;
                 inline-size: 1.5rem;
 
-                inset-inline-start: 0;
-                inset-block-start: 0;
                 border: 0.1rem solid var(--surface4-dark);
 
                 &::before {
                     content: "";
-                    position: absolute;
-                    z-index: -2;
-                    inset: 0.2rem;
+
+                    background-color: hsl(240deg 50% 50%);
 
                     opacity: 0;
-                    transform: scale(0);
-                    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 
-                    background-color: hsl(240, 50%, 50%);
+                    position: absolute;
+                    inset: 0.2rem;
+                    z-index: -2;
+
+                    transform: scale(0);
+
+                    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
                 }
             }
+
             .checkbox:checked ~ .checkmark::before {
                 opacity: 1;
+
                 transform: scale(1);
             }
         }

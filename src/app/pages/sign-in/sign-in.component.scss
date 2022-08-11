@@ -5,8 +5,6 @@
     block-size: 100vh;
 
     .form {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 5rem 100%, 0% calc(100% - 5rem));
-
         background-color: var(--surface1-dark);
         color: var(--text2-dark);
 
@@ -19,6 +17,8 @@
         padding-inline: 10rem;
 
         border-radius: 0.3rem;
+
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 5rem 100%, 0% calc(100% - 5rem));
 
         .validation-error {
             color: hsl(0deg 100% 50%);
@@ -53,17 +53,18 @@
         }
 
         .submit-btn {
-            color: var(--text1-dark);
             background-color: var(--brand-dark);
-            border-radius: 0.3rem;
+            color: var(--text1-dark);
 
             padding-block: 1rem;
+
+            border-radius: 0.3rem;
+
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
 
             font-size: 2rem;
 
             cursor: pointer;
-
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
         }
 
         .sign-up-link {

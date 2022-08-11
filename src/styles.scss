@@ -43,12 +43,12 @@
 }
 
 html {
+    scroll-behavior: smooth;
+
     font-family: Shabnam, sans-serif;
-    color-scheme: dark;
 
     font-size: 62.5%;
-
-    scroll-behavior: smooth;
+    color-scheme: dark;
 }
 
 body {

@@ -1,36 +1,45 @@
 .cards-container {
     position: relative;
+
     padding-block: 10rem;
+
     .cards-left,
     .cards-right {
+        background-color: var(--surface4-dark);
+        color: var(--text2-dark);
+
+        position: absolute;
+        right: 2rem;
+        bottom: 20%;
+        z-index: 1;
+
         display: grid;
         place-items: center;
-        position: absolute;
-        background-color: var(--surface4-dark);
-        font-size: 2rem;
-        color: var(--text2-dark);
-        border: 0.2rem solid var(--text2-dark);
-        z-index: 1;
+
         width: 5rem;
         height: 5rem;
+
+        border: 0.2rem solid var(--text2-dark);
         border-radius: 50%;
-        bottom: 20%;
-        right: 2rem;
+
+        font-size: 2rem;
     }
 
     .cards-left {
-        left: 2rem;
         right: initial;
+        left: 2rem;
     }
 
     .scroll-cards {
+        overflow-x: scroll;
+
         display: flex;
         gap: 2rem;
-        padding-inline: calc((100% - 25rem) / 2);
 
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
+
+        padding-inline: calc((100% - 25rem) / 2);
+        scroll-snap-type: x mandatory;
     }
 }
 
@@ -42,16 +51,19 @@
         .cards-right {
             top: 50%;
         }
+
         .cards-left {
             left: max(calc((100% - 120rem) / 2 - 2.5rem), 2rem);
         }
+
         .cards-right {
             right: max(calc((100% - 120rem) / 2 - 2.5rem), 2rem);
         }
 
         .scroll-cards {
-            padding-inline: 0rem;
             gap: calc(20rem / 3);
+
+            padding-inline: 0;
         }
     }
 }

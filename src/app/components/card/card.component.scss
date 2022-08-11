@@ -1,31 +1,42 @@
 :host {
     flex: 25rem 0 0;
 }
+
 .card {
-    font-family: Brutal, sans-serif;
-    position: relative;
     direction: ltr;
-    scroll-snap-align: center;
+
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+
+    font-family: Brutal, sans-serif;
+    scroll-snap-align: center;
+
     .card-img {
         position: relative;
+
         &::before {
             content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            inset: 0;
+
             background-color: var(--surface2-dark);
             opacity: 0;
+
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
             transition: opacity 0.3s ease;
         }
 
         img {
-            border-radius: 0.3rem;
             aspect-ratio: 3/4;
+
+            border-radius: 0.3rem;
         }
     }
 
@@ -35,6 +46,7 @@
                 opacity: 0.3;
             }
         }
+
         .favorite-btn {
             opacity: 1;
         }
@@ -43,29 +55,41 @@
     .card-title {
         font-size: 1.8rem;
         font-weight: 400;
+
         word-wrap: break-word;
     }
+
     .card-rating {
-        display: inline-block;
-        width: min-content;
-        padding: 0.5rem 1rem;
-        border-radius: 0.3rem;
         background-color: var(--surface3-dark);
         color: var(--text2-dark);
+
+        display: inline-block;
+
+        width: min-content;
+
+        padding: 0.5rem 1rem;
+
+        border-radius: 0.3rem;
     }
 
     .favorite-btn {
-        position: absolute;
-        font-size: 2rem;
+        background-color: transparent;
         opacity: 0;
+
+        position: absolute;
         top: 0;
         right: 0;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
+
         padding: 0.5rem;
-        border-radius: 0.3rem;
+
         border: none;
-        background-color: transparent;
+        border-radius: 0.3rem;
+
+        font-size: 2rem;
+
+        transition: opacity 0.3s ease;
+
+        cursor: pointer;
     }
 }
 

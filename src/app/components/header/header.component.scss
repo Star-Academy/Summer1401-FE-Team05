@@ -1,9 +1,9 @@
 .header {
-    z-index: 999;
     background-color: var(--surface1-dark);
     color: var(--text1-dark);
 
     position: relative;
+    z-index: 999;
 
     display: flex;
     align-items: center;
@@ -54,9 +54,9 @@
                 inset-block-start: 50%;
                 inset-inline-start: 0;
 
-                cursor: pointer;
-
                 transform: translate(-50%, -50%);
+
+                cursor: pointer;
             }
 
             input {

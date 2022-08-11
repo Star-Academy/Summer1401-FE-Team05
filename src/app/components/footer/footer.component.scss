@@ -1,24 +1,28 @@
 .footer {
-    color: var(--text1-dark);
     background-color: var(--surface1-dark);
+    color: var(--text1-dark);
 }
+
 .column-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
     align-items: start;
-    padding: 4rem;
+    justify-items: center;
     column-gap: 2rem;
+
+    padding: 4rem;
 }
+
 .footer-logo {
-    width: 12rem;
-    justify-self: start;
     align-self: center;
+    justify-self: start;
+
+    width: 12rem;
 }
 
 .list-title {
-    font-weight: 700;
     font-size: 1.6rem;
+    font-weight: 700;
 }
 
 .footer ul {
@@ -26,9 +30,11 @@
     flex-direction: column;
     gap: 1rem;
 }
+
 .footer ul li {
     font-size: 1.2rem;
 }
+
 .footer ul:first-of-type {
     justify-self: end;
 }
@@ -40,22 +46,31 @@
 .scroll-to-top {
     align-self: center;
     justify-self: end;
-    position: relative;
-    font-size: 1.4rem;
+
+    background-color: var(--surface4-dark);
     color: var(--text1-dark);
-    cursor: pointer;
-    border: none;
+
+    position: relative;
+
     width: 4rem;
     height: 4rem;
-    background-color: var(--surface4-dark);
+
+    border: none;
     border-radius: 0.3rem;
+
     clip-path: polygon(0 0, 100% 0, 100% 100%, 1.2rem 100%, 0% calc(100% - 1.2rem));
 
+    font-size: 1.4rem;
+
     transition: transform 300ms ease;
+
+    cursor: pointer;
 }
+
 .scroll-to-top:hover {
     transform: translateY(-0.5rem);
 }
+
 .scroll-to-top:active {
     transform: translateY(1rem);
 }
