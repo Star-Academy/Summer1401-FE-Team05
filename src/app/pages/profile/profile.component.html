@@ -20,24 +20,29 @@
     <section class="wishlist">
         <h2 class="wishlist-title">سبد خرید</h2>
         <div class="row-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="https://via.placeholder.com/100" alt="" />
-                </div>
-                <div class="card-data">
-                    <span>نام بازی</span>
-                    <p class="card-title">Darksiders</p>
-                    <span>قیمت اولیه</span>
-                    <p class="init-price">1690000</p>
-                    <span>مقدار تخفیف</span>
-                    <p class="card-sale">0%</p>
-                    <span>قیمت نهایی</span>
-                    <p class="final-price">1390000</p>
-                </div>
-                <div class="control">
-                    <button class="remove-game" title="حذف از سبد خرید">حذف از سبد خرید</button>
-                </div>
-            </div>
+            <!--            <div class="card">-->
+            <!--                <div class="card-img">-->
+            <!--                    <img src="https://via.placeholder.com/100" alt="" />-->
+            <!--                </div>-->
+            <!--                <div class="card-data">-->
+            <!--                    <span>نام بازی</span>-->
+            <!--                    <p class="card-title">Darksiders</p>-->
+            <!--                    <span>قیمت اولیه</span>-->
+            <!--                    <p class="init-price">1690000</p>-->
+            <!--                    <span>مقدار تخفیف</span>-->
+            <!--                    <p class="card-sale">0%</p>-->
+            <!--                    <span>قیمت نهایی</span>-->
+            <!--                    <p class="final-price">1390000</p>-->
+            <!--                </div>-->
+            <!--                <div class="control">-->
+            <!--                    <button class="remove-game" title="حذف از سبد خرید">-->
+            <!--                        حذف از سبد خرید-->
+            <!--                    </button>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <ng-container *ngFor="let cardGame of wishlist">
+                <app-row-card [cardGame]="cardGame" (newRefreshWishlistEventEmitter)="refreshWishlist()"></app-row-card>
+            </ng-container>
         </div>
     </section>
 </div>

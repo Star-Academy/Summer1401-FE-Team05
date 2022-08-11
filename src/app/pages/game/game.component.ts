@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
     selector: 'app-game',
@@ -8,7 +9,12 @@ import {ApiService} from '../../services/api.service';
     styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements OnInit {
-    public constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+    public constructor(
+        private route: ActivatedRoute,
+        private apiService: ApiService,
+        private authService: AuthService,
+        private router: Router
+    ) {}
 
     private gameId!: number;
 
@@ -25,18 +31,28 @@ export class GameComponent implements OnInit {
     }
 
     private async getGameData(_id: number): Promise<void> {
-        // const data = await this.apiService.getRequest<any>(`https://api.bijanprogrammer.com/games/one/${_id}`);
-
         const response = await fetch(`https://api.bijanprogrammer.com/games/one/${_id}`);
         const data = await response.json();
 
-        this.currentGame = data.game;
-
-        await console.log(data.game);
+        this.currentGame = await data.game;
     }
 
-    // public async addToWishList(): Promise<void> {
-    //     const response = await fetch('https://api.bijanprogrammer.com/games/wishlist/add');
-    //     const data = await response.json();
-    // }
+    public async addToWishlist(): Promise<void> {
+        if (!this.authService.isUserLoggedIn) {
+            await this.router.navigateByUrl('/sign-in');
+            return;
+        }
+
+        const token = await localStorage.getItem('token');
+        const fetchBody = {
+            token: token,
+            gameId: this.currentGame.id,
+        };
+
+        await fetch('https://api.bijanprogrammer.com/games/wishlist/add', {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(fetchBody),
+        });
+    }
 }

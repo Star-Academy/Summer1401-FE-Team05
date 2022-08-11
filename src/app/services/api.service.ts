@@ -13,7 +13,7 @@ export class ApiService {
         };
 
         const response = await fetch(url, options);
-        const data = await response.json();
+        const data = await response?.json();
 
         if (response.ok) return data as T;
         return null;
@@ -31,6 +31,20 @@ export class ApiService {
         const data = await response.json();
 
         if (response.ok) return data as T;
+        return null;
+    }
+
+    public async deleteRequest<T>(url: string, body: any = '', init: Partial<RequestInit> = {}): Promise<T | null> {
+        const option = {
+            method: 'delete',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(body),
+            ...init,
+        };
+
+        const response = await fetch(url, option);
+
+        if (response.ok) console.log('ok');
         return null;
     }
 }
