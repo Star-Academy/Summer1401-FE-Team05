@@ -1,10 +1,12 @@
 <div class="cards-container">
-    <button class="cards-left" (click)="next()">
-        <i class="fa-regular fa-angle-left"></i>
-    </button>
-    <button class="cards-right" (click)="prev()">
-        <i class="fa-regular fa-angle-right"></i>
-    </button>
+    <div class="control-btns">
+        <button class="cards-right" (click)="prev()">
+            <i class="fa-regular fa-angle-right"></i>
+        </button>
+        <button class="cards-left" (click)="next()">
+            <i class="fa-regular fa-angle-left"></i>
+        </button>
+    </div>
     <div class="scroll-cards" #scrollCards>
         <ng-container *ngFor="let game of someGame">
             <app-card [game]="game"></app-card>

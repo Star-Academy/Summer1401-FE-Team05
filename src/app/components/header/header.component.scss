@@ -22,7 +22,7 @@
     }
 
     .nav {
-        background-color: var(--surface1-dark);
+        background-color: var(--surface2-dark);
 
         position: absolute;
         inset-block-start: 100%;
@@ -138,6 +138,8 @@
 
 @media (min-width: 60em) {
     .header {
+        padding-inline: max(calc((100% - 120rem) / 2), 2rem);
+
         .nav {
             position: static;
 
