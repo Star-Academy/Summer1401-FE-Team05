@@ -5,5 +5,6 @@ interface subCategory {
 
 export interface Category {
     title: string;
+    searchName: string;
     subCategories: subCategory[];
 }

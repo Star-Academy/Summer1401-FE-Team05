@@ -8,176 +8,178 @@ import {Category} from '../model/category';
 export class CategoryFetchDataService {
     private data: Category[] = [
         {
-            title: 'Genre',
+            title: 'ژانر ها',
+            searchName: 'genres',
             subCategories: [
                 {
                     id: 2,
-                    name: 'Point-and-click',
+                    name: 'نشانه گیری',
                 },
                 {
                     id: 4,
-                    name: 'Fighting',
+                    name: 'جنگی',
                 },
                 {
                     id: 5,
-                    name: 'Shooter',
+                    name: 'شوتر',
                 },
                 {
                     id: 7,
-                    name: 'Music',
+                    name: 'موزیکال',
                 },
                 {
                     id: 8,
-                    name: 'Platform',
+                    name: 'پلتفرم',
                 },
                 {
                     id: 9,
-                    name: 'Puzzle',
+                    name: 'پازل',
                 },
                 {
                     id: 10,
-                    name: 'Racing',
+                    name: 'مسابقه',
                 },
                 {
                     id: 11,
-                    name: 'Real Time Strategy (RTS)',
+                    name: 'استراتژی لحظه ای (RTS)',
                 },
                 {
                     id: 12,
-                    name: 'Role-playing (RPG)',
+                    name: 'نقش آفرینی (RPG)',
                 },
                 {
                     id: 13,
-                    name: 'Simulator',
+                    name: 'شبیه سازی',
                 },
                 {
                     id: 14,
-                    name: 'Sport',
+                    name: 'ورزش',
                 },
                 {
                     id: 15,
-                    name: 'Strategy',
+                    name: 'استراتژی',
                 },
                 {
                     id: 16,
-                    name: 'Turn-based strategy (TBS)',
+                    name: 'استراتژی نوبتی (TBS)',
                 },
                 {
                     id: 24,
-                    name: 'Tactical',
+                    name: 'تاکتیک',
                 },
                 {
                     id: 25,
-                    name: "Hack and slash/Beat 'em up",
+                    name: 'هک و اسلش',
                 },
                 {
                     id: 26,
-                    name: 'Quiz/Trivia',
+                    name: 'کوییز',
                 },
                 {
                     id: 30,
-                    name: 'Pinball',
+                    name: 'پین بال',
                 },
                 {
                     id: 31,
-                    name: 'Adventure',
+                    name: 'ماجرایی',
                 },
                 {
                     id: 32,
-                    name: 'Indie',
+                    name: 'مستقل',
                 },
                 {
                     id: 33,
-                    name: 'Arcade',
+                    name: 'آرکید',
                 },
                 {
                     id: 34,
-                    name: 'Visual Novel',
+                    name: 'داستانی',
                 },
                 {
                     id: 35,
-                    name: 'Card & Board Game',
+                    name: 'کارت و بازی رومیزی',
                 },
                 {
                     id: 36,
-                    name: 'MOBA',
+                    name: 'موبا',
                 },
             ],
         },
         {
-            title: 'theme',
+            title: 'تم',
+            searchName: 'themes',
             subCategories: [
                 {
                     id: 1,
-                    name: 'Action',
+                    name: 'اکشن',
                 },
                 {
                     id: 17,
-                    name: 'Fantasy',
+                    name: 'فانتزی',
                 },
                 {
                     id: 18,
-                    name: 'Science fiction',
+                    name: 'علمی تخیلی',
                 },
                 {
                     id: 19,
-                    name: 'Horror',
+                    name: 'خشن',
                 },
                 {
                     id: 20,
-                    name: 'Thriller',
+                    name: 'دلهره آور',
                 },
                 {
                     id: 21,
-                    name: 'Survival',
+                    name: 'بقا',
                 },
                 {
                     id: 22,
-                    name: 'Historical',
+                    name: 'تاریخ',
                 },
                 {
                     id: 23,
-                    name: 'Stealth',
+                    name: 'مخفی کاری',
                 },
                 {
                     id: 27,
-                    name: 'Comedy',
+                    name: 'کمدی',
                 },
                 {
                     id: 28,
-                    name: 'Business',
+                    name: 'تجارت',
                 },
                 {
                     id: 31,
-                    name: 'Drama',
+                    name: 'دراما',
                 },
                 {
                     id: 32,
-                    name: 'Non-fiction',
+                    name: 'غیر تخیلی',
                 },
                 {
                     id: 33,
-                    name: 'Sandbox',
+                    name: 'سندباکس',
                 },
                 {
                     id: 34,
-                    name: 'Educational',
+                    name: 'آموزش',
                 },
                 {
                     id: 35,
-                    name: 'Kids',
+                    name: 'بچگانه',
                 },
                 {
                     id: 38,
-                    name: 'Open world',
+                    name: 'جهان باز',
                 },
                 {
                     id: 39,
-                    name: 'Warfare',
+                    name: 'جنگی',
                 },
                 {
                     id: 40,
-                    name: 'Party',
+                    name: 'جشن',
                 },
                 {
                     id: 41,
@@ -185,77 +187,79 @@ export class CategoryFetchDataService {
                 },
                 {
                     id: 42,
-                    name: 'Erotic',
+                    name: 'اروتیک',
                 },
                 {
                     id: 43,
-                    name: 'Mystery',
+                    name: 'سحرآمیز',
                 },
                 {
                     id: 44,
-                    name: 'Romance',
+                    name: 'عاشقانه',
                 },
             ],
         },
         {
-            title: 'Game Mode',
+            title: 'سبک بازی',
+            searchName: 'gameModes',
             subCategories: [
                 {
                     id: 1,
-                    name: 'Single player',
+                    name: 'تک نفره',
                 },
                 {
                     id: 2,
-                    name: 'Multiplayer',
+                    name: 'چند نفره',
                 },
                 {
                     id: 3,
-                    name: 'Co-operative',
+                    name: 'تعونی',
                 },
                 {
                     id: 4,
-                    name: 'Split screen',
+                    name: 'چند صفحه ای',
                 },
                 {
                     id: 5,
-                    name: 'Massively Multiplayer Online (MMO)',
+                    name: 'بازی پیچیده آنلاین (MMO)',
                 },
                 {
                     id: 6,
-                    name: 'Battle Royale',
+                    name: 'بتل رویال',
                 },
             ],
         },
         {
-            title: 'Player Perspective',
+            title: 'دیدگاه بازیکن',
+            searchName: 'playerPerspectives',
             subCategories: [
                 {
                     id: 1,
-                    name: 'First person',
+                    name: 'اول شخص',
                 },
                 {
                     id: 2,
-                    name: 'Third person',
+                    name: 'سوم شخص',
                 },
                 {
                     id: 3,
-                    name: 'Bird view / Isometric',
+                    name: 'دید پرنده',
                 },
                 {
                     id: 4,
-                    name: 'Side view',
+                    name: 'دید از کنار',
                 },
                 {
                     id: 5,
-                    name: 'Text',
+                    name: 'متن',
                 },
                 {
                     id: 6,
-                    name: 'Auditory',
+                    name: 'شنوایی',
                 },
                 {
                     id: 7,
-                    name: 'Virtual Reality',
+                    name: 'حقیقت مجازی',
                 },
             ],
         },

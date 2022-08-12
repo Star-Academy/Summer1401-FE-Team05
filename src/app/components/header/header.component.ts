@@ -19,8 +19,6 @@ export class HeaderComponent {
     public searchText: string | null = null;
 
     public handleSubmit(): void {
-        this.router.navigate(['/search'], {queryParams: {order: this.searchText}}).then();
-
-        console.log(this.searchText);
+        this.router.navigate(['/search'], {queryParams: {searchText: this.searchText}}).then();
     }
 }

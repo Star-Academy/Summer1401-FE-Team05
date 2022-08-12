@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
+import {CategoryFetchDataService} from '../../components/header/categories/services/category-fetch-data.service';
+import {Category} from '../../components/header/categories/model/category';
+import {SearchPost} from '../../models/search-post';
 
 @Component({
     templateUrl: './search.component.html',
@@ -9,26 +12,39 @@ import {ApiService} from '../../services/api.service';
 export class SearchComponent implements OnInit {
     public order: any = null;
 
-    public constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) {
+    public constructor(
+        private router: Router,
+        private activatedRoute: ActivatedRoute,
+        private apiService: ApiService,
+        private categoryFetchDataService: CategoryFetchDataService
+    ) {
         this.router.routeReuseStrategy.shouldReuseRoute = function (): boolean {
             return false;
         };
     }
+
+    private categories: Category[] = this.categoryFetchDataService.fetchData();
 
     public ngOnInit(): any {
         this.activatedRoute.queryParamMap.subscribe((params) => {
             this.order = {...params.keys, ...params};
         });
 
-        console.log(this.order.params.order);
+        if (!!this.order?.params?.category) {
+            // @ts-ignore
+            this.searchSetting.filters[this.order?.params?.category] =
+                [Number.parseInt(this.order?.params?.subCategory)] ?? [];
+        } else if (!!this.order?.params?.searchText) {
+            this.searchSetting.searchPhrase = this.order?.params?.searchText ?? '';
+        }
 
         this.searchForData().then();
     }
 
     public gamesData: any;
 
-    public searchSetting: object = {
-        searchPhrase: this.order?.params?.order ? this.order.params.order : '',
+    public searchSetting: SearchPost = {
+        searchPhrase: '',
         pageSize: 20,
         offset: 0,
         sort: 2,
@@ -50,9 +66,7 @@ export class SearchComponent implements OnInit {
             this.searchSetting
         );
 
-        this.gamesData = await data.games;
-
-        console.log(this.gamesData);
+        this.gamesData = await data?.games;
     }
 
     public updateSearch(newSetting: any): void {

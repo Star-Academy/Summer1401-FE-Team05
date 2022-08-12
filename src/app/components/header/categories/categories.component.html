@@ -16,7 +16,6 @@
                 [class.active]="category === activeCategory"
                 (mouseenter)="activeCategory = category"
             >
-                <!--<i [class]="category.icon"></i>-->
                 <div>{{ category.title }}</div>
             </li>
         </ul>
@@ -25,7 +24,7 @@
             <ng-container *ngIf="activeCategory">
                 <ul>
                     <li *ngFor="let subCategory of activeCategory.subCategories">
-                        <a [routerLink]="subCategory.name">
+                        <a [routerLink]="['/search']" [queryParams]="{category: activeCategory.searchName, subCategory: subCategory.id}">
                             {{ subCategory.name }}
                         </a>
                     </li>

@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 import {cards} from './sample-data';
 import {ApiService} from '../../../services/api.service';
@@ -8,8 +8,11 @@ import {ApiService} from '../../../services/api.service';
     templateUrl: './products.component.html',
     styleUrls: ['./products.component.scss'],
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
     @ViewChild('scrollCards') private scrollCards!: ElementRef<HTMLElement>;
+
+    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
+    @Input() sub: number | null = null;
 
     public next(): void {
         this.scrollCards.nativeElement.scrollBy(-250, 0);
@@ -20,7 +23,10 @@ export class ProductsComponent {
 
     public someGame: any = cards;
 
-    public constructor(private apiService: ApiService) {
+    public constructor(private apiService: ApiService) {}
+
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-member-accessibility
+    ngOnInit() {
         this.getSomeGame().then();
     }
 
@@ -32,7 +38,7 @@ export class ProductsComponent {
             sort: 2,
             filters: {
                 gameModes: [],
-                genres: [],
+                genres: !!this.sub ? [this.sub] : [],
                 keywords: [],
                 platforms: [],
                 playerPerspectives: [],
@@ -47,6 +53,6 @@ export class ProductsComponent {
             searchSetting
         );
 
-        this.someGame = data.games;
+        this.someGame = data?.games;
     }
 }

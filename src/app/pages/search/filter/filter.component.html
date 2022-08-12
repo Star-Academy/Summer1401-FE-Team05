@@ -6,20 +6,8 @@
     </section>
 
     <section class="filters">
-        <div class="year-filter">
-            <h3 class="filter-title">Years</h3>
-            <label>
-                از
-                <input type="number" name="" placeholder="1970" />
-            </label>
-            <label>
-                تا
-                <input type="number" name="" placeholder="2022" />
-            </label>
-        </div>
-
         <div class="genre-filter">
-            <h3 class="filter-title">Genre</h3>
+            <h3 class="filter-title">ژانر ها</h3>
             <label class="label" *ngFor="let filter of filters[0].subCategories">
                 <input
                     class="checkbox"
@@ -32,8 +20,8 @@
             </label>
         </div>
 
-        <div class="platform-filter">
-            <h3 class="filter-title">Game Mode</h3>
+        <div class="theme-filter">
+            <h3 class="filter-title">تم ها</h3>
             <label class="label" *ngFor="let filter of filters[1].subCategories">
                 <input
                     class="checkbox"
@@ -47,7 +35,7 @@
         </div>
 
         <div class="game-mode-filter">
-            <h3 class="filter-title">Perspective</h3>
+            <h3 class="filter-title">سبک بازی</h3>
             <label class="label" *ngFor="let filter of filters[2].subCategories">
                 <input
                     class="checkbox"
@@ -61,7 +49,7 @@
         </div>
 
         <div class="player-perspective-filter">
-            <h3 class="filter-title">Platform</h3>
+            <h3 class="filter-title">دیدگاه بازیکن</h3>
             <label class="label" *ngFor="let filter of filters[3].subCategories">
                 <input
                     class="checkbox"
