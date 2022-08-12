@@ -1,118 +1,96 @@
-.carousel-container {
-    position: relative;
-
-    padding-block-start: 2rem;
-    padding-inline: max(calc((100% - 120rem) / 2), 5rem);
-
-    font-family: Brutal, Shabnam, sans-serif;
-}
-
-.scroll-area {
-    overflow-x: scroll;
-
-    display: flex;
-
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-
-    // -ms-overflow-style: none; /* Internet Explorer 10+ */
-    // scrollbar-width: none; /* Firefox */
-}
-
-// .scroll-area::-webkit-scrollbar {
-//     display: none; /* Safari and Chrome */
-// }
-.banner {
-    // direction: ltr;
-    flex: 100% 0 0;
-
-    position: relative;
+.slideshow {
     overflow: hidden;
 
-    border-radius: 2rem;
-    scroll-snap-align: center;
-}
-
-.bg-img img {
     aspect-ratio: 16/9;
-}
 
-.carousel-prev,
-.carousel-next {
-    background-color: var(--text1-dark);
-    color: var(--brand-dark);
-    opacity: 0.5;
+    padding-inline: max(calc((100% - 120rem) / 2), 2rem);;
 
-    position: absolute;
-    top: 50%;
-    z-index: 1;
+    ol {
+        position: relative;
+        display: flex;
 
-    display: grid;
-    place-items: center;
+        gap: 100%;
 
-    width: 5rem;
-    height: 5rem;
+        li {
+            flex: 0 0 100%;
 
-    border-radius: 50%;
+            transform: translateX(calc(var(--active-index) * 200%));
 
-    transform: translate(0, -50%);
+            transition: transform 0.5s ease-in-out;
 
-    font-size: 3rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
 
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
-.carousel-prev {
-    right: calc(((100% - 120rem) / 2) + 2rem);
-}
+        .overlay {
+            position: absolute;
+            inset-block-end: 0;
+            inset-inline-start: 0;
 
-.carousel-prev:hover {
-    opacity: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
 
-    transform: translate(1rem, -50%);
-}
+            padding: 2rem;
 
-.carousel-next {
-    left: calc(((100% - 120rem) / 2) + 2rem);
-}
+            .controls {
+                opacity: 1;
 
-.carousel-next:hover {
-    opacity: 1;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
 
-    transform: translate(-1rem, -50%);
-}
+                transition: opacity 0.1s ease-in-out;
 
-.overlay {
-    // background-image: linear-gradient(to right, transparent, hsla(0, 0%, 10%, 0.4));
+                button {
+                    background-color: var(--surface4-dark);
 
-    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 0%) 60%, rgb(0 0 0 / 100%) 100%);
+                    justify-content: center;
 
-    position: absolute;
-    inset: 0;
+                    width: 3rem;
+                    height: 3rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 2.5rem;
+                    border-radius: 999rem;
 
-    padding: 4rem;
-}
+                    &:hover {
+                        background-color: var(--surface3-dark);
+                    }
+                }
+            }
 
-.description {
-    inline-size: 50%;
+            .bullets {
+                display: flex;
+                gap: 1rem;
 
-    font-size: 1.8rem;
-}
+                i {
+                    background-color: var(--surface4-dark);
 
-.wishlist {
-    background-color: var(--brand-dark);
+                    display: block;
 
-    padding: 1rem 2rem;
+                    width: 1em;
+                    height: 1em;
 
-    border-radius: 0.3rem;
+                    border-radius: 999rem;
 
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1.6rem 100%, 0% calc(100% - 1.6rem));
+                    font-size: 0.6rem;
 
-    font-size: 1.4rem;
+                    &.active {
+                        background-color: var(--surface3-dark);
+
+                        width: 2em;
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .overlay .controls {
+            opacity: 1;
+        }
+    }
 }

@@ -1,17 +1,18 @@
-<section class="carousel-container">
-    <button class="carousel-next" (click)="next()"><i class="fa-regular fa-angle-left"></i></button>
-    <button class="carousel-prev" (click)="prev()"><i class="fa-regular fa-angle-right"></i></button>
-    <div class="scroll-area" #scrollCards (mouseenter)="stopSliding()" (mouseleave)="startSliding()">
-        <div *ngFor="let slide of slides" class="banner">
-            <div class="bg-img">
-                <img [src]="slide.imgSrc" [alt]="slide.alt" />
+<div class="slideshow" [style.--active-index]="activeIndex">
+    <ol>
+        <li *ngFor="let item of items; index as index" [class.active]="index === activeIndex">
+            <img [src]="item.src" alt="" />
+        </li>
+
+        <div class="overlay">
+            <div class="controls">
+                <button (click)="changeActiveIndex(activeIndex - 1)"><i class="far fa-angle-right"></i></button>
+                <button (click)="changeActiveIndex(activeIndex + 1)"><i class="far fa-angle-left"></i></button>
             </div>
-            <div class="overlay" [ngClass]="slide.overlayPosition">
-                <p class="description">
-                    {{ slide.description }}
-                </p>
-                <button class="wishlist">اضافه کردن به علاقه مندی ها</button>
+
+            <div class="bullets">
+                <i *ngFor="let _ of items; index as index" [class.active]="index === activeIndex"></i>
             </div>
         </div>
-    </div>
-</section>
+    </ol>
+</div>

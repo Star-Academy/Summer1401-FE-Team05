@@ -2,52 +2,31 @@ import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angul
 import {Slide} from './models/slide';
 import {slides} from './slides';
 
+interface Item {
+    src: string;
+}
+
 @Component({
     selector: 'app-carousel',
     templateUrl: './carousel.component.html',
     styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements AfterViewInit, OnDestroy {
-    @ViewChild('scrollCards') private scrollCards!: ElementRef<HTMLElement>;
-
-    private scrollWidth: number = this.scrollCards?.nativeElement.clientWidth ?? 1200;
-
     private readonly INTERVAL_DELAY: number = 3000;
 
+    public items: Item[] = [
+        {src: 'assets/images/banners/COD-MW-II.jpg'},
+        {src: 'assets/images/banners/dying-light-2-stay-human.jpg'},
+        {src: 'assets/images/banners/elden-ring.webp'},
+        {src: 'assets/images/banners/horizen-forbidden-west.webp'},
+        {src: 'assets/images/banners/LEGO-startwars-the-skywalker-saga.jpg'},
+        // {src: 'assets/images/banners/slide06.jpg'},
+        // {src: 'assets/images/banners/slide07.jpg'},
+    ];
+
+    public activeIndex: number = 0;
+
     private interval!: number;
-    private paused: boolean = false;
-
-    private slide(scrollTo: number): void {
-        if (this.activeScroll >= slides.length && scrollTo === -1) {
-            this.scrollCards.nativeElement.scrollTo(-1, 0);
-            this.activeScroll = 1;
-        } else if (this.activeScroll <= 1 && scrollTo === 1) {
-            this.scrollCards.nativeElement.scrollTo(-1 * this.scrollWidth * slides.length, 0);
-            this.activeScroll = slides.length;
-        } else {
-            this.scrollCards.nativeElement.scrollBy(scrollTo * this.scrollWidth, 0);
-            this.activeScroll -= scrollTo;
-        }
-    }
-    private resetInterval(): void {
-        if (this.paused === false) {
-            clearInterval(this.interval);
-            this.interval = setInterval(() => {
-                this.slide(-1);
-            }, this.INTERVAL_DELAY);
-        } else {
-            clearInterval(this.interval);
-        }
-    }
-    public slides: Slide[] = slides;
-
-    public next(): void {
-        this.slide(-1);
-    }
-    public prev(): void {
-        this.slide(+1);
-    }
-    public activeScroll: number = 1;
 
     public ngAfterViewInit(): void {
         this.resetInterval();
@@ -56,12 +35,20 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     public ngOnDestroy(): void {
         clearInterval(this.interval);
     }
-    public stopSliding(): void {
-        this.paused = true;
+
+    public changeActiveIndex(index: number): void {
+        if (index < 0) index = this.items.length - 1;
+        else if (index >= this.items.length) index = 0;
+
+        this.activeIndex = index;
         this.resetInterval();
     }
-    public startSliding(): void {
-        this.paused = false;
-        this.resetInterval();
+
+    private resetInterval(): void {
+        clearInterval(this.interval);
+
+        this.interval = setInterval(() => {
+            this.changeActiveIndex(this.activeIndex + 1);
+        }, this.INTERVAL_DELAY);
     }
 }
