@@ -3,6 +3,7 @@ import {Component} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {ApiService} from '../../services/api.service';
 import {User} from '../../models/user.model';
+import {API_WISHLIST_ALL} from '../../utils/urls';
 
 @Component({
     selector: 'app-profile',
@@ -26,7 +27,7 @@ export class ProfileComponent {
     private async getAllWishlist(): Promise<void> {
         const token = localStorage.getItem('token');
 
-        const data = await this.apiService.postRequest<any>('https://api.bijanprogrammer.com/games/wishlist/all', {
+        const data = await this.apiService.postRequest<any>(API_WISHLIST_ALL, {
             token: token,
         });
 

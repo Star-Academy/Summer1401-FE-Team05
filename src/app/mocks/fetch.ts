@@ -1,4 +1,4 @@
-import {API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER, API_WISHLIST_REMOVE} from '../utils/urls';
+import {API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER, API_WISHLIST_REMOVE, API_WISHLIST_ALL} from '../utils/urls';
 import {User} from '../models/user.model';
 
 export const VALID_TOKEN: string =
@@ -18,6 +18,9 @@ export const VALID_USER_SIGNUP_DATA: User = {
 export class FetchMock {
     private static get tokenObjectResponse(): Response {
         return new Response(JSON.stringify({id: 23, token: VALID_TOKEN}), {status: 200});
+    }
+    private static get gamesResponse(): Response {
+        return new Response(JSON.stringify([{name: 'Read Dead Redemption 2'}]));
     }
 
     private static get userResponse(): Response {
@@ -56,6 +59,10 @@ export class FetchMock {
 
             if (url === API_USER_REGISTER && FetchMock.isEqual(body, VALID_USER_SIGNUP_DATA))
                 return FetchMock.tokenObjectResponse;
+
+            if (url === API_WISHLIST_ALL && FetchMock.isEqual(body, {token: VALID_TOKEN})) {
+                return FetchMock.gamesResponse;
+            }
         } else if (init && init.body && init.method === 'delete') {
             const body = JSON.parse(init.body as any);
             if (url === API_WISHLIST_REMOVE && body.token === VALID_TOKEN && body.id === 25015)

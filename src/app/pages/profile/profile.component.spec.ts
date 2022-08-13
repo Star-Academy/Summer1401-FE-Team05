@@ -4,6 +4,7 @@ import {ApiService} from 'src/app/services/api.service';
 import {AuthService} from 'src/app/services/auth.service';
 
 import {ProfileComponent} from './profile.component';
+import {FetchMock} from '../../mocks/fetch';
 
 describe('ProfileComponent', () => {
     let component: ProfileComponent;
@@ -11,6 +12,8 @@ describe('ProfileComponent', () => {
     let authService: AuthService;
     let apiService: ApiService;
     let host: HTMLElement;
+    let fetchMock: FetchMock;
+
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [ProfileComponent],
@@ -25,6 +28,9 @@ describe('ProfileComponent', () => {
         host = fixture.nativeElement as HTMLElement;
         authService = TestBed.inject(AuthService);
         apiService = TestBed.inject(ApiService);
+
+        fetchMock = new FetchMock();
+        spyOn(window, 'fetch').and.callFake(fetchMock.fetch.bind(fetchMock));
     });
 
     it('should create the component', () => {
@@ -43,7 +49,10 @@ describe('ProfileComponent', () => {
         expect(component.wishlist).toBeFalsy();
     });
 
-    // it('should check if ', () => {
-    //     expect(component.wishlist).toBeFalsy();
-    // });
+    it('should check if ', () => {
+        component.refreshWishlist();
+
+        fixture.detectChanges();
+        expect(component.wishlist).toBeTruthy();
+    });
 });
