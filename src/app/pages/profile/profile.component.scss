@@ -66,9 +66,6 @@
     font-size: var(--sm-font-size);
 }
 
-.account-data p {
-}
-
 .account-data span {
     color: var(--text2-dark);
 
@@ -83,7 +80,6 @@
 
     padding: 1rem;
 
-    border: none;
     border: 0.1rem solid var(--danger-dark);
     border-radius: 0.3rem;
 
@@ -171,26 +167,14 @@
     font-size: 1.2rem;
 }
 
-.card-data p {
-}
-
 .card-data span {
     color: var(--text2-dark);
 
     font-weight: bold;
 }
 
-.card-title {
-}
-
 .init-price {
     text-decoration: line-through;
-}
-
-.card-sale {
-}
-
-.final-price {
 }
 
 .remove-game {
@@ -253,6 +237,7 @@
         column-gap: 4rem;
     }
 }
+
 @media (min-width: 50em) {
     .card-data {
         grid-template-columns: repeat(4, auto);
@@ -264,6 +249,7 @@
         padding-inline-end: 4rem;
     }
 }
+
 @media (min-width: 60em) {
     .profile-container {
         grid-template-columns: minmax(28rem, 25%) 1fr;
