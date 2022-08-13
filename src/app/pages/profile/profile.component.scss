@@ -1,40 +1,42 @@
 .profile-container {
     display: grid;
-    gap: 2rem;
+    gap: var(--md-gap);
     padding: 4rem 2rem;
     color: var(--text1-dark);
+
+    .main-header {
+        align-self: flex-start;
+        border-inline-start: 0.3rem solid var(--brand-dark);
+        padding: var(--xs-padding) var(--sm-padding);
+        font-size: var(--xl-font-size);
+    }
+    .account {
+        background-color: var(--surface2-dark);
+        padding: var(--md-padding);
+        border-radius: var(--default-border-radius);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--md-gap);
+
+        .data-title {
+            font-size: var(--md-font-size);
+        }
+
+        .avatar {
+            width: 15rem;
+            height: 15rem;
+            border-radius: 50%;
+            display: grid;
+            align-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 0 0.3rem var(--surface3-dark), 0 0 0 0.6rem var(--brand-dark);
+        }
+    }
 }
 
-.main-header {
-    align-self: flex-start;
-    border-inline-start: 0.3rem solid var(--brand-dark);
-    padding: 0.6rem 1.2rem;
-    font-size: 2.4rem;
-}
-
-.account {
-    background-color: var(--surface2-dark);
-    padding: 2rem;
-    border-radius: 0.3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-.data-title {
-    font-size: 1.8rem;
-}
-.avatar {
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-    display: grid;
-    align-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 0 0 0.3rem var(--surface3-dark), 0 0 0 0.6rem var(--brand-dark);
-}
 .avatar img {
     width: 100%;
 }
@@ -44,9 +46,9 @@
     display: grid;
     align-items: center;
     grid-template-columns: repeat(2, auto);
-    row-gap: 1.4rem;
-    column-gap: 1rem;
-    font-size: 1.4rem;
+    row-gap: var(--md-gap);
+    column-gap: var(--sm-gap);
+    font-size: var(--sm-font-size);
 }
 .account-data p {
 }

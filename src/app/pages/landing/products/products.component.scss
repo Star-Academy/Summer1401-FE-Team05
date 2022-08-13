@@ -4,6 +4,7 @@
     .control-btns {
         display: flex;
         gap: 2rem;
+        padding-inline: 2rem;
 
         .cards-left,
         .cards-right {
@@ -35,6 +36,10 @@
 @media (min-width: 30em) {
     .cards-container {
         padding-inline: max(calc((100% - 120rem) / 2), 5rem);
+
+        .control-btns {
+            padding-inline: 2rem;
+        }
 
         .scroll-cards {
             gap: calc(20rem / 3);
