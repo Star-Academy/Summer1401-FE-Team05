@@ -21,12 +21,12 @@ describe('ApiService', () => {
     });
 
     it('tests valid request', async () => {
-        const res = await service.post<Token>(API_USER_AUTH, {token: VALID_TOKEN});
+        const res = await service.postRequest<Token>(API_USER_AUTH, {token: VALID_TOKEN});
         expect(res?.token).toBeTruthy();
     });
 
     it('tests invalid request', async () => {
-        const res = await service.post<Token>(API_USER_AUTH, {token: ''});
+        const res = await service.postRequest<Token>(API_USER_AUTH, {token: ''});
         expect(res?.token).toBeFalsy();
     });
 });
