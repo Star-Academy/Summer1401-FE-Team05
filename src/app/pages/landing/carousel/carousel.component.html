@@ -1,9 +1,15 @@
 <div class="slideshow" [style.--active-index]="activeIndex">
     <ol>
-        <li *ngFor="let item of items; index as index" [class.active]="index === activeIndex">
-            <img [src]="item.src" alt="" />
-        </li>
-
+        <ng-container *ngIf="!images; else screenshots">
+            <li *ngFor="let item of items; index as index" [class.active]="index === activeIndex">
+                <img [src]="item.src" alt="" />
+            </li>
+        </ng-container>
+        <ng-template #screenshots>
+            <li *ngFor="let image of images?.screenshots; index as index" [class.active]="index === activeIndex">
+                <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_med_2x/{{ image?.id }}.webp" alt="" />
+            </li>
+        </ng-template>
         <div class="overlay">
             <div class="controls">
                 <button (click)="changeActiveIndex(activeIndex - 1)"><i class="far fa-angle-right"></i></button>

@@ -13,9 +13,11 @@
             <p class="summary-text">
                 {{ currentGame?.summary }}
             </p>
-            <p class="genres" *ngFor="let genre of currentGame?.genres"><span>ژانر: </span>{{ genre?.name }}</p>
-            <p class="release-date"><span>تاریخ انتشار: </span>10/26/2018</p>
-            <!--  new Date(1540512000000).toLocaleDateString() -->
+            <span class="genres"
+                >ژانر:
+                <span class="genre" *ngFor="let genre of currentGame?.genres">{{ genre?.name }}</span>
+            </span>
+            <p class="release-date"><span>تاریخ انتشار: </span>{{ gameReleaseDate }}</p>
             <span>پلتفرم: </span>
             <p class="platform">
                 <ng-container *ngFor="let platform of currentGame?.platforms">
@@ -27,6 +29,7 @@
     </section>
     <section class="screenshots">
         <h2 class="details-title">تصاویری از بازی</h2>
+        <app-carousel [images]="currentGame?.screenshots"></app-carousel>
     </section>
     <section class="details">
         <h2 class="details-title">درباره بازی</h2>
@@ -35,6 +38,6 @@
         </p>
     </section>
     <section class="suggestions">
-        <h2 class="details-title">پیشنهادات</h2>
+        <app-products [subId]="currentGame?.genres[0]?.id" [subIndex]="'بازی های پیشنهادی'"></app-products>
     </section>
 </div>

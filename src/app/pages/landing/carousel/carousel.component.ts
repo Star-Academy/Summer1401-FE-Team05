@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild} from '@angular/core';
 import {Slide} from './models/slide';
 import {slides} from './slides';
 
@@ -12,6 +12,9 @@ interface Item {
     styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements AfterViewInit, OnDestroy {
+    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
+    @Input() images: any;
+
     private readonly INTERVAL_DELAY: number = 3000;
 
     public items: Item[] = [
@@ -20,8 +23,6 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
         {src: 'assets/images/banners/elden-ring.webp'},
         {src: 'assets/images/banners/horizen-forbidden-west.webp'},
         {src: 'assets/images/banners/LEGO-startwars-the-skywalker-saga.jpg'},
-        // {src: 'assets/images/banners/slide06.jpg'},
-        // {src: 'assets/images/banners/slide07.jpg'},
     ];
 
     public activeIndex: number = 0;

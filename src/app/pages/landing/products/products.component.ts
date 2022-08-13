@@ -1,6 +1,5 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
-import {cards} from './sample-data';
 import {ApiService} from '../../../services/api.service';
 import {FetchCategoriesDataService} from '../../../services/fetch-categories-data.service';
 import {Category} from '../../../components/header/categories/model/category';
@@ -25,7 +24,7 @@ export class ProductsComponent implements OnInit {
         this.scrollCards.nativeElement.scrollBy(250, 0);
     }
 
-    public someGame: any = cards;
+    public someGame: any;
 
     public categories: Category[];
 

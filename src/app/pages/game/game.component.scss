@@ -1,7 +1,7 @@
 .game-page-container {
     display: grid;
     gap: 2rem;
-    //padding: 4rem 2rem;
+    padding: 4rem 2rem;
     padding-inline: max(calc((100% - 120rem) / 2), 5rem);
     color: var(--text1-dark);
 }
@@ -31,11 +31,20 @@
     padding: 0.6rem 1.2rem;
 }
 .summary-text {
+    position: relative;
+
     font-family: Brutal, sans-serif;
     direction: ltr;
     align-self: end;
     font-size: 1.4rem;
     padding-block-end: 4rem;
+
+    /* hide extra summary */
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 19.1rem;
 }
 
 .genres,
@@ -50,6 +59,12 @@
 }
 
 .genres {
+    display: flex;
+    flex-wrap: wrap;
+
+    .genre {
+        padding-inline-start: var(--sm-padding);
+    }
 }
 .release-date {
 }
@@ -60,7 +75,7 @@
     background-color: transparent;
     color: var(--text1-dark);
     padding: 1rem;
-    border: none;
+    //border: none;
     z-index: 1;
     border-radius: 0.3rem;
     font-size: 1.2rem;
@@ -105,4 +120,14 @@
     background-color: var(--surface2-dark);
     padding: 2rem;
     border-radius: 0.3rem;
+}
+
+@media (max-width: 59em) {
+    .summary{
+        grid-template-columns: 1fr;
+    }
+
+    .game-summary {
+        padding-inline: 0;
+    }
 }

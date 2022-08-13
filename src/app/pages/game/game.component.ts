@@ -18,6 +18,8 @@ export class GameComponent implements OnInit {
 
     private gameId!: number;
 
+    public gameReleaseDate: Date | null = null;
+
     public currentGame: any;
 
     public ngOnInit(): void {
@@ -35,6 +37,8 @@ export class GameComponent implements OnInit {
         const data = await response.json();
 
         this.currentGame = await data.game;
+
+        this.gameReleaseDate = new Date(this.currentGame?.releaseDate);
     }
 
     public async addToWishlist(): Promise<void> {
