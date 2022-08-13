@@ -27,15 +27,13 @@ export class ProfileComponent {
     private async getAllWishlist(): Promise<void> {
         const token = localStorage.getItem('token');
 
-        const data = await this.apiService.postRequest<any>(API_WISHLIST_ALL, {
-            token: token,
-        });
+        const data = await this.apiService.postRequest<any>(API_WISHLIST_ALL, {token});
 
-        this.wishlist = await data?.games;
+        this.wishlist = data?.games;
     }
 
-    public refreshWishlist(): void {
-        this.getAllWishlist().then();
+    public async refreshWishlist(): Promise<void> {
+        await this.getAllWishlist();
     }
 
     private async getUser(): Promise<void> {

@@ -41,8 +41,10 @@ export class CategoriesComponent {
     }
 
     public subCategoryButtonHandler(e: any): void {
-        const btn = e.target?.closest('.drop-down-sub-button');
-        const link = e.target?.closest('.drop-down-content-links');
+        // @ts-ignore
+        const btn = e.target.closest('.drop-down-sub-button');
+        // @ts-ignore
+        const link = e.target.closest('.drop-down-content-links');
 
         if (!!btn && btn?.classList.contains('open')) {
             btn.classList.remove('open');

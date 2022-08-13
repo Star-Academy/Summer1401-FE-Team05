@@ -4,7 +4,8 @@ import {ApiService} from 'src/app/services/api.service';
 import {AuthService} from 'src/app/services/auth.service';
 
 import {ProfileComponent} from './profile.component';
-import {FetchMock} from '../../mocks/fetch';
+import {FetchMock, VALID_TOKEN} from '../../mocks/fetch';
+import {LocalStorageMock} from 'src/app/mocks/local-storage';
 
 describe('ProfileComponent', () => {
     let component: ProfileComponent;
@@ -13,6 +14,7 @@ describe('ProfileComponent', () => {
     let apiService: ApiService;
     let host: HTMLElement;
     let fetchMock: FetchMock;
+    let localStorageMock: LocalStorageMock;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -28,6 +30,11 @@ describe('ProfileComponent', () => {
         host = fixture.nativeElement as HTMLElement;
         authService = TestBed.inject(AuthService);
         apiService = TestBed.inject(ApiService);
+
+        localStorageMock = new LocalStorageMock();
+        spyOn(localStorage, 'getItem').and.callFake(localStorageMock.getItem.bind(localStorageMock));
+        spyOn(localStorage, 'setItem').and.callFake(localStorageMock.setItem.bind(localStorageMock));
+        spyOn(localStorage, 'removeItem').and.callFake(localStorageMock.removeItem.bind(localStorageMock));
 
         fetchMock = new FetchMock();
         spyOn(window, 'fetch').and.callFake(fetchMock.fetch.bind(fetchMock));
@@ -49,10 +56,9 @@ describe('ProfileComponent', () => {
         expect(component.wishlist).toBeFalsy();
     });
 
-    it('should check if ', () => {
-        component.refreshWishlist();
-
-        fixture.detectChanges();
+    it('should check if wishlist is getting updated', async () => {
+        localStorageMock.setItem('token', VALID_TOKEN);
+        const response = await component.refreshWishlist();
         expect(component.wishlist).toBeTruthy();
     });
 });

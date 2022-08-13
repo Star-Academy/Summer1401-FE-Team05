@@ -11,7 +11,7 @@ describe('HeaderComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [HeaderComponent],
-            imports: [CommonModule, RouterTestingModule],
+            imports: [RouterTestingModule],
         }).compileComponents();
     });
 
@@ -31,7 +31,7 @@ describe('HeaderComponent', () => {
         expect(headerElement).toBeTruthy();
     });
 
-    it('should open and close mobile navbar properly', () => {
+    it('should be close at the first time', () => {
         const navbar = host.querySelector('.nav');
         fixture.detectChanges();
         expect(navbar?.classList.contains('open')).toBeFalse();

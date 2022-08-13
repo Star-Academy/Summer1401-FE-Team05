@@ -14,13 +14,14 @@ export const VALID_USER_SIGNUP_DATA: User = {
     password: '12345',
     email: 'sina.programmer@gmail.com',
 };
+export const VALID_GAME_ID: number = 25015;
 
 export class FetchMock {
     private static get tokenObjectResponse(): Response {
         return new Response(JSON.stringify({id: 23, token: VALID_TOKEN}), {status: 200});
     }
     private static get gamesResponse(): Response {
-        return new Response(JSON.stringify([{name: 'Read Dead Redemption 2'}]));
+        return new Response(JSON.stringify({games: []}));
     }
 
     private static get userResponse(): Response {
@@ -60,12 +61,12 @@ export class FetchMock {
             if (url === API_USER_REGISTER && FetchMock.isEqual(body, VALID_USER_SIGNUP_DATA))
                 return FetchMock.tokenObjectResponse;
 
-            if (url === API_WISHLIST_ALL && FetchMock.isEqual(body, {token: VALID_TOKEN})) {
+            if (url === API_WISHLIST_ALL && body.token === VALID_TOKEN) {
                 return FetchMock.gamesResponse;
             }
         } else if (init && init.body && init.method === 'delete') {
             const body = JSON.parse(init.body as any);
-            if (url === API_WISHLIST_REMOVE && body.token === VALID_TOKEN && body.id === 25015)
+            if (url === API_WISHLIST_REMOVE && body.token === VALID_TOKEN && body.id === VALID_GAME_ID)
                 return FetchMock.tokenObjectResponse;
         }
 
