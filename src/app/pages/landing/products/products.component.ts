@@ -2,6 +2,8 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 
 import {cards} from './sample-data';
 import {ApiService} from '../../../services/api.service';
+import {FetchCategoriesDataService} from '../../../services/fetch-categories-data.service';
+import {Category} from '../../../components/header/categories/model/category';
 
 @Component({
     selector: 'app-products',
@@ -12,7 +14,9 @@ export class ProductsComponent implements OnInit {
     @ViewChild('scrollCards') private scrollCards!: ElementRef<HTMLElement>;
 
     // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() sub: number | null = null;
+    @Input() subId: number | null = null;
+    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
+    @Input() subIndex: string = '';
 
     public next(): void {
         this.scrollCards.nativeElement.scrollBy(-250, 0);
@@ -23,7 +27,11 @@ export class ProductsComponent implements OnInit {
 
     public someGame: any = cards;
 
-    public constructor(private apiService: ApiService) {}
+    public categories: Category[];
+
+    public constructor(private apiService: ApiService, private fetchCategoriesData: FetchCategoriesDataService) {
+        this.categories = fetchCategoriesData.fetchData();
+    }
 
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-member-accessibility
     ngOnInit() {
@@ -38,7 +46,7 @@ export class ProductsComponent implements OnInit {
             sort: 2,
             filters: {
                 gameModes: [],
-                genres: !!this.sub ? [this.sub] : [],
+                genres: !!this.subId ? [this.subId] : [],
                 keywords: [],
                 platforms: [],
                 playerPerspectives: [],

@@ -1,8 +1,20 @@
 .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
     padding-block: 10rem;
+
+    .sub-name {
+        border-inline-start: 0.3rem solid var(--brand-dark);
+        padding: var(--sm-padding);
+        margin-inline-start: var(--md-padding);
+
+        font-size: 2rem;
+    }
 
     .control-btns {
         display: flex;
+        justify-content: flex-end;
         gap: 2rem;
         padding-inline: 2rem;
 
@@ -20,6 +32,8 @@
     }
 
     .scroll-cards {
+        grid-column: 1/-1;
+
         overflow-x: scroll;
 
         display: flex;
@@ -37,8 +51,12 @@
     .cards-container {
         padding-inline: max(calc((100% - 120rem) / 2), 5rem);
 
+        .sub-name {
+            margin: 0;
+        }
+
         .control-btns {
-            padding-inline: 2rem;
+            padding-inline: 0;
         }
 
         .scroll-cards {
