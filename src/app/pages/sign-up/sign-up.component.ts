@@ -23,6 +23,8 @@ export class SignUpComponent {
 
     public user: User = {
         username: '',
+        firstName: '',
+        lastName: '',
         password: '',
         email: '',
     };

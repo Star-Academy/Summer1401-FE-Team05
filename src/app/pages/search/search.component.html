@@ -5,3 +5,8 @@
     (newDoSearchEventEmitter)="doSearch()"
 ></app-filter>
 <app-card-grid [gamesData]="gamesData"></app-card-grid>
+<div class="btns-container">
+    <button (click)="nextPage()" title="صفحه بعد"><i class="fa-regular fa-angle-right"></i></button>
+    <span class="page-number">صفحه {{ pageNumber }}</span>
+    <button (click)="prevPage()" title="صفحه قبل"><i class="fa-regular fa-angle-left"></i></button>
+</div>

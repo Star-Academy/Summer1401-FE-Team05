@@ -59,6 +59,7 @@ export class SearchComponent implements OnInit {
             maximumRating: 99,
         },
     };
+    public pageNumber: number = 1;
 
     private async searchForData(): Promise<void> {
         const data = await this.apiService.postRequest<any>(
@@ -75,5 +76,21 @@ export class SearchComponent implements OnInit {
 
     public async doSearch(): Promise<void> {
         await this.searchForData();
+    }
+
+    public nextPage(): void {
+        this.searchSetting.offset += this.searchSetting.pageSize;
+        this.pageNumber++;
+
+        this.searchForData().then();
+    }
+    public prevPage(): void {
+        if (this.searchSetting.offset > this.searchSetting.pageSize) {
+            this.searchSetting.offset -= this.searchSetting.pageSize;
+
+            this.pageNumber--;
+        }
+
+        this.searchForData().then();
     }
 }
