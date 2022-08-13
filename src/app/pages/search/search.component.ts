@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
-import {CategoryFetchDataService} from '../../components/header/categories/services/category-fetch-data.service';
+import {FetchCategoriesDataService} from '../../services/fetch-categories-data.service';
 import {Category} from '../../components/header/categories/model/category';
 import {SearchPost} from '../../models/search-post';
 
@@ -16,14 +16,14 @@ export class SearchComponent implements OnInit {
         private router: Router,
         private activatedRoute: ActivatedRoute,
         private apiService: ApiService,
-        private categoryFetchDataService: CategoryFetchDataService
+        private fetchCategoriesDataService: FetchCategoriesDataService
     ) {
         this.router.routeReuseStrategy.shouldReuseRoute = function (): boolean {
             return false;
         };
     }
 
-    private categories: Category[] = this.categoryFetchDataService.fetchData();
+    private categories: Category[] = this.fetchCategoriesDataService.fetchData();
 
     public ngOnInit(): any {
         this.activatedRoute.queryParamMap.subscribe((params) => {

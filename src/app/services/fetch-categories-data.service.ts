@@ -1,11 +1,10 @@
 import {Injectable} from '@angular/core';
-
-import {Category} from '../model/category';
+import {Category} from '../components/header/categories/model/category';
 
 @Injectable({
     providedIn: 'root',
 })
-export class CategoryFetchDataService {
+export class FetchCategoriesDataService {
     private data: Category[] = [
         {
             title: 'ژانر ها',
@@ -106,7 +105,7 @@ export class CategoryFetchDataService {
             ],
         },
         {
-            title: 'تم',
+            title: 'تم ها',
             searchName: 'themes',
             subCategories: [
                 {

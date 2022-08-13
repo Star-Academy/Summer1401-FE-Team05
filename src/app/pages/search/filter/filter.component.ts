@@ -1,7 +1,8 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import {FilterDataService} from './service/filter-data.service';
+
 import {Category} from '../../../components/header/categories/model/category';
 import {Router} from '@angular/router';
+import {FetchCategoriesDataService} from '../../../services/fetch-categories-data.service';
 
 @Component({
     selector: 'app-filter',
@@ -19,9 +20,9 @@ export class FilterComponent {
     // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
     @Output() newDoSearchEventEmitter = new EventEmitter<void>();
 
-    public constructor(private filterData: FilterDataService, private router: Router) {}
+    public constructor(private filterData: FetchCategoriesDataService, private router: Router) {}
 
-    public filters: Category[] = this.filterData.fetchFilterData();
+    public filters: Category[] = this.filterData.fetchData();
 
     public checkboxChange(e: any, kindOfFilter: string): void {
         if (e.target.checked) this.searchSetting.filters[kindOfFilter].push(Number.parseInt(e.target.name));

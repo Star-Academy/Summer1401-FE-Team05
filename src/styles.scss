@@ -24,10 +24,29 @@
     --danger-dark: hsl(0 80% 65%);
     --surface-shadow-dark: var(--brand-hue) 50% 3%;
 
-    --mobile-inline-padding: 2rem;
+    --xs-font-size: 1.2rem;
+    --sm-font-size: 1.4rem;
+    --md-font-size: 1.8rem;
+    --lg-font-size: 2rem;
+    --xl-font-size: 2.4rem;
 
-    --mobile-header-block-padding: 1.5rem;
-    --mobile-nav-block-padding: 3rem;
+    --xs-gap: 0.5rem;
+    --sm-gap: 1rem;
+    --md-gap: 2rem;
+    --lg-gap: 3rem;
+    --xl-gap: 4rem;
+
+
+
+    --xs-padding: 0.5rem;
+    --sm-padding: 1rem;
+    --md-padding: 2rem;
+    --lg-padding: 4rem;
+    --xl-padding: 6rem;
+
+    --container-padding: max(calc((100% - 160rem) / 2), var(--md-padding));
+
+    --logo-flex: 0 0 12rem;
 
     --default-border-radius: 0.3rem;
 }
@@ -63,6 +82,8 @@ body {
             padding: 0;
 
             border: 0;
+
+            inset-block-start: 2rem !important;
 
             > .ngxp__arrow {
                 &::before {

@@ -21,4 +21,8 @@ export class HeaderComponent {
     public handleSubmit(): void {
         this.router.navigate(['/search'], {queryParams: {searchText: this.searchText}}).then();
     }
+
+    public closeNav(): void {
+        this.isMobileNavOpen = false;
+    }
 }

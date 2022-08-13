@@ -10,8 +10,8 @@
     justify-content: space-between;
     gap: 2rem;
 
-    padding-block: var(--mobile-header-block-padding);
-    padding-inline: var(--mobile-inline-padding);
+    padding-block: var(--md-padding);
+    padding-inline: var(--md-padding);
 
     font-size: 2rem;
 
@@ -32,15 +32,13 @@
 
         display: flex;
         flex-direction: column;
-        gap: var(--mobile-nav-block-padding);
+        gap: var(--lg-gap);
 
         min-block-size: calc(100vh - 100%);
 
         inline-size: 100%;
 
-        padding-block: var(--mobile-nav-block-padding);
-
-        padding-inline: var(--mobile-inline-padding);
+        padding: var(--lg-padding) var(--md-padding);
 
         transition: transform 300ms ease;
 
@@ -64,7 +62,7 @@
 
                 inline-size: 100%;
 
-                padding: 1rem 4rem 1rem 2rem;
+                padding: var(--sm-padding) var(--lg-padding) var(--sm-padding) var(--md-padding);
 
                 border-radius: var(--default-border-radius);
 
@@ -109,10 +107,10 @@
         .account {
             background-color: var(--surface2-dark);
 
-            padding: 0.5rem 2rem;
+            padding: var(--xs-padding) var(--md-padding);
 
             border: 0.1rem solid var(--text1-dark);
-            border-radius: 0.5rem;
+            border-radius: var(--default-border-radius);
 
             cursor: pointer;
         }

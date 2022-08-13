@@ -10,7 +10,7 @@
         </form>
         <ul class="main-nav">
             <li class="current-page"><a routerLink="/">خانه</a></li>
-            <li><app-categories></app-categories></li>
+            <li><app-categories (newCloseMobileNavEventEmitter)="closeNav()"></app-categories></li>
         </ul>
     </nav>
 

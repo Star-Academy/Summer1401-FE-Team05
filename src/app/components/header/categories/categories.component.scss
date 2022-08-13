@@ -1,78 +1,138 @@
-span {
-    display: inline-block;
+.desktop-categories-wrapper {
+    span {
+        display: inline-block;
 
-    padding: 1.5rem 1rem;
+        padding: 1.5rem 1rem;
 
-    cursor: default;
+        cursor: default;
 
-    &:hover {
-        background-color: transparent;
-    }
-}
-
-.mega-nav {
-    background-color: var(--surface1-dark);
-
-    display: grid;
-    grid-template-columns: auto 1fr;
-
-    inline-size: 90vw;
-    max-inline-size: 100rem;
-
-    padding: 1rem;
-
-    border-radius: 0.5rem;
-
-    font-family: Shabnam, sans-serif;
-
-    font-size: 1.8rem;
-
-    .categories {
-        display: flex;
-        flex-direction: column;
-
-        padding-block: 2rem;
-
-        li {
-            padding: 1rem;
-
-            cursor: default;
-
-            i {
-                justify-self: center;
-            }
-
-            &.active,
-            &:hover {
-                background-color: var(--surface3-dark);
-                color: var(--brand-hue);
-            }
+        &:hover {
+            background-color: transparent;
         }
     }
 
-    .sub-categories {
-        padding: 2rem;
+    .mega-nav {
+        background-color: var(--surface1-dark);
 
-        ul {
+        display: grid;
+        grid-template-columns: auto 1fr;
+
+        inline-size: 90vw;
+        max-inline-size: 100rem;
+
+        padding: 1rem;
+
+        border-radius: 0.5rem;
+
+        font-family: Shabnam, sans-serif;
+
+        font-size: 1.8rem;
+
+        .categories {
             display: flex;
             flex-direction: column;
-            flex-wrap: wrap;
 
-            block-size: 40rem;
+            padding-block: 2rem;
 
             li {
-                a {
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
+                padding: 1rem;
 
-                    padding: 1rem;
+                cursor: default;
 
-                    &:hover {
-                        color: var(--brand-hue);
+                i {
+                    justify-self: center;
+                }
+
+                &.active,
+                &:hover {
+                    background-color: var(--surface3-dark);
+                    color: var(--brand-hue);
+                }
+            }
+        }
+
+        .sub-categories {
+            padding: 2rem;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                block-size: 40rem;
+
+                li {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+
+                        padding: 1rem;
+
+                        &:hover {
+                            color: var(--brand-hue);
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+.mobile-categories-wrapper {
+    display: none;
+
+    .drop-down-main-btn {
+        display: flex;
+        align-items: flex-start;
+        border: none;
+        color: inherit;
+        background-color: var(--surface2-dark);
+    }
+    .drop-down {
+        padding-inline-start: var(--md-padding);
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: var(--xs-gap);
+    }
+    .drop-down-main-btn.open + .drop-down {
+        display: flex;
+    }
+
+    .drop-down-sub-button {
+        background-color: transparent;
+        border: none;
+        align-self: start;
+        padding-block-start: var(--sm-padding);
+    }
+    .drop-down-content {
+        padding-inline-start: var(--xs-padding);
+        display: none;
+        flex-direction: column;
+        gap: var(--sm-gap);
+        padding-block: var(--xs-padding);
+
+        border-radius: var(--default-border-radius);
+    }
+
+    .drop-down-sub-button.open + .drop-down-content {
+        display: flex;
+    }
+    .drop-down-content-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--xs-gap);
+        padding-inline-start: var(--md-padding);
+    }
+}
+
+@media (max-width: 60em) {
+    .mobile-categories-wrapper {
+        display: block;
+    }
+
+    .desktop-categories-wrapper {
+        display: none;
     }
 }
