@@ -1,19 +1,21 @@
 .btns-container {
-    inline-size: 100%;
-    padding-block-end: 10rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--lg-gap);
+
     min-block-size: 5rem;
+    inline-size: 100%;
+
+    padding-block-end: 10rem;
 
     button {
         background-color: var(--surface4-dark);
         color: var(--text1-dark);
 
-        inline-size: 5rem;
         block-size: 5rem;
+
+        inline-size: 5rem;
 
         border-radius: 50%;
 

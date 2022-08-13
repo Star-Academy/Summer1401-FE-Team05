@@ -1,50 +1,70 @@
 .game-page-container {
+    color: var(--text1-dark);
+
     display: grid;
     gap: 2rem;
-    padding: 4rem 2rem;
+
     padding-inline: max(calc((100% - 120rem) / 2), 5rem);
-    color: var(--text1-dark);
+    padding: 4rem 2rem;
 }
+
 .summary {
     background-color: var(--surface2-dark);
-    padding: 2rem;
-    border-radius: 0.3rem;
+
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
-}
-.game-summary {
-    padding: 6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: flex-start;
+
+    padding: 2rem;
+
     border-radius: 0.3rem;
 }
-.game-title {
-    font-family: Brutal, sans-serif;
-    direction: ltr;
-    align-self: flex-end;
-    font-size: 3rem;
-    padding-block-end: 4rem;
-    border-inline-start: 0.3rem solid var(--brand-dark);
-    padding: 0.6rem 1.2rem;
+
+.game-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+
+    padding: 6rem;
+
+    border-radius: 0.3rem;
 }
-.summary-text {
-    position: relative;
+
+.game-title {
+    align-self: flex-end;
+
+    direction: ltr;
+
+    padding-block-end: 4rem;
+    padding: 0.6rem 1.2rem;
+
+    border-inline-start: 0.3rem solid var(--brand-dark);
 
     font-family: Brutal, sans-serif;
-    direction: ltr;
+    font-size: 3rem;
+}
+
+.summary-text {
     align-self: end;
-    font-size: 1.4rem;
-    padding-block-end: 4rem;
+
+    direction: ltr;
+
+    position: relative;
+    overflow: hidden;
 
     /* hide extra summary */
     display: block;
+
+    max-height: 19.1rem;
+
+    padding-block-end: 4rem;
+
+    font-family: Brutal, sans-serif;
+    font-size: 1.4rem;
+
     text-overflow: ellipsis;
     word-wrap: break-word;
-    overflow: hidden;
-    max-height: 19.1rem;
 }
 
 .genres,
@@ -52,6 +72,7 @@
 .platform {
     font-size: 1.4rem;
 }
+
 .genres span,
 .release-date span,
 .platform span {
@@ -66,64 +87,89 @@
         padding-inline-start: var(--sm-padding);
     }
 }
+
 .release-date {
 }
+
 .platform {
     padding-block-end: 4rem;
 }
+
 .add-to-wishlist {
     background-color: transparent;
     color: var(--text1-dark);
-    padding: 1rem;
+
     //border: none;
     z-index: 1;
-    border-radius: 0.3rem;
-    font-size: 1.2rem;
-    cursor: pointer;
+
+    padding: 1rem;
+
     border: 0.1rem solid var(--text1-dark);
+    border-radius: 0.3rem;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
 }
 
 .add-to-wishlist:hover {
     background-color: var(--surface4-dark);
 }
+
 .add-to-wishlist:active {
     background-color: var(--surface3-dark);
 }
+
 .game-cover img {
     width: 100%;
     aspect-ratio: 16/9;
 }
+
 .details {
     background-color: var(--surface2-dark);
-    padding: 2rem;
-    border-radius: 0.3rem;
+
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    padding: 2rem;
+
+    border-radius: 0.3rem;
 }
+
 .details-title {
     align-self: flex-start;
-    font-size: 3rem;
+
     padding-block-end: 4rem;
-    border-inline-start: 0.3rem solid var(--brand-dark);
     padding: 0.6rem 1.2rem;
+
+    border-inline-start: 0.3rem solid var(--brand-dark);
+
+    font-size: 3rem;
 }
+
 .details-description {
-    font-family: Brutal, sans-serif;
-    direction: ltr;
     align-self: end;
-    font-size: 1.8rem;
+
+    direction: ltr;
+
     padding-block-end: 4rem;
+
+    font-family: Brutal, sans-serif;
+    font-size: 1.8rem;
 }
+
 .screenshots,
 .suggestions {
     background-color: var(--surface2-dark);
+
     padding: 2rem;
+
     border-radius: 0.3rem;
 }
 
 @media (max-width: 59em) {
-    .summary{
+    .summary {
         grid-template-columns: 1fr;
     }
 

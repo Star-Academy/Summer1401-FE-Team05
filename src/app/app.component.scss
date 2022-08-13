@@ -1,7 +1,10 @@
 :host {
+    background-color: var(--surface1-dark);
+
+    overflow-x: hidden;
+
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-    background-color: var(--surface1-dark);
+
     min-block-size: 100vh;
 }

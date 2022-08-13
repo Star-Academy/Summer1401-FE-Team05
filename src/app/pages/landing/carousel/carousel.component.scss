@@ -3,10 +3,11 @@
 
     aspect-ratio: 16/9;
 
-    padding-inline: max(calc((100% - 120rem) / 2), 2rem);;
+    padding-inline: max(calc((100% - 120rem) / 2), 2rem);
 
     ol {
         position: relative;
+
         display: flex;
 
         gap: 100%;
@@ -24,7 +25,6 @@
                 object-fit: cover;
             }
         }
-
 
         .overlay {
             position: absolute;

@@ -64,18 +64,19 @@
         }
 
         .filter-title {
-            inline-size: 100%;
-            text-align: center;
-
             justify-self: center;
 
             background-color: var(--surface3-dark);
+
+            inline-size: 100%;
 
             padding-block: 1rem;
 
             padding-inline: 2rem;
 
             font-size: 1.6rem;
+
+            text-align: center;
         }
 
         .label {
@@ -136,8 +137,8 @@
             grid-template-columns: repeat(5, 1fr);
 
             .player-perspective-filter {
-                grid-template-columns: repeat(2, 1fr);
                 grid-column: 1/-4;
+                grid-template-columns: repeat(2, 1fr);
 
                 .filter-title {
                     grid-column: -1/1;
@@ -171,8 +172,8 @@
 @media (max-width: 39em) {
     .filter-container {
         .filter-heading {
-            gap: 2rem;
             flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .filters {
@@ -189,8 +190,8 @@
 @media (max-width: 24em) {
     .filter-container {
         .filter-heading {
-            gap: 2rem;
             flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .filters {

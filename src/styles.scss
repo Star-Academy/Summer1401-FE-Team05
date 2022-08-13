@@ -21,7 +21,7 @@
     --surface2-dark: hsl(var(--brand-hue) 15% 15%);
     --surface3-dark: hsl(var(--brand-hue) 10% 20%);
     --surface4-dark: hsl(var(--brand-hue) 10% 25%);
-    --danger-dark: hsl(0 80% 65%);
+    --danger-dark: hsl(0deg 80% 65%);
     --surface-shadow-dark: var(--brand-hue) 50% 3%;
 
     --xs-font-size: 1.2rem;
@@ -35,8 +35,6 @@
     --md-gap: 2rem;
     --lg-gap: 3rem;
     --xl-gap: 4rem;
-
-
 
     --xs-padding: 0.5rem;
     --sm-padding: 1rem;
@@ -127,6 +125,7 @@ ul,
 ol {
     list-style: none;
 }
+
 button {
     cursor: pointer;
 }

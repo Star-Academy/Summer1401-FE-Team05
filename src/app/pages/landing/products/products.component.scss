@@ -5,9 +5,10 @@
     padding-block: 10rem;
 
     .sub-name {
-        border-inline-start: 0.3rem solid var(--brand-dark);
-        padding: var(--sm-padding);
         margin-inline-start: var(--md-padding);
+        padding: var(--sm-padding);
+
+        border-inline-start: 0.3rem solid var(--brand-dark);
 
         font-size: 2rem;
     }
@@ -16,34 +17,39 @@
         display: flex;
         justify-content: flex-end;
         gap: 2rem;
+
         padding-inline: 2rem;
 
         .cards-left,
         .cards-right {
             background-color: var(--surface4-dark);
             color: var(--text2-dark);
+
             display: grid;
             place-items: center;
-            inline-size: 4rem;
+
             block-size: 4rem;
+            inline-size: 4rem;
+
             border-radius: 50%;
+
             font-size: 2rem;
         }
     }
 
     .scroll-cards {
-        grid-column: 1/-1;
-
         overflow-x: scroll;
 
         display: flex;
+        grid-column: 1/-1;
         gap: 2rem;
 
         scroll-behavior: smooth;
 
+        padding-block: 2rem;
+
         padding-inline: calc((100% - 25rem) / 2);
         scroll-snap-type: x mandatory;
-        padding-block: 2rem;
     }
 }
 
