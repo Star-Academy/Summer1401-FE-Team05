@@ -24,7 +24,7 @@ export class ProfileComponent {
     public wishlist: any = null;
 
     private async getAllWishlist(): Promise<void> {
-        const token = await localStorage.getItem('token');
+        const token = localStorage.getItem('token');
 
         const data = await this.apiService.postRequest<any>('https://api.bijanprogrammer.com/games/wishlist/all', {
             token: token,

@@ -1,6 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild} from '@angular/core';
-import {Slide} from './models/slide';
-import {slides} from './slides';
+import {AfterViewInit, Component, Input, OnDestroy} from '@angular/core';
 
 interface Item {
     src: string;

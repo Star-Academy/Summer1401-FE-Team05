@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ApiService} from '../../services/api.service';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
@@ -9,12 +8,7 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements OnInit {
-    public constructor(
-        private route: ActivatedRoute,
-        private apiService: ApiService,
-        private authService: AuthService,
-        private router: Router
-    ) {}
+    public constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {}
 
     private gameId!: number;
 
@@ -47,7 +41,7 @@ export class GameComponent implements OnInit {
             return;
         }
 
-        const token = await localStorage.getItem('token');
+        const token = localStorage.getItem('token');
         const fetchBody = {
             token: token,
             gameId: this.currentGame.id,

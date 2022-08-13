@@ -1,4 +1,4 @@
-import {API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER} from '../utils/urls';
+import {API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER, API_WISHLIST_REMOVE} from '../utils/urls';
 import {User} from '../models/user.model';
 
 export const VALID_TOKEN: string =
@@ -55,6 +55,10 @@ export class FetchMock {
                 return FetchMock.tokenObjectResponse;
 
             if (url === API_USER_REGISTER && FetchMock.isEqual(body, VALID_USER_SIGNUP_DATA))
+                return FetchMock.tokenObjectResponse;
+        } else if (init && init.body && init.method === 'delete') {
+            const body = JSON.parse(init.body as any);
+            if (url === API_WISHLIST_REMOVE && body.token === VALID_TOKEN && body.id === 25015)
                 return FetchMock.tokenObjectResponse;
         }
 

@@ -15,8 +15,8 @@ export class RowCardComponent implements OnInit {
     @Output() newRefreshWishlistEventEmitter = new EventEmitter<void>();
 
     public async deleteWishlistItem(_id: number): Promise<void> {
-        const token = await localStorage.getItem('token');
-        await this.apiService.deleteRequest<void>('https://api.bijanprogrammer.com/games//wishlist/remove', {
+        const token = localStorage.getItem('token');
+        await this.apiService.deleteRequest('https://api.bijanprogrammer.com/games//wishlist/remove', {
             token: token,
             gameId: _id,
         });
