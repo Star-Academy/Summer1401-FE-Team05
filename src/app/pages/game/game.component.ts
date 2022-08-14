@@ -38,7 +38,6 @@ export class GameComponent implements OnInit {
     public async addToWishlist(): Promise<void> {
         if (!this.authService.isUserLoggedIn) {
             await this.router.navigateByUrl('/sign-in');
-            return;
         }
 
         const token = localStorage.getItem('token');

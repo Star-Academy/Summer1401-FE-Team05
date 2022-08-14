@@ -33,7 +33,17 @@ describe('RowCardComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should create2', async () => {
+    it('should delete item from wishlist', async () => {
         await component.deleteWishlistItem(VALID_GAME_ID);
+    });
+    it('should show the off percentage in wishlist', () => {
+        component.cardGame = {
+            priceOnSale: 18000,
+            price: 19000,
+        };
+
+        fixture.detectChanges();
+
+        component.ngOnInit();
     });
 });

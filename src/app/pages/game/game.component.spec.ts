@@ -1,6 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
-import {AuthService} from 'src/app/services/auth.service';
 import {GameComponent} from './game.component';
 
 describe('GameComponent', () => {
@@ -11,7 +10,6 @@ describe('GameComponent', () => {
         await TestBed.configureTestingModule({
             declarations: [GameComponent],
             imports: [RouterTestingModule],
-            providers: [AuthService],
         }).compileComponents();
     });
 
@@ -24,9 +22,4 @@ describe('GameComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
-
-    // it('should create', () => {
-    //     // const signUpMethodSpy = spyOn(response, 'json');
-    //     // expect(signUpMethodSpy).toHaveBeenCalled();
-    // });
 });

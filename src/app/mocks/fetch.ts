@@ -1,5 +1,6 @@
 import {API_USER_AUTH, API_USER_LOGIN, API_USER_REGISTER, API_WISHLIST_REMOVE, API_WISHLIST_ALL} from '../utils/urls';
 import {User} from '../models/user.model';
+import {gameObject} from './gameRespons';
 
 export const VALID_TOKEN: string =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjMsImlhdCI6MTY1ODg4Mjc3Mn0._eFaFDUrI4JL5NS-d6f0J0dTgTyu51oc6AyoS7qHn0U';
@@ -50,6 +51,9 @@ export class FetchMock {
     public async fetch(url: RequestInfo, init?: RequestInit): Promise<Response> {
         if (!init || init.method === 'get') {
             if (url.toString().endsWith('23')) return FetchMock.userResponse;
+
+            if (url.toString().endsWith(VALID_GAME_ID.toString()))
+                return new Response(JSON.stringify(gameObject), {status: 200});
         } else if (init && init.body && init.method === 'post') {
             const body = JSON.parse(init.body as any);
 
