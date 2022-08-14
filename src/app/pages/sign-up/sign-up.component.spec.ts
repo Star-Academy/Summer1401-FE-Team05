@@ -68,6 +68,7 @@ describe('SignUpComponent', () => {
 
         const signUpMethodSpy = spyOn(authService, 'signUp');
         component.handleSubmit();
+        fixture.detectChanges();
         expect(signUpMethodSpy).toHaveBeenCalled();
     });
 

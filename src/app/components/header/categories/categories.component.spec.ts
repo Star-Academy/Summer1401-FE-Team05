@@ -50,11 +50,38 @@ describe('CategoriesComponent', () => {
         expect(dropDown?.classList.contains('open')).toBeFalse();
     });
 
-    it('should close mobile navbar subcategory properly', () => {
-        const dropDown = host.querySelector('.drop-down-main-btn');
+    it('should not open mobile navbar subcategory properly when clicks outside', () => {
+        const dropDown = host.querySelector('.drop-down');
+
         //@ts-ignore
         dropDown?.click();
         fixture.detectChanges();
-        expect(dropDown?.classList.contains('open')).toBeTrue();
+        expect(dropDown?.classList.contains('open')).toBeFalse();
+    });
+
+    it('should open mobile navbar subcategory when clicks on right button', () => {
+        const subDropDown = host.querySelector('.drop-down-sub-button');
+        //@ts-ignore
+        subDropDown?.click();
+        fixture.detectChanges();
+        expect(subDropDown?.classList.contains('open')).toBeTrue();
+    });
+
+    it('should close mobile navbar subcategory when clicks on right button', () => {
+        const subDropDown = host.querySelector('.drop-down-sub-button');
+        subDropDown?.classList.add('open');
+        fixture.detectChanges();
+        //@ts-ignore
+        subDropDown?.click();
+        fixture.detectChanges();
+        expect(subDropDown?.classList.contains('open')).toBeFalse();
+    });
+
+    it('should close mobile navbar subcategory when clicks on links', () => {
+        const subDropDownLink = host.querySelector('.drop-down-content-links');
+        //@ts-ignore
+        subDropDownLink?.click();
+        fixture.detectChanges();
+        expect(subDropDownLink?.classList.contains('open')).toBeFalse();
     });
 });

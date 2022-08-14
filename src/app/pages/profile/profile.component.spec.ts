@@ -26,7 +26,7 @@ describe('ProfileComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(ProfileComponent);
         component = fixture.componentInstance;
-        // fixture.detectChanges();
+        fixture.detectChanges();
         host = fixture.nativeElement as HTMLElement;
         authService = TestBed.inject(AuthService);
         apiService = TestBed.inject(ApiService);
@@ -49,6 +49,7 @@ describe('ProfileComponent', () => {
         const logoutMethodSpy = spyOn(authService, 'logout');
         //@ts-ignore
         logoutBtn?.click();
+        fixture.detectChanges();
         expect(logoutMethodSpy).toHaveBeenCalled();
     });
 
@@ -58,7 +59,9 @@ describe('ProfileComponent', () => {
 
     it('should check if wishlist is getting updated', async () => {
         localStorageMock.setItem('token', VALID_TOKEN);
+        fixture.detectChanges();
         const response = await component.refreshWishlist();
+        fixture.detectChanges();
         expect(component.wishlist).toBeTruthy();
     });
 });
