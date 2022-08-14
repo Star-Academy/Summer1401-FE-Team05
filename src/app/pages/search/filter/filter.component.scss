@@ -108,7 +108,7 @@
                 &::before {
                     content: "";
 
-                    background-color: hsl(240deg 50% 50%);
+                    background-color: var(--brand-dark2);
 
                     opacity: 0;
 

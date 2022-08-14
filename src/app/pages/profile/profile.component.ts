@@ -37,12 +37,14 @@ export class ProfileComponent {
     }
 
     private async getUser(): Promise<void> {
-        // @ts-ignore
-        const {id} = await this.authService.auth();
+        const response = await this.authService.auth();
 
-        // @ts-ignore
-        const {user} = await this.authService.getUserData(id);
+        const id = response?.id;
 
-        this.user = user;
+        if (!!id) {
+            const userData = await this.authService.getUserData(id);
+
+            this.user = userData?.user;
+        }
     }
 }

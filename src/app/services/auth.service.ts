@@ -58,7 +58,7 @@ export class AuthService {
         return await this.apiService.postRequest<{id: number}>(URLS.API_USER_AUTH, {token: token});
     }
 
-    public async getUserData(id: number): Promise<User | null> {
-        return await this.apiService.getRequest<User>(URLS.API_USER_ONE + `/${id}`);
+    public async getUserData(id: number): Promise<{user: User} | null> {
+        return await this.apiService.getRequest<{user: User}>(URLS.API_USER_ONE + `/${id}`);
     }
 }
