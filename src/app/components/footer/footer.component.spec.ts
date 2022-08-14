@@ -35,10 +35,4 @@ describe('FooterComponent', () => {
 
         expect(footerTag?.className).toEqual('footer');
     });
-
-    // it('should have footer__note', () => {
-    //     const footer__note = host.querySelector('.footer__note');
-    //
-    //     expect(footer__note).toBeTruthy();
-    // });
 });
