@@ -12,10 +12,8 @@ import {Category} from '../../../components/header/categories/model/category';
 export class ProductsComponent implements OnInit {
     @ViewChild('scrollCards') private scrollCards!: ElementRef<HTMLElement>;
 
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() subId: number | null = null;
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() subIndex: string = '';
+    @Input() public subId: number | null = null;
+    @Input() public subIndex: string = '';
 
     public next(): void {
         this.scrollCards.nativeElement.scrollBy(-250, 0);
@@ -32,8 +30,7 @@ export class ProductsComponent implements OnInit {
         this.categories = fetchCategoriesData.fetchData();
     }
 
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-member-accessibility
-    ngOnInit() {
+    public ngOnInit(): void {
         this.getSomeGame().then();
     }
 

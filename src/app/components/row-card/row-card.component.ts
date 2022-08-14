@@ -9,10 +9,9 @@ import {ApiService} from '../../services/api.service';
 export class RowCardComponent implements OnInit {
     public constructor(private apiService: ApiService) {}
 
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() cardGame: any = null;
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Output() newRefreshWishlistEventEmitter = new EventEmitter<void>();
+    @Input() public cardGame: any = null;
+
+    @Output() public newRefreshWishlistEventEmitter = new EventEmitter<void>();
 
     public async deleteWishlistItem(_id: number): Promise<void> {
         const token = localStorage.getItem('token');
@@ -26,8 +25,7 @@ export class RowCardComponent implements OnInit {
 
     public sale: number = 0;
 
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-member-accessibility
-    ngOnInit() {
+    public ngOnInit(): void {
         this.sale =
             this.cardGame?.priceOnSale === this.cardGame?.price
                 ? 0

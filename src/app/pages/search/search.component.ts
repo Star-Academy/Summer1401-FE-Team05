@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
 
     private categories: Category[] = this.fetchCategoriesDataService.fetchData();
 
-    public ngOnInit(): any {
+    public ngOnInit(): void {
         this.activatedRoute.queryParamMap.subscribe((params) => {
             this.order = {...params.keys, ...params};
         });

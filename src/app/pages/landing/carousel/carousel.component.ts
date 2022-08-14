@@ -10,8 +10,7 @@ interface Item {
     styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements AfterViewInit, OnDestroy {
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() images: any;
+    @Input() public images: any;
 
     private readonly INTERVAL_DELAY: number = 3000;
 

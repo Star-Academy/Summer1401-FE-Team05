@@ -6,6 +6,5 @@ import {Component, Input} from '@angular/core';
     styleUrls: ['./card-grid.component.scss'],
 })
 export class CardGridComponent {
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() gamesData: object[] | null = null;
+    @Input() public gamesData: object[] | null = null;
 }

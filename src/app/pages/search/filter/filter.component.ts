@@ -10,15 +10,11 @@ import {FetchCategoriesDataService} from '../../../services/fetch-categories-dat
     styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent {
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() searchSetting: any = '';
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() order: any = null;
+    @Input() public searchSetting: any = '';
+    @Input() public order: any = null;
 
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Output() newSearchSettingEventEmitter = new EventEmitter<any>();
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Output() newDoSearchEventEmitter = new EventEmitter<void>();
+    @Output() public newSearchSettingEventEmitter = new EventEmitter<any>();
+    @Output() public newDoSearchEventEmitter = new EventEmitter<void>();
 
     public constructor(private filterData: FetchCategoriesDataService, private router: Router) {}
 

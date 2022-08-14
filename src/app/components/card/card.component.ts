@@ -6,13 +6,11 @@ import {Component, Input, OnInit} from '@angular/core';
     styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Input() game: any;
+    @Input() public game: any;
 
     public imageSrc!: string;
 
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type,@typescript-eslint/explicit-member-accessibility
-    ngOnInit() {
+    public ngOnInit(): void {
         if (!!this.game?.cover?.id) {
             this.imageSrc = 'https://images.igdb.com/igdb/image/upload/t_cover_big/' + this.game.cover.id + '.png';
         } else {
