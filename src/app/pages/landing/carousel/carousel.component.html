@@ -2,7 +2,9 @@
     <ol>
         <ng-container *ngIf="!images; else screenshots">
             <li *ngFor="let item of items; index as index" [class.active]="index === activeIndex">
-                <img [src]="item.src" alt="" />
+                <a routerLink="{{ item.url }}">
+                    <img [src]="item.src" alt="" />
+                </a>
             </li>
         </ng-container>
         <ng-template #screenshots>
