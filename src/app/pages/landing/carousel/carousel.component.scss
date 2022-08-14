@@ -1,9 +1,7 @@
 .slideshow {
     overflow: hidden;
 
-    aspect-ratio: 16/9;
-
-    padding-inline: max(calc((100% - 120rem) / 2), 2rem);
+    padding: var(--lg-padding) max(calc((100% - 120rem) / 2), 2rem);
 
     ol {
         position: relative;

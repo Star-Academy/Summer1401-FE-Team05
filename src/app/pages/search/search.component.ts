@@ -4,6 +4,7 @@ import {ApiService} from '../../services/api.service';
 import {FetchCategoriesDataService} from '../../services/fetch-categories-data.service';
 import {Category} from '../../components/header/categories/model/category';
 import {SearchPost} from '../../models/search-post';
+import {API_GAME_SEARCH} from '../../utils/urls';
 
 @Component({
     templateUrl: './search.component.html',
@@ -25,22 +26,6 @@ export class SearchComponent implements OnInit {
 
     private categories: Category[] = this.fetchCategoriesDataService.fetchData();
 
-    public ngOnInit(): void {
-        this.activatedRoute.queryParamMap.subscribe((params) => {
-            this.order = {...params.keys, ...params};
-        });
-
-        if (!!this.order?.params?.category) {
-            // @ts-ignore
-            this.searchSetting.filters[this.order?.params?.category] =
-                [Number.parseInt(this.order?.params?.subCategory)] ?? [];
-        } else if (!!this.order?.params?.searchText) {
-            this.searchSetting.searchPhrase = this.order?.params?.searchText ?? '';
-        }
-
-        this.searchForData().then();
-    }
-
     public gamesData: any;
 
     public searchSetting: SearchPost = {
@@ -61,11 +46,24 @@ export class SearchComponent implements OnInit {
     };
     public pageNumber: number = 1;
 
+    public ngOnInit(): void {
+        this.activatedRoute.queryParamMap.subscribe((params) => {
+            this.order = {...params.keys, ...params};
+        });
+
+        if (!!this.order?.params?.category) {
+            // @ts-ignore
+            this.searchSetting.filters[this.order?.params?.category] =
+                [Number.parseInt(this.order?.params?.subCategory)] ?? [];
+        } else if (!!this.order?.params?.searchText) {
+            this.searchSetting.searchPhrase = this.order?.params?.searchText ?? '';
+        }
+
+        this.searchForData().then();
+    }
+
     private async searchForData(): Promise<void> {
-        const data = await this.apiService.postRequest<any>(
-            'https://api.bijanprogrammer.com/games/search',
-            this.searchSetting
-        );
+        const data = await this.apiService.postRequest<any>(API_GAME_SEARCH, this.searchSetting);
 
         this.gamesData = await data?.games;
     }

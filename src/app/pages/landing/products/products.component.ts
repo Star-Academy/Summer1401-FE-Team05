@@ -3,6 +3,8 @@ import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {ApiService} from '../../../services/api.service';
 import {FetchCategoriesDataService} from '../../../services/fetch-categories-data.service';
 import {Category} from '../../../components/header/categories/model/category';
+import {API_GAME_SEARCH} from '../../../utils/urls';
+import {Game} from "../../../models/game.model";
 
 @Component({
     selector: 'app-products',
@@ -12,8 +14,12 @@ import {Category} from '../../../components/header/categories/model/category';
 export class ProductsComponent implements OnInit {
     @ViewChild('scrollCards') private scrollCards!: ElementRef<HTMLElement>;
 
-    @Input() public subId: number | null = null;
+    @Input() public subId?: number;
     @Input() public subIndex: string = '';
+
+    public someGame!: Game[];
+
+    public categories: Category[];
 
     public next(): void {
         this.scrollCards.nativeElement.scrollBy(-250, 0);
@@ -21,10 +27,6 @@ export class ProductsComponent implements OnInit {
     public prev(): void {
         this.scrollCards.nativeElement.scrollBy(250, 0);
     }
-
-    public someGame: any;
-
-    public categories: Category[];
 
     public constructor(private apiService: ApiService, private fetchCategoriesData: FetchCategoriesDataService) {
         this.categories = fetchCategoriesData.fetchData();
@@ -52,10 +54,7 @@ export class ProductsComponent implements OnInit {
             },
         };
 
-        const data = await this.apiService.postRequest<any>(
-            'https://api.bijanprogrammer.com/games/search',
-            searchSetting
-        );
+        const data = await this.apiService.postRequest<any>(API_GAME_SEARCH, searchSetting);
 
         this.someGame = data?.games;
     }

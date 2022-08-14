@@ -14,8 +14,10 @@ export class CategoriesComponent {
     public NgxPopperjsPlacements = NgxPopperjsPlacements;
     public NgxPopperjsTriggers = NgxPopperjsTriggers;
 
+    public categoryOpen: boolean = false;
     public categories: Category[];
     public activeCategory!: Category;
+    @Output() public newCloseMobileNavEventEmitter = new EventEmitter<void>();
 
     public constructor(private fetchCategoriesDataService: FetchCategoriesDataService) {
         this.categories = fetchCategoriesDataService.fetchData();
@@ -30,11 +32,6 @@ export class CategoriesComponent {
             },
         },
     ];
-
-    // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-    @Output() newCloseMobileNavEventEmitter = new EventEmitter<void>();
-
-    public categoryOpen: boolean = false;
 
     public categoryButtonHandler(): void {
         this.categoryOpen = !this.categoryOpen;

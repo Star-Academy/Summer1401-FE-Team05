@@ -2,7 +2,7 @@ import {AfterViewInit, Component, Input, OnDestroy} from '@angular/core';
 
 interface Item {
     src: string;
-    url?: string;
+    url: string;
 }
 
 @Component({
@@ -13,14 +13,14 @@ interface Item {
 export class CarouselComponent implements AfterViewInit, OnDestroy {
     @Input() public images: any;
 
-    private readonly INTERVAL_DELAY: number = 3000;
+    private readonly INTERVAL_DELAY: number = 5000;
 
     public items: Item[] = [
         {src: 'assets/images/banners/COD-MW-II.jpg', url: '/games/559'},
         {src: 'assets/images/banners/dying-light-2-stay-human.jpg', url: '/games/102584'},
         {src: 'assets/images/banners/elden-ring.webp', url: '/games/119133'},
-        {src: 'assets/images/banners/horizen-forbidden-west.webp', url: '/games/112874'},
-        {src: 'assets/images/banners/LEGO-startwars-the-skywalker-saga.jpg', url: '/games/119305'},
+        {src: 'assets/images/banners/horizon-forbidden-west.webp', url: '/games/112874'},
+        {src: 'assets/images/banners/LEGO-star-wars-the-skywalker-saga.jpg', url: '/games/119305'},
     ];
 
     public activeIndex: number = 0;

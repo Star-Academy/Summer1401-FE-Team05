@@ -17,12 +17,11 @@ export class ProfileComponent {
     }
 
     public user?: User | null;
+    public wishlist: any = null;
 
     public async logout(): Promise<void> {
         await this.authService.logout();
     }
-
-    public wishlist: any = null;
 
     private async getAllWishlist(): Promise<void> {
         const token = localStorage.getItem('token');

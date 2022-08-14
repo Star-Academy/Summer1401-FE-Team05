@@ -8,15 +8,14 @@ import {Router} from '@angular/router';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-    public constructor(public authService: AuthService, private router: Router) {}
-
     public isMobileNavOpen: boolean = false;
+    public searchText: string | null = null;
+
+    public constructor(public authService: AuthService, private router: Router) {}
 
     public navButtonHandler(): void {
         this.isMobileNavOpen = !this.isMobileNavOpen;
     }
-
-    public searchText: string | null = null;
 
     public handleSubmit(): void {
         this.router.navigate(['/search'], {queryParams: {searchText: this.searchText}}).then();

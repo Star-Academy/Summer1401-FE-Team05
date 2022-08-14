@@ -1,8 +1,9 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 
 import {Category} from '../../../components/header/categories/model/category';
 import {Router} from '@angular/router';
 import {FetchCategoriesDataService} from '../../../services/fetch-categories-data.service';
+import {SearchPost} from '../../../models/search-post';
 
 @Component({
     selector: 'app-filter',
@@ -10,22 +11,31 @@ import {FetchCategoriesDataService} from '../../../services/fetch-categories-dat
     styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent {
-    @Input() public searchSetting: any = '';
+    @Input() public searchSetting!: SearchPost;
     @Input() public order: any = null;
 
     @Output() public newSearchSettingEventEmitter = new EventEmitter<any>();
     @Output() public newDoSearchEventEmitter = new EventEmitter<void>();
 
-    public constructor(private filterData: FetchCategoriesDataService, private router: Router) {}
+    public filters: Category[];
 
-    public filters: Category[] = this.filterData.fetchData();
+    public constructor(private filterData: FetchCategoriesDataService) {
+        this.filters = this.filterData.fetchData();
+    }
 
     public checkboxChange(e: any, kindOfFilter: string): void {
-        if (e.target.checked) this.searchSetting.filters[kindOfFilter].push(Number.parseInt(e.target.name));
-        else
+        console.log(typeof e);
+        if (e.target.checked) {
+            // @ts-ignore
+            this.searchSetting.filters[kindOfFilter].push(Number.parseInt(e.target.name));
+        } else {
+            // @ts-ignore
             this.searchSetting.filters[kindOfFilter] = this.searchSetting.filters[kindOfFilter].filter(
                 (x: number) => x !== Number.parseInt(e.target.name)
             );
+        }
+
+        this.searchSetting.filters['minimumRating'] = 0;
 
         this.updateSearchSetting(this.searchSetting);
     }

@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
+import {Game} from '../../models/game.model';
+import {GameService} from '../../services/game.service';
+import {API_WISHLIST_ADD} from '../../utils/urls';
 
 @Component({
     selector: 'app-game',
@@ -8,31 +11,30 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements OnInit {
-    public constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {}
+    // public gameReleaseDate: Date | null = null;
 
-    private gameId!: number;
+    public currentGame: Game = {
+        id: 0,
+        name: '',
+        screenshots: [],
+        genres: [],
+    };
 
-    public gameReleaseDate: Date | null = null;
+    public constructor(
+        private route: ActivatedRoute,
+        private authService: AuthService,
+        private router: Router,
+        private gameService: GameService
+    ) {}
 
-    public currentGame: any;
+    public async ngOnInit(): Promise<void> {
+        const gameId = this.getGameId();
 
-    public ngOnInit(): void {
-        this.getGameId();
+        this.currentGame = await this.gameService.getGameData(gameId);
     }
 
-    private getGameId(): void {
-        this.gameId = Number(this.route.snapshot.paramMap.get('id'));
-
-        this.getGameData(this.gameId).then();
-    }
-
-    private async getGameData(_id: number): Promise<void> {
-        const response = await fetch(`https://api.bijanprogrammer.com/games/one/${_id}`);
-        const data = await response.json();
-
-        this.currentGame = await data.game;
-
-        this.gameReleaseDate = new Date(this.currentGame?.releaseDate);
+    private getGameId(): number {
+        return Number(this.route.snapshot.paramMap.get('id'));
     }
 
     public async addToWishlist(): Promise<void> {
@@ -43,10 +45,10 @@ export class GameComponent implements OnInit {
         const token = localStorage.getItem('token');
         const fetchBody = {
             token: token,
-            gameId: this.currentGame.id,
+            gameId: this.currentGame?.id,
         };
 
-        await fetch('https://api.bijanprogrammer.com/games/wishlist/add', {
+        await fetch(API_WISHLIST_ADD, {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(fetchBody),

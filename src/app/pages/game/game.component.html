@@ -1,12 +1,7 @@
 <div class="game-page-container">
     <section class="summary">
         <div class="game-cover">
-            <img
-                src="https://images.igdb.com/igdb/image/upload/t_screenshot_med_2x/{{
-                    currentGame?.screenshots[0]?.id ? currentGame?.screenshots[0].id : currentGame?.cover?.id
-                }}.webp"
-                alt=""
-            />
+            <img src="{{ currentGame | gameBanner }}" alt="" />
         </div>
         <div class="game-summary">
             <h1 class="game-title">{{ currentGame?.name }}</h1>
@@ -17,7 +12,7 @@
                 >ژانر:
                 <span class="genre" *ngFor="let genre of currentGame?.genres">{{ genre?.name }}</span>
             </span>
-            <p class="release-date"><span>تاریخ انتشار: </span>{{ gameReleaseDate }}</p>
+            <!--            <p class="release-date"><span>تاریخ انتشار: </span>{{ gameReleaseDate }}</p>-->
             <span>پلتفرم: </span>
             <p class="platform">
                 <ng-container *ngFor="let platform of currentGame?.platforms">
@@ -38,6 +33,6 @@
         </p>
     </section>
     <section class="suggestions">
-        <app-products [subId]="currentGame?.genres[0]?.id" [subIndex]="'بازی های پیشنهادی'"></app-products>
+        <app-products [subId]="currentGame | gameGenre" [subIndex]="'بازی های پیشنهادی'"></app-products>
     </section>
 </div>

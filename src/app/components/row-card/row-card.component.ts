@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ApiService} from '../../services/api.service';
+import {API_WISHLIST_REMOVE} from '../../utils/urls';
 
 @Component({
     selector: 'app-row-card',
@@ -8,6 +9,7 @@ import {ApiService} from '../../services/api.service';
 })
 export class RowCardComponent implements OnInit {
     public constructor(private apiService: ApiService) {}
+    public sale: number = 0;
 
     @Input() public cardGame: any = null;
 
@@ -15,15 +17,13 @@ export class RowCardComponent implements OnInit {
 
     public async deleteWishlistItem(_id: number): Promise<void> {
         const token = localStorage.getItem('token');
-        await this.apiService.deleteRequest('https://api.bijanprogrammer.com/games//wishlist/remove', {
+        await this.apiService.deleteRequest(API_WISHLIST_REMOVE, {
             token: token,
             gameId: _id,
         });
 
         this.newRefreshWishlistEventEmitter.emit();
     }
-
-    public sale: number = 0;
 
     public ngOnInit(): void {
         this.sale =
