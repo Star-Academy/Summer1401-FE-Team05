@@ -31,7 +31,7 @@ describe('HeaderComponent', () => {
         expect(headerElement).toBeTruthy();
     });
 
-    it('should be close at the first time', () => {
+    it('should be closed at the first time', () => {
         const navbar = host.querySelector('.nav');
         fixture.detectChanges();
         expect(navbar?.classList.contains('open')).toBeFalse();

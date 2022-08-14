@@ -17,7 +17,7 @@
 
             transform: translateX(calc(var(--active-index) * 200%));
 
-            transition: transform 0.5s ease-in-out;
+            transition: transform 500ms ease-in-out;
 
             img {
                 block-size: 100%;
@@ -45,7 +45,7 @@
                 align-items: center;
                 gap: 1rem;
 
-                transition: opacity 0.1s ease-in-out;
+                transition: opacity 100ms ease-in-out;
 
                 button {
                     background-color: var(--surface4-dark);
