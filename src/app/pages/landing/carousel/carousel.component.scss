@@ -20,8 +20,8 @@
             transition: transform 0.5s ease-in-out;
 
             img {
-                width: 100%;
-                height: 100%;
+                inline-size: 100%;
+                blo: 100%;
                 object-fit: cover;
             }
         }
@@ -51,8 +51,8 @@
 
                     justify-content: center;
 
-                    width: 3rem;
-                    height: 3rem;
+                    inline-size: 3rem;
+                    block-size: 3rem;
 
                     border-radius: 999rem;
 
@@ -71,8 +71,8 @@
 
                     display: block;
 
-                    width: 1em;
-                    height: 1em;
+                    inline-size: 1em;
+                    block-size: 1em;
 
                     border-radius: 999rem;
 
@@ -81,7 +81,7 @@
                     &.active {
                         background-color: var(--surface3-dark);
 
-                        width: 2em;
+                        inline-size: 2em;
                     }
                 }
             }

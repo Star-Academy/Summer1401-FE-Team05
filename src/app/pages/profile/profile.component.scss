@@ -42,8 +42,8 @@
             align-content: center;
             align-items: center;
 
-            width: 15rem;
-            height: 15rem;
+            inline-size: 15rem;
+            block-size: 15rem;
 
             border-radius: 50%;
         }
@@ -51,7 +51,7 @@
 }
 
 .avatar img {
-    width: 100%;
+    inline-size: 100%;
 }
 
 .account-data {
@@ -145,8 +145,8 @@
     align-content: center;
     align-items: center;
 
-    width: 12rem;
-    height: 12rem;
+    inline-size: 12rem;
+    block-size: 12rem;
 
     border-radius: 0.3rem;
 
@@ -154,7 +154,7 @@
 }
 
 .card-img img {
-    width: 100%;
+    inline-size: 100%;
 }
 
 .card-data {
@@ -265,10 +265,6 @@
 
     .main-header {
         grid-column: 1/-1;
-    }
-
-    .card-data {
-        /* column-gap: 4rem; */
     }
 
     .card-data p {

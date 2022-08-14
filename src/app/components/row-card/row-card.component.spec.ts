@@ -41,9 +41,7 @@ describe('RowCardComponent', () => {
             priceOnSale: 18000,
             price: 19000,
         };
-
         fixture.detectChanges();
-
         component.ngOnInit();
     });
 });

@@ -19,8 +19,8 @@
     align-content: center;
     align-items: center;
 
-    width: 12rem;
-    height: 12rem;
+    inline-size: 12rem;
+    block-size: 12rem;
 
     border-radius: 0.3rem;
 
@@ -99,10 +99,6 @@
 }
 
 @media (min-width: 60em) {
-    .card-data {
-        /* column-gap: 4rem; */
-    }
-
     .card-data p {
         grid-row: 2/3;
 
