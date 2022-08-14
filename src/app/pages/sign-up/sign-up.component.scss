@@ -16,7 +16,7 @@
         padding-block-end: 8rem;
         padding-inline: 10rem;
 
-        border-radius: 0.3rem;
+        border-radius: var(--default-border-radius);
 
         clip-path: polygon(0 0, 100% 0, 100% 100%, 5rem 100%, 0% calc(100% - 5rem));
 
@@ -42,7 +42,7 @@
                 padding: 1rem 2rem;
 
                 border: 0.2rem solid var(--text2-dark);
-                border-radius: 0.3rem;
+                border-radius: var(--default-border-radius);
 
                 font-size: 1.6rem;
             }
@@ -54,7 +54,7 @@
 
             padding-block: 1rem;
 
-            border-radius: 0.3rem;
+            border-radius: var(--default-border-radius);
 
             clip-path: polygon(0 0, 100% 0, 100% 100%, 2rem 100%, 0% calc(100% - 2rem));
 

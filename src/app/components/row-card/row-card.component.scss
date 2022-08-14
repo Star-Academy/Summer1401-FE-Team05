@@ -9,7 +9,7 @@
 
     padding: 2rem;
 
-    border-radius: 0.3rem;
+    border-radius: var(--default-border-radius);
 }
 
 .card-img {
@@ -22,7 +22,7 @@
     block-size: 12rem;
     inline-size: 12rem;
 
-    border-radius: 0.3rem;
+    border-radius: var(--default-border-radius);
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1.6rem 100%, 0% calc(100% - 1.6rem));
 }
@@ -60,7 +60,7 @@
     padding: 1rem;
 
     border: 0.1rem solid var(--text1-dark);
-    border-radius: 0.3rem;
+    border-radius: var(--default-border-radius);
 
     font-size: 1.2rem;
 
