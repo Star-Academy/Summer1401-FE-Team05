@@ -5,169 +5,171 @@
     gap: 2rem;
 
     padding: 4rem max(calc((100% - 120rem) / 2), 2rem);
-}
 
-.summary {
-    background-color: var(--surface2-dark);
+    .summary {
+        background-color: var(--surface2-dark);
 
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
 
-    padding: 2rem;
+        padding: 2rem;
 
-    border-radius: 0.3rem;
-}
+        border-radius: var(--default-border-radius);
 
-.game-summary {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
+        .game-cover {
+            img {
+                inline-size: 100%;
+                aspect-ratio: 16/9;
+            }
+        }
 
-    padding: 6rem;
+        .game-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
 
-    border-radius: 0.3rem;
-}
+            padding: 6rem;
 
-.game-title {
-    align-self: flex-end;
+            border-radius: var(--default-border-radius);
 
-    direction: ltr;
+            .game-title {
+                align-self: flex-end;
 
-    padding-block-end: 4rem;
-    padding: 0.6rem 1.2rem;
+                direction: ltr;
 
-    border-inline-start: 0.3rem solid var(--brand-dark);
+                padding-block-end: 4rem;
+                padding: 0.6rem 1.2rem;
 
-    font-family: Brutal, sans-serif;
-    font-size: 3rem;
-}
+                border-inline-start: 0.3rem solid var(--brand-dark);
 
-.summary-text {
-    align-self: end;
+                font-family: Brutal, sans-serif;
+                font-size: 3rem;
+            }
 
-    direction: ltr;
+            .summary-text {
+                align-self: end;
 
-    position: relative;
-    overflow: hidden;
+                direction: ltr;
 
-    display: block;
+                position: relative;
+                overflow: hidden;
 
-    max-block-size: 19.1rem;
+                display: block;
 
-    padding-block-end: 4rem;
+                max-block-size: 19.1rem;
 
-    font-family: Brutal, sans-serif;
-    font-size: 1.4rem;
+                padding-block-end: 4rem;
 
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-}
+                font-family: Brutal, sans-serif;
+                font-size: 1.4rem;
 
-.genres,
-.release-date,
-.platform {
-    font-size: 1.4rem;
-}
+                text-overflow: ellipsis;
+                word-wrap: break-word;
+            }
 
-.genres span,
-.release-date span,
-.platform span {
-    font-weight: 700;
-}
+            .genres,
+            .release-date,
+            .platform {
+                font-size: 1.4rem;
 
-.genres {
-    display: flex;
-    flex-wrap: wrap;
+                span {
+                    font-weight: 700;
+                }
+            }
 
-    .genre {
-        padding-inline-start: var(--sm-padding);
+            .genres {
+                display: flex;
+                flex-wrap: wrap;
+
+                .genre {
+                    padding-inline-start: var(--sm-padding);
+                }
+            }
+
+            .platform {
+                padding-block-end: 4rem;
+            }
+
+            .add-to-wishlist {
+                background-color: transparent;
+                color: var(--text1-dark);
+
+                z-index: 1;
+
+                padding: 1rem;
+
+                border: 0.1rem solid var(--text1-dark);
+                border-radius: var(--default-border-radius);
+
+                font-size: 1.2rem;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-color: var(--surface4-dark);
+                }
+
+                &:active {
+                    background-color: var(--surface3-dark);
+                }
+            }
+        }
     }
-}
 
-.platform {
-    padding-block-end: 4rem;
-}
+    .details {
+        background-color: var(--surface2-dark);
 
-.add-to-wishlist {
-    background-color: transparent;
-    color: var(--text1-dark);
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
 
-    z-index: 1;
+        padding: 2rem;
 
-    padding: 1rem;
+        border-radius: var(--default-border-radius);
 
-    border: 0.1rem solid var(--text1-dark);
-    border-radius: 0.3rem;
+        .details-title {
+            align-self: flex-start;
 
-    font-size: 1.2rem;
+            padding-block-end: 4rem;
+            padding: 0.6rem 1.2rem;
 
-    cursor: pointer;
-}
+            border-inline-start: 0.3rem solid var(--brand-dark);
 
-.add-to-wishlist:hover {
-    background-color: var(--surface4-dark);
-}
+            font-size: 3rem;
+        }
 
-.add-to-wishlist:active {
-    background-color: var(--surface3-dark);
-}
+        .details-description {
+            align-self: end;
 
-.game-cover img {
-    inline-size: 100%;
-    aspect-ratio: 16/9;
-}
+            direction: ltr;
 
-.details {
-    background-color: var(--surface2-dark);
+            padding-block-end: 4rem;
 
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+            font-family: Brutal, sans-serif;
+            font-size: 1.8rem;
+        }
+    }
 
-    padding: 2rem;
+    .screenshots,
+    .suggestions {
+        background-color: var(--surface2-dark);
 
-    border-radius: 0.3rem;
-}
+        padding: 2rem;
 
-.details-title {
-    align-self: flex-start;
-
-    padding-block-end: 4rem;
-    padding: 0.6rem 1.2rem;
-
-    border-inline-start: 0.3rem solid var(--brand-dark);
-
-    font-size: 3rem;
-}
-
-.details-description {
-    align-self: end;
-
-    direction: ltr;
-
-    padding-block-end: 4rem;
-
-    font-family: Brutal, sans-serif;
-    font-size: 1.8rem;
-}
-
-.screenshots,
-.suggestions {
-    background-color: var(--surface2-dark);
-
-    padding: 2rem;
-
-    border-radius: 0.3rem;
+        border-radius: var(--default-border-radius);
+    }
 }
 
 @media (max-width: 59em) {
-    .summary {
-        grid-template-columns: 1fr;
-    }
+    .game-page-container {
+        .summary {
+            grid-template-columns: 1fr;
 
-    .game-summary {
-        padding-inline: 0;
+            .game-summary {
+                padding-inline: 0;
+            }
+        }
     }
 }

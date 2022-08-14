@@ -38,7 +38,7 @@
         }
 
         img {
-            border-radius: 0.3rem;
+            border-radius: var(--default-border-radius);
         }
     }
 
@@ -71,7 +71,7 @@
 
         padding: 0.5rem 1rem;
 
-        border-radius: 0.3rem;
+        border-radius: var(--default-border-radius);
     }
 
     .favorite-btn {
@@ -85,7 +85,7 @@
         padding: 0.5rem;
 
         border: none;
-        border-radius: 0.3rem;
+        border-radius: var(--default-border-radius);
 
         font-size: 2rem;
 

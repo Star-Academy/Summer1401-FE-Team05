@@ -25,41 +25,41 @@ describe('ApiService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('tests post request with valid request', async () => {
+    it('should preform a post request with valid request', async () => {
         const res = await service.postRequest<Token>(API_USER_AUTH, {token: VALID_TOKEN});
         expect(res?.token).toBeTruthy();
     });
 
-    it('tests post request with invalid request', async () => {
+    it('should preform a post request with invalid request', async () => {
         const res = await service.postRequest<Token>(API_USER_AUTH, {token: ''});
         expect(res?.token).toBeFalsy();
     });
-    it('tests post request with empty request', async () => {
+    it('should preform a post request with empty request', async () => {
         const res = await service.postRequest<Token>(API_USER_AUTH);
         expect(res?.token).toBeFalsy();
     });
 
-    it('tests get request with valid request', async () => {
+    it('should preform a get request with valid request', async () => {
         const res = await service.getRequest<any>(API_USER_ONE + '/23');
         expect(res?.user?.id).toBeTruthy();
     });
 
-    it('tests get request with invalid request', async () => {
+    it('should preform a get request with invalid request', async () => {
         const res = await service.getRequest<any>(API_USER_ONE + '/24');
         expect(res?.user).toBeFalsy();
     });
 
-    it('tests delete request with valid request', async () => {
+    it('should preform a delete request with valid request', async () => {
         const res = await service.deleteRequest(API_WISHLIST_REMOVE, {token: VALID_TOKEN, id: 25015});
         expect(res).toBeTrue();
     });
 
-    it('tests delete request with invalid request', async () => {
+    it('should preform a delete request with invalid request', async () => {
         const res = await service.deleteRequest(API_WISHLIST_REMOVE, {token: VALID_TOKEN, id: 'wrong id here!'});
         expect(res).toBeFalsy();
     });
 
-    it('tests delete request with empty request', async () => {
+    it('should preform a delete request with empty request', async () => {
         const res = await service.deleteRequest(API_WISHLIST_REMOVE);
         expect(res).toBeFalsy();
     });
