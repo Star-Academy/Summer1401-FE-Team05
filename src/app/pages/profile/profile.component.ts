@@ -16,7 +16,7 @@ export class ProfileComponent {
         this.getUser().then();
     }
 
-    public user?: User;
+    public user?: User | null;
 
     public async logout(): Promise<void> {
         await this.authService.logout();

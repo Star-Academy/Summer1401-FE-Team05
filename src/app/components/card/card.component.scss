@@ -34,7 +34,7 @@
             block-size: 100%;
             inline-size: 100%;
 
-            transition: opacity 0.3s ease;
+            transition: opacity 300ms ease;
         }
 
         img {
@@ -89,7 +89,7 @@
 
         font-size: 2rem;
 
-        transition: opacity 0.3s ease;
+        transition: opacity 300ms ease;
 
         cursor: pointer;
     }
