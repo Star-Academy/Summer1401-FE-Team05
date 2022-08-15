@@ -4,7 +4,7 @@ import {GameComponent} from './game.component';
 import {CarouselModule} from '../landing/carousel/carousel.module';
 import {ProductsModule} from '../landing/products/products.module';
 import {GameBannerModule} from '../../pipes/game-banner/game-banner.module';
-import {GameGenreModule} from "../../pipes/game-genre/game-genre.module";
+import {GameGenreModule} from '../../pipes/game-genre/game-genre.module';
 
 @NgModule({
     declarations: [GameComponent],
