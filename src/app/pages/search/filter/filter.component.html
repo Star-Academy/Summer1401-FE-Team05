@@ -3,9 +3,11 @@
         <h1>فیلتر ها</h1>
         <button (click)="doSearch()">اعمال فیلتر ها</button>
         <button (click)="resetFilters()">پاک کردن فیلتر ها</button>
+        <button (click)="showFilters()" *ngIf="showFilter">عدم نمایش فیلتر ها</button>
+        <button (click)="showFilters()" *ngIf="!showFilter">نمایش فیلتر ها</button>
     </section>
 
-    <section class="filters">
+    <section class="filters" *ngIf="showFilter">
         <div class="genre-filter">
             <h3 class="filter-title">ژانر ها</h3>
             <label class="label" *ngFor="let filter of filters[0].subCategories">

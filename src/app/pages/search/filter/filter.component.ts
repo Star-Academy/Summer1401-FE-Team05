@@ -19,6 +19,8 @@ export class FilterComponent {
 
     public filters: Category[];
 
+    public showFilter: boolean = false;
+
     public constructor(private filterData: FetchCategoriesDataService) {
         this.filters = this.filterData.fetchData();
     }
@@ -74,5 +76,9 @@ export class FilterComponent {
         this.updateSearchSetting(this.searchSetting);
 
         this.doSearch();
+    }
+
+    public showFilters(): void {
+        this.showFilter = !this.showFilter;
     }
 }

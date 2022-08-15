@@ -27,6 +27,7 @@ export class SearchComponent implements OnInit {
     private categories: Category[] = this.fetchCategoriesDataService.fetchData();
 
     public gamesData: any;
+    public count: number = 0;
 
     public searchSetting: SearchPost = {
         searchPhrase: '',
@@ -64,6 +65,8 @@ export class SearchComponent implements OnInit {
 
     private async searchForData(): Promise<void> {
         const data = await this.apiService.postRequest<any>(API_GAME_SEARCH, this.searchSetting);
+
+        this.count = await data?.count;
 
         this.gamesData = await data?.games;
     }

@@ -28,7 +28,7 @@
 }
 
 .card-img img {
-    width: 100%;
+    inline-size: 100%;
 }
 
 .card-data {
@@ -44,11 +44,16 @@
 .card-data span {
     color: var(--text2-dark);
 
+    font-size: 1.6rem;
     font-weight: bold;
 }
 
 .init-price {
     text-decoration: line-through;
+}
+
+.card-sale {
+    text-align: center;
 }
 
 .remove-game {
@@ -87,9 +92,9 @@
 
 @media (min-width: 50em) {
     .card-data {
-        grid-template-columns: repeat(4, auto);
-        column-gap: 2rem;
-        row-gap: 2rem;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 3.5rem;
+        row-gap: 1rem;
     }
 
     .card-data p {

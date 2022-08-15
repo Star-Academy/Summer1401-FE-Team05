@@ -178,10 +178,27 @@
 @media (max-width: 59em) {
     .game-page-container {
         .summary {
-            grid-template-columns: 1fr;
-
+            .game-cover{
+                grid-column: 1/-1;
+            }
             .game-summary {
+                grid-column: 1/-1;
+
                 padding-inline: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 27em) {
+    .game-page-container {
+        .summary {
+            .info {
+                grid-column: 1/-1;
+            }
+
+            .add-to-wishlist {
+                grid-column: 1/-1;
             }
         }
     }

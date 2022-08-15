@@ -15,14 +15,18 @@
 
         block-size: 5rem;
 
-        inline-size: 5rem;
+        inline-size: 10rem;
 
         border-radius: 50%;
 
-        font-size: 2rem;
+        font-size: 1.6rem;
 
         &:hover {
             background-color: var(--surface3-dark);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
         }
     }
 

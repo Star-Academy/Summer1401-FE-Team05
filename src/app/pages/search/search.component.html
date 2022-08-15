@@ -6,7 +6,7 @@
 ></app-filter>
 <app-card-grid [gamesData]="gamesData"></app-card-grid>
 <div class="btns-container">
-    <button (click)="nextPage()" title="صفحه بعد"><i class="fa-regular fa-angle-right"></i></button>
+    <button (click)="prevPage()" title="صفحه قبل" [disabled]="pageNumber === 1">صفحه قبل</button>
     <span class="page-number">صفحه {{ pageNumber }}</span>
-    <button (click)="prevPage()" title="صفحه قبل"><i class="fa-regular fa-angle-left"></i></button>
+    <button (click)="nextPage()" title="صفحه بعد" [disabled]="count <= searchSetting.offset + 20">صفحه بعد</button>
 </div>

@@ -14,7 +14,6 @@
             <div class="genre">
                 <span *ngFor="let genre of currentGame?.genres">{{ genre?.name }}</span>
             </div>
-            <!--            <h5 class="release-date"><span>تاریخ انتشار: </span>{{ gameReleaseDate }}</h5>-->
             <h5 class="platform-title">پلتفرم:</h5>
             <div class="platform">
                 <span *ngFor="let platform of currentGame?.platforms">{{ platform?.name }}</span>
@@ -25,7 +24,7 @@
     <section class="details">
         <h2 class="details-title">درباره بازی</h2>
         <p class="details-description">
-            {{ currentGame?.description ? currentGame.description : currentGame?.summary }}
+            {{ currentGame?.storyline ? currentGame.storyline : currentGame?.summary }}
         </p>
     </section>
     <section class="suggestions">
