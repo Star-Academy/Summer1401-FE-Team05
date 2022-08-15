@@ -10,7 +10,7 @@
         background-color: var(--surface2-dark);
 
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
 
         padding: 2rem;
@@ -18,6 +18,7 @@
         border-radius: var(--default-border-radius);
 
         .game-cover {
+            grid-column: 1/-2;
             img {
                 inline-size: 100%;
                 aspect-ratio: 16/9;
@@ -30,7 +31,7 @@
             align-items: flex-start;
             gap: 2rem;
 
-            padding: 6rem;
+            padding: 4rem;
 
             border-radius: var(--default-border-radius);
 
@@ -49,16 +50,9 @@
             }
 
             .summary-text {
-                align-self: end;
-
                 direction: ltr;
 
-                position: relative;
-                overflow: hidden;
-
                 display: block;
-
-                max-block-size: 19.1rem;
 
                 padding-block-end: 4rem;
 
@@ -68,52 +62,71 @@
                 text-overflow: ellipsis;
                 word-wrap: break-word;
             }
+        }
 
-            .genres,
-            .release-date,
-            .platform {
-                font-size: 1.4rem;
+        .info {
+            padding-inline-start: var(--md-padding);
+            grid-column: 1/-2;
 
-                span {
-                    font-weight: 700;
-                }
+            .release-date {
             }
 
-            .genres {
+            .genre-title {
+                font-size: 1.6rem;
+                font-weight: 700;
+            }
+
+            .genre {
+                font-size: 1.4rem;
+                inline-size: 100%;
+
                 display: flex;
                 flex-wrap: wrap;
+                gap: 1rem;
+            }
 
-                .genre {
-                    padding-inline-start: var(--sm-padding);
-                }
+            .platform-title {
+                font-size: 1.6rem;
+                font-weight: 700;
+
+                padding-block-start: var(--sm-padding);
             }
 
             .platform {
-                padding-block-end: 4rem;
+                inline-size: 100%;
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                font-size: 1.4rem;
+            }
+        }
+
+        .add-to-wishlist {
+            grid-column: 3;
+            place-self: center;
+
+            background-color: transparent;
+            color: var(--text1-dark);
+
+            z-index: 1;
+
+            padding: 1rem;
+
+            border: 0.1rem solid var(--text1-dark);
+            border-radius: var(--default-border-radius);
+
+            font-size: 1.2rem;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--surface4-dark);
             }
 
-            .add-to-wishlist {
-                background-color: transparent;
-                color: var(--text1-dark);
-
-                z-index: 1;
-
-                padding: 1rem;
-
-                border: 0.1rem solid var(--text1-dark);
-                border-radius: var(--default-border-radius);
-
-                font-size: 1.2rem;
-
-                cursor: pointer;
-
-                &:hover {
-                    background-color: var(--surface4-dark);
-                }
-
-                &:active {
-                    background-color: var(--surface3-dark);
-                }
+            &:active {
+                background-color: var(--surface3-dark);
             }
         }
     }

@@ -25,7 +25,11 @@ export class GameComponent implements OnInit {
         private authService: AuthService,
         private router: Router,
         private gameService: GameService
-    ) {}
+    ) {
+        this.router.routeReuseStrategy.shouldReuseRoute = function (): boolean {
+            return false;
+        };
+    }
 
     public async ngOnInit(): Promise<void> {
         const gameId = this.getGameId();

@@ -182,7 +182,7 @@ export class FetchCategoriesDataService {
                 },
                 {
                     id: 41,
-                    name: '4X (explore, expand, exploit, and exterminate)',
+                    name: '4X',
                 },
                 {
                     id: 42,

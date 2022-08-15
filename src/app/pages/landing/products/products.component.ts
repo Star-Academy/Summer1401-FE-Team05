@@ -4,7 +4,7 @@ import {ApiService} from '../../../services/api.service';
 import {FetchCategoriesDataService} from '../../../services/fetch-categories-data.service';
 import {Category} from '../../../components/header/categories/model/category';
 import {API_GAME_SEARCH} from '../../../utils/urls';
-import {Game} from "../../../models/game.model";
+import {Game} from '../../../models/game.model';
 
 @Component({
     selector: 'app-products',
