@@ -19,6 +19,7 @@
 
         .game-cover {
             grid-column: 1/-2;
+
             img {
                 inline-size: 100%;
                 aspect-ratio: 16/9;
@@ -65,11 +66,9 @@
         }
 
         .info {
-            padding-inline-start: var(--md-padding);
             grid-column: 1/-2;
 
-            .release-date {
-            }
+            padding-inline-start: var(--md-padding);
 
             .genre-title {
                 font-size: 1.6rem;
@@ -77,40 +76,40 @@
             }
 
             .genre {
-                font-size: 1.4rem;
-                inline-size: 100%;
-
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1rem;
+
+                inline-size: 100%;
+
+                font-size: 1.4rem;
             }
 
             .platform-title {
+                padding-block-start: var(--sm-padding);
+
                 font-size: 1.6rem;
                 font-weight: 700;
-
-                padding-block-start: var(--sm-padding);
             }
 
             .platform {
-                inline-size: 100%;
-
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1rem;
+
+                inline-size: 100%;
 
                 font-size: 1.4rem;
             }
         }
 
         .add-to-wishlist {
-            grid-column: 3;
-            place-self: center;
-
             background-color: transparent;
             color: var(--text1-dark);
 
             z-index: 1;
+
+            grid-column: 3;
 
             padding: 1rem;
 
@@ -120,6 +119,7 @@
             font-size: 1.2rem;
 
             cursor: pointer;
+            place-self: center;
 
             &:hover {
                 background-color: var(--surface4-dark);
