@@ -24,7 +24,6 @@ export class FilterComponent {
     }
 
     public checkboxChange(e: any, kindOfFilter: string): void {
-        console.log(typeof e);
         if (e.target.checked) {
             // @ts-ignore
             this.searchSetting.filters[kindOfFilter].push(Number.parseInt(e.target.name));
