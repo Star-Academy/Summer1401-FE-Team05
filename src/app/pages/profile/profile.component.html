@@ -18,7 +18,7 @@
         <button class="exit-account" (click)="logout()">خروج از حساب کاربری</button>
     </section>
     <section class="wishlist">
-        <h2 class="wishlist-title">سبد خرید</h2>
+        <h2 class="wishlist-title">اضافه به علاقه مندی ها</h2>
         <div class="row-card">
             <ng-container *ngFor="let cardGame of wishlist">
                 <app-row-card [cardGame]="cardGame" (newRefreshWishlistEventEmitter)="refreshWishlist()"></app-row-card>

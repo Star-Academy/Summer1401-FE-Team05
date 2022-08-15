@@ -16,14 +16,12 @@
             <p class="init-price">{{ cardGame?.price }}</p>
             <p class="final-price">{{ cardGame?.priceOnSale }}</p>
         </div>
-        <!--        <p class="final-price">{{ cardGame?.priceOnSale }}</p>-->
 
         <p class="card-sale">{{ sale }}%</p>
-        <!--        <span>قیمت نهایی</span>-->
     </div>
     <div class="control">
-        <button class="remove-game" title="حذف از سبد خرید" (click)="deleteWishlistItem(cardGame?.id)">
-            حذف از سبد خرید
+        <button class="remove-game" title="حذف از علاقه مندی ها" (click)="deleteWishlistItem(cardGame?.id)">
+            حذف از علاقه مندی ها
         </button>
     </div>
 </div>
