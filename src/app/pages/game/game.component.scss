@@ -178,9 +178,10 @@
 @media (max-width: 59em) {
     .game-page-container {
         .summary {
-            .game-cover{
+            .game-cover {
                 grid-column: 1/-1;
             }
+
             .game-summary {
                 grid-column: 1/-1;
 
