@@ -1,6 +1,6 @@
 <app-filter
     [searchSetting]="searchSetting"
-    [order]="order"
+    [searchText]="searchProperty.searchText"
     (newSearchSettingEventEmitter)="updateSearch($event)"
     (newDoSearchEventEmitter)="doSearch()"
 ></app-filter>

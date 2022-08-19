@@ -12,7 +12,7 @@ import {SearchPost} from '../../../models/search-post';
 })
 export class FilterComponent {
     @Input() public searchSetting!: SearchPost;
-    @Input() public order: any = null;
+    @Input() public searchText!: string;
 
     @Output() public newSearchSettingEventEmitter = new EventEmitter<any>();
     @Output() public newDoSearchEventEmitter = new EventEmitter<void>();
@@ -57,7 +57,7 @@ export class FilterComponent {
         });
 
         this.searchSetting = {
-            searchPhrase: this.order?.params?.order,
+            searchPhrase: this.searchText,
             pageSize: 20,
             offset: 0,
             sort: 2,

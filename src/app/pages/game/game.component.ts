@@ -11,8 +11,6 @@ import {API_WISHLIST_ADD} from '../../utils/urls';
     styleUrls: ['./game.component.scss'],
 })
 export class GameComponent implements OnInit {
-    // public gameReleaseDate: Date | null = null;
-
     public currentGame: Game = {
         id: 0,
         name: '',
