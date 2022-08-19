@@ -15,6 +15,7 @@
                     class="checkbox"
                     type="checkbox"
                     [name]="filter?.id"
+                    [checked]="filter.isChecked"
                     (change)="checkboxChange($event, 'genres')"
                 />
                 {{ filter.name }}
@@ -29,6 +30,7 @@
                     class="checkbox"
                     type="checkbox"
                     [name]="filter.id"
+                    [checked]="filter.isChecked"
                     (change)="checkboxChange($event, 'themes')"
                 />
                 {{ filter.name }}
@@ -43,6 +45,7 @@
                     class="checkbox"
                     type="checkbox"
                     [name]="filter.id"
+                    [checked]="filter.isChecked"
                     (change)="checkboxChange($event, 'gameModes')"
                 />
                 {{ filter.name }}
@@ -57,6 +60,7 @@
                     class="checkbox"
                     type="checkbox"
                     [name]="filter.id"
+                    [checked]="filter.isChecked"
                     (change)="checkboxChange($event, 'playerPerspectives')"
                 />
                 {{ filter.name }}

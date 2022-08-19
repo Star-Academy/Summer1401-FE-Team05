@@ -50,10 +50,8 @@ export class FilterComponent {
     }
 
     public resetFilters(): void {
-        const checkboxes = document.querySelectorAll<HTMLInputElement>('.checkbox');
-
-        checkboxes.forEach((checkbox) => {
-            checkbox.checked = false;
+        this.filters.forEach((category) => {
+            category.subCategories.forEach((subCategory) => subCategory.isChecked = false);
         });
 
         this.searchSetting = {
