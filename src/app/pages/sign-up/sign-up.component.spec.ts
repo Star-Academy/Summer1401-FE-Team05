@@ -19,7 +19,6 @@ describe('SignUpComponent', () => {
         await TestBed.configureTestingModule({
             declarations: [SignUpComponent],
             imports: [FormsModule, RouterTestingModule],
-            providers: [AuthService],
         }).compileComponents();
     });
 
@@ -48,6 +47,7 @@ describe('SignUpComponent', () => {
         const usernameInput = host.querySelector('[name="username"]');
         const passwordInput = host.querySelector('[name="password"]');
         const emailInput = host.querySelector('[name="email"]');
+
         expect(usernameInput).toBeTruthy();
         expect(passwordInput).toBeTruthy();
         expect(emailInput).toBeTruthy();
@@ -57,21 +57,23 @@ describe('SignUpComponent', () => {
         const usernameInput = host.querySelector('[name="username"]');
         const passwordInput = host.querySelector('[name="password"]');
         const emailInput = host.querySelector('[name="email"]');
+        const firstNameInput = host.querySelector('[name="firstName"]');
+        const lastNameInput = host.querySelector('[name="lastName"]');
 
         usernameInput?.setAttribute('value', 'SinaProgrammer');
         passwordInput?.setAttribute('value', '12345');
         emailInput?.setAttribute('value', 'sina.programmer@gmail.com');
+        firstNameInput?.setAttribute('value', 'Sina');
+        lastNameInput?.setAttribute('value', 'Amini');
 
         const signUpMethodSpy = spyOn(authService, 'signUp');
-
         component.handleSubmit();
-
+        fixture.detectChanges();
         expect(signUpMethodSpy).toHaveBeenCalled();
     });
 
     it('should handle submit with empty inputs', async () => {
         component.handleSubmit();
-
         expect(component.validity).toBeFalse();
     });
 });

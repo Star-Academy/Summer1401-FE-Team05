@@ -13,16 +13,18 @@ import {Router} from '@angular/router';
 export class SignUpComponent {
     @ViewChild('signUpForm') private signUpForm!: ElementRef<HTMLFormElement>;
 
-    private checkIsValid(): boolean {
-        return this.signUpForm.nativeElement.checkValidity();
-    }
-
     public validity: boolean = true;
 
     public constructor(private router: Router, private authService: AuthService) {}
 
+    private checkIsValid(): boolean {
+        return this.signUpForm.nativeElement.checkValidity();
+    }
+
     public user: User = {
         username: '',
+        firstName: '',
+        lastName: '',
         password: '',
         email: '',
     };

@@ -1,55 +1,95 @@
-.hero {
-    background-image: linear-gradient(45deg, hsl(242deg 98% 20% / 50%), hsl(0deg 0% 0% / 50%)), url("horizon.webp");
-    background-size: cover;
-    color: hsl(0deg 0% 100%);
+.slideshow {
+    overflow: hidden;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: var(--lg-padding) max(calc((100% - 120rem) / 2), 2rem);
 
-    min-block-size: 100vh;
+    ol {
+        position: relative;
 
-    inline-size: 100%;
-
-    &__container {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4rem;
 
-        inline-size: 80%;
+        gap: 100%;
 
-        h1 {
-            inline-size: 50%;
+        li {
+            flex: 0 0 100%;
 
-            font-size: clamp(2.4rem, calc(1rem + 2.4vw), 5.2rem);
+            transform: translateX(calc(var(--active-index) * 200%));
 
-            line-height: 1;
+            transition: transform 500ms ease-in-out;
+
+            img {
+                block-size: 100%;
+                inline-size: 100%;
+
+                object-fit: cover;
+            }
         }
 
-        .btn:link,
-        .btn:visited {
-            background-color: hsl(28deg 80% 52%);
-            color: hsl(0deg 0% 100%);
+        .overlay {
+            position: absolute;
+            inset-block-end: 0;
+            inset-inline-start: 0;
 
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
 
-            padding: 1.6rem 3.2rem;
+            padding: 2rem;
 
-            border-radius: 0.9rem;
+            .controls {
+                opacity: 1;
 
-            font-size: 2rem;
-            font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
 
-            text-decoration: none;
+                transition: opacity 100ms ease-in-out;
+
+                button {
+                    background-color: var(--surface4-dark);
+
+                    justify-content: center;
+
+                    block-size: 3rem;
+                    inline-size: 3rem;
+
+                    border-radius: 999rem;
+
+                    &:hover {
+                        background-color: var(--surface3-dark);
+                    }
+                }
+            }
+
+            .bullets {
+                display: flex;
+                gap: 1rem;
+
+                i {
+                    background-color: var(--surface4-dark);
+
+                    display: block;
+
+                    block-size: 1rem;
+                    inline-size: 1rem;
+
+                    border-radius: 999rem;
+
+                    font-size: 0.6rem;
+
+                    &.active {
+                        background-color: var(--surface3-dark);
+
+                        inline-size: 2em;
+                    }
+                }
+            }
         }
+    }
 
-        p {
-            inline-size: 50%;
-
-            font-size: 2rem;
-
-            line-height: 1.6;
+    &:hover {
+        .overlay .controls {
+            opacity: 1;
         }
     }
 }

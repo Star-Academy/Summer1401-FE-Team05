@@ -16,7 +16,7 @@ export class AuthService {
     }
 
     public async login(user: User): Promise<boolean> {
-        const data = await this.apiService.post<Token>(URLS.API_USER_LOGIN, user);
+        const data = await this.apiService.postRequest<Token>(URLS.API_USER_LOGIN, user);
 
         if (data?.token) {
             localStorage.setItem('token', data.token);
@@ -28,7 +28,7 @@ export class AuthService {
     public async isLoggedIn(): Promise<boolean> {
         const token = localStorage.getItem('token') || '';
 
-        const data = await this.apiService.post<{id: number}>(URLS.API_USER_AUTH, {token});
+        const data = await this.apiService.postRequest<{id: number}>(URLS.API_USER_AUTH, {token});
 
         this.isUserLoggedIn = !!data;
 
@@ -36,7 +36,7 @@ export class AuthService {
     }
 
     public async signUp(user: User): Promise<boolean> {
-        const data = await this.apiService.post<Token>(URLS.API_USER_REGISTER, user);
+        const data = await this.apiService.postRequest<Token>(URLS.API_USER_REGISTER, user);
 
         if (data?.token) {
             localStorage.setItem('token', data.token);
@@ -50,5 +50,15 @@ export class AuthService {
         this.isUserLoggedIn = false;
 
         await this.router.navigateByUrl('/');
+    }
+
+    public async auth(): Promise<{id: number} | null> {
+        const token = localStorage.getItem('token') || '';
+
+        return await this.apiService.postRequest<{id: number}>(URLS.API_USER_AUTH, {token: token});
+    }
+
+    public async getUserData(id: number): Promise<{user: User} | null> {
+        return await this.apiService.getRequest<{user: User}>(URLS.API_USER_ONE + `/${id}`);
     }
 }

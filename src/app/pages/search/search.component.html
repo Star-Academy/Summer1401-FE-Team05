@@ -1,0 +1,12 @@
+<app-filter
+    [searchSetting]="searchSetting"
+    [searchText]="searchProperty.searchText"
+    (newSearchSettingEventEmitter)="updateSearch($event)"
+    (newDoSearchEventEmitter)="doSearch()"
+></app-filter>
+<app-card-grid [gamesData]="gamesData"></app-card-grid>
+<div class="btns-container">
+    <button (click)="prevPage()" title="صفحه قبل" [disabled]="pageNumber === 1">صفحه قبل</button>
+    <span class="page-number">صفحه {{ pageNumber }}</span>
+    <button (click)="nextPage()" title="صفحه بعد" [disabled]="count <= searchSetting.offset + 20">صفحه بعد</button>
+</div>

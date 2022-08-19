@@ -1,0 +1,111 @@
+.card {
+    background-color: var(--surface3-dark);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    padding: 2rem;
+
+    border-radius: var(--default-border-radius);
+}
+
+.card-img {
+    overflow: hidden;
+
+    display: grid;
+    align-content: center;
+    align-items: center;
+
+    block-size: 12rem;
+    inline-size: 12rem;
+
+    border-radius: var(--default-border-radius);
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1.6rem 100%, 0% calc(100% - 1.6rem));
+}
+
+.card-img img {
+    inline-size: 100%;
+}
+
+.card-data {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 2rem;
+
+    row-gap: 0.8rem;
+
+    font-size: 1.2rem;
+}
+
+.card-data span {
+    color: var(--text2-dark);
+
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.init-price {
+    text-decoration: line-through;
+}
+
+.card-sale {
+    text-align: center;
+}
+
+.remove-game {
+    background-color: transparent;
+    color: var(--text1-dark);
+
+    z-index: 1;
+
+    padding: 1rem;
+
+    border: 0.1rem solid var(--text1-dark);
+    border-radius: var(--default-border-radius);
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+}
+
+.remove-game:hover {
+    background-color: var(--surface2-dark);
+}
+
+.remove-game:active {
+    background-color: var(--surface4-dark);
+}
+
+@media (min-width: 35em) {
+    .card {
+        flex-direction: row;
+    }
+
+    .card-data {
+        column-gap: 4rem;
+    }
+}
+
+@media (min-width: 50em) {
+    .card-data {
+        grid-template-columns: repeat(3, auto);
+        column-gap: 3.5rem;
+        row-gap: 1rem;
+    }
+
+    .card-data p {
+        padding-inline-end: 4rem;
+    }
+}
+
+@media (min-width: 60em) {
+    .card-data p {
+        grid-row: 2/3;
+
+        padding-inline-end: 0;
+    }
+}

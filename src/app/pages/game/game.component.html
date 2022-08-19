@@ -1,0 +1,33 @@
+<div class="game-page-container">
+    <section class="summary">
+        <div class="game-cover">
+            <img src="{{ currentGame | gameBanner }}" alt="" />
+        </div>
+        <div class="game-summary">
+            <h1 class="game-title">{{ currentGame?.name }}</h1>
+            <p class="summary-text">
+                {{ currentGame?.summary }}
+            </p>
+        </div>
+        <div class="info">
+            <h5 class="genre-title">ژانر:</h5>
+            <div class="genre">
+                <span *ngFor="let genre of currentGame?.genres">{{ genre?.name }}</span>
+            </div>
+            <h5 class="platform-title">پلتفرم:</h5>
+            <div class="platform">
+                <span *ngFor="let platform of currentGame?.platforms">{{ platform?.name }}</span>
+            </div>
+        </div>
+        <button class="add-to-wishlist" (click)="addToWishlist()">اضافه کردن به علاقه مندی ها</button>
+    </section>
+    <section class="details">
+        <h2 class="details-title">درباره بازی</h2>
+        <p class="details-description">
+            {{ currentGame?.storyline ? currentGame.storyline : currentGame?.summary }}
+        </p>
+    </section>
+    <section class="suggestions">
+        <app-products [subId]="currentGame | gameGenre" [subIndex]="'بازی های پیشنهادی'"></app-products>
+    </section>
+</div>

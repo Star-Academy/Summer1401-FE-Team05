@@ -1,0 +1,208 @@
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding-block: 10rem;
+
+    padding-inline: max(calc((100% - 120rem) / 2), 5rem);
+
+    .filter-heading {
+        display: flex;
+        gap: 5rem;
+
+        padding: 1rem 2rem;
+
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        button {
+            background-color: var(--brand-dark);
+
+            padding: 1rem 2rem;
+
+            border-radius: var(--default-border-radius);
+
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1rem 100%, 0% calc(100% - 1rem));
+
+            font-size: 1.6rem;
+
+            cursor: pointer;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    }
+
+    .filters {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: start;
+        column-gap: 2.5rem;
+
+        .genre-filter,
+        .theme-filter {
+            display: grid;
+            grid-column: span 2;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 1rem;
+            row-gap: 0.7rem;
+
+            .filter-title {
+                grid-column: -1/1;
+            }
+        }
+
+        .game-mode-filter,
+        .player-perspective-filter {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            column-gap: 1rem;
+            row-gap: 0.7rem;
+        }
+
+        .filter-title {
+            justify-self: center;
+
+            background-color: var(--surface3-dark);
+
+            inline-size: 100%;
+
+            padding-block: 1rem;
+
+            padding-inline: 2rem;
+
+            font-size: 1.6rem;
+
+            text-align: center;
+        }
+
+        .label {
+            position: relative;
+
+            font-size: 1.4rem;
+
+            .checkbox {
+                opacity: 0;
+
+                block-size: 1.5rem;
+                inline-size: 1.5rem;
+
+                cursor: pointer;
+            }
+
+            .checkmark {
+                position: absolute;
+                inset-block-start: 0;
+
+                inset-inline-start: 0;
+                z-index: 2;
+
+                block-size: 1.5rem;
+                inline-size: 1.5rem;
+
+                border: 0.1rem solid var(--surface4-dark);
+
+                &::before {
+                    content: "";
+
+                    background-color: var(--brand-dark2);
+
+                    opacity: 0;
+
+                    position: absolute;
+                    inset: 0.2rem;
+                    z-index: -2;
+
+                    transform: scale(0);
+
+                    transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+                }
+            }
+
+            .checkbox:checked ~ .checkmark::before {
+                opacity: 1;
+
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+@media (max-width: 63em) {
+    .filter-container {
+        .filters {
+            grid-template-columns: repeat(5, 1fr);
+
+            .player-perspective-filter {
+                grid-column: 1/-4;
+                grid-template-columns: repeat(2, 1fr);
+
+                .filter-title {
+                    grid-column: -1/1;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 50em) {
+    .filter-container {
+        .filters {
+            grid-template-columns: repeat(4, 1fr);
+
+            .game-mode-filter {
+                grid-column: 1/-3;
+                grid-template-columns: repeat(2, 1fr);
+
+                .filter-title {
+                    grid-column: -1/1;
+                }
+            }
+
+            .player-perspective-filter {
+                grid-column: 3/-1;
+            }
+        }
+    }
+}
+
+@media (max-width: 39em) {
+    .filter-container {
+        .filter-heading {
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .filters {
+            grid-template-columns: repeat(2, 1fr);
+
+            .player-perspective-filter,
+            .game-mode-filter {
+                grid-column: 1/-1;
+            }
+        }
+    }
+}
+
+@media (max-width: 24em) {
+    .filter-container {
+        .filter-heading {
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .filters {
+            grid-template-columns: repeat(2, 1fr);
+
+            .player-perspective-filter,
+            .game-mode-filter,
+            .genre-filter,
+            .theme-filter {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}

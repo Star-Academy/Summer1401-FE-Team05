@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -7,11 +8,20 @@ import {AuthService} from '../../services/auth.service';
     styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-    public constructor(public authService: AuthService) {}
-
     public isMobileNavOpen: boolean = false;
+    public searchText: string | null = null;
+
+    public constructor(public authService: AuthService, private router: Router) {}
 
     public navButtonHandler(): void {
         this.isMobileNavOpen = !this.isMobileNavOpen;
+    }
+
+    public handleSubmit(): void {
+        this.router.navigate(['/search'], {queryParams: {searchText: this.searchText}}).then();
+    }
+
+    public closeNav(): void {
+        this.isMobileNavOpen = false;
     }
 }

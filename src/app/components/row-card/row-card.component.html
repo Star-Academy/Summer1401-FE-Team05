@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-img">
+        <a routerLink="/games/{{ cardGame?.id }}">
+            <img
+                src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{ cardGame?.cover?.id }}.png"
+                alt="کاور {{ cardGame?.name }}"
+            />
+        </a>
+    </div>
+    <div class="card-data">
+        <span>نام بازی</span>
+        <p class="card-title">{{ cardGame?.name }}</p>
+        <span>مقدار تخفیف</span>
+        <span>قیمت</span>
+        <div>
+            <p class="init-price">{{ cardGame?.price }}</p>
+            <p class="final-price">{{ cardGame?.priceOnSale }}</p>
+        </div>
+
+        <p class="card-sale">{{ sale }}%</p>
+    </div>
+    <div class="control">
+        <button class="remove-game" title="حذف از علاقه مندی ها" (click)="deleteWishlistItem(cardGame?.id)">
+            حذف از علاقه مندی ها
+        </button>
+    </div>
+</div>

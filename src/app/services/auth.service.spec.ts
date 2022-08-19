@@ -62,10 +62,20 @@ describe('AuthService', () => {
         expect(response).toBeTrue();
     });
 
-    it('should sign up', async () => {
+    it('should sign up - with valid username and password', async () => {
         const response = await service.signUp(VALID_USER_SIGNUP_DATA);
         expect(localStorageMock.getItem('token')).toEqual(VALID_TOKEN);
         expect(response).toBeTrue();
+    });
+
+    it('should not sign up - with invalid username and password', async () => {
+        const response = await service.signUp({
+            username: '',
+            password: '',
+            email: '',
+        });
+        expect(localStorageMock.getItem('token')).toEqual(null);
+        expect(response).toBeFalse();
     });
 
     it('should log out', async () => {

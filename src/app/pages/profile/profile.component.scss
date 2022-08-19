@@ -1,8 +1,279 @@
-.container {
-    display: flex;
+.profile-container {
+    color: var(--text1-dark);
+
+    display: grid;
+    gap: var(--md-gap);
+
+    padding: 4rem 2rem;
+
+    .main-header {
+        align-self: flex-start;
+
+        padding: var(--xs-padding) var(--sm-padding);
+
+        border-inline-start: 0.3rem solid var(--brand-dark);
+
+        font-size: var(--xl-font-size);
+    }
+
+    .account {
+        background-color: var(--surface2-dark);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--md-gap);
+
+        padding: var(--md-padding);
+
+        border-radius: var(--default-border-radius);
+
+        .data-title {
+            font-size: var(--md-font-size);
+        }
+
+        .avatar {
+            box-shadow: 0 0 0 0.3rem var(--surface2-dark), 0 0 0 0.6rem var(--brand-dark);
+
+            position: relative;
+            overflow: hidden;
+
+            display: grid;
+            align-content: center;
+            align-items: center;
+
+            block-size: 15rem;
+            inline-size: 15rem;
+
+            border-radius: 50%;
+        }
+    }
+}
+
+.avatar img {
+    inline-size: 100%;
+}
+
+.account-data {
+    align-self: stretch;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     align-items: center;
-    justify-content: center;
+    column-gap: var(--sm-gap);
+    row-gap: var(--md-gap);
+
+    font-size: var(--sm-font-size);
+}
+
+.account-data span {
+    color: var(--text2-dark);
+
+    font-weight: bold;
+}
+
+.exit-account {
+    background-color: transparent;
+    color: var(--danger-dark);
+
+    z-index: 1;
+
+    padding: 1rem;
+
+    border: 0.1rem solid var(--danger-dark);
+    border-radius: var(--default-border-radius);
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+}
+
+.exit-account:hover {
+    background-color: var(--surface4-dark);
+}
+
+.exit-account:active {
+    background-color: var(--surface3-dark);
+}
+
+.wishlist {
+    background-color: var(--surface2-dark);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 2rem;
+
+    border-radius: var(--default-border-radius);
+}
+
+.wishlist-title {
+    padding-block-end: 2rem;
+
+    font-size: 1.8rem;
+}
+
+.row-card {
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--surface3-dark);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     gap: 2rem;
 
-    min-block-size: 100vh;
+    padding: 2rem;
+
+    border-radius: var(--default-border-radius);
+}
+
+.card-img {
+    overflow: hidden;
+
+    display: grid;
+    align-content: center;
+    align-items: center;
+
+    block-size: 12rem;
+    inline-size: 12rem;
+
+    border-radius: var(--default-border-radius);
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 1.6rem 100%, 0% calc(100% - 1.6rem));
+}
+
+.card-img img {
+    inline-size: 100%;
+}
+
+.card-data {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 2rem;
+
+    row-gap: 0.8rem;
+
+    font-size: 1.2rem;
+}
+
+.card-data span {
+    color: var(--text2-dark);
+
+    font-weight: bold;
+}
+
+.init-price {
+    text-decoration: line-through;
+}
+
+.remove-game {
+    background-color: transparent;
+    color: var(--text1-dark);
+
+    z-index: 1;
+
+    padding: 1rem;
+
+    border: none;
+    border: 0.1rem solid var(--text1-dark);
+    border-radius: var(--default-border-radius);
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+}
+
+.remove-game:hover {
+    background-color: var(--surface2-dark);
+}
+
+.remove-game:active {
+    background-color: var(--surface4-dark);
+}
+@media (min-width: 35em) {
+    .account {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        column-gap: 4rem;
+        row-gap: 4rem;
+    }
+
+    .exit-account {
+        justify-self: center;
+
+        grid-column: 1/-1;
+    }
+
+    .avatar {
+        align-self: center;
+        justify-self: end;
+
+        grid-column: 2/3;
+        grid-row: 1/3;
+    }
+
+    .data-title {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+    }
+
+    .card {
+        flex-direction: row;
+    }
+
+    .card-data {
+        column-gap: 4rem;
+    }
+}
+
+@media (min-width: 50em) {
+    .card-data {
+        grid-template-columns: repeat(4, auto);
+        column-gap: 2rem;
+        row-gap: 2rem;
+    }
+
+    .card-data p {
+        padding-inline-end: 4rem;
+    }
+}
+
+@media (min-width: 60em) {
+    .profile-container {
+        grid-template-columns: minmax(28rem, 25%) 1fr;
+
+        padding-inline: max(calc((100% - 120rem) / 2), 2rem);
+    }
+
+    .account {
+        align-self: start;
+
+        display: flex;
+    }
+
+    .main-header {
+        grid-column: 1/-1;
+    }
+
+    .card-data p {
+        grid-row: 2/3;
+
+        padding-inline-end: 0;
+    }
+
+    .wishlist-title {
+        align-self: flex-start;
+    }
 }

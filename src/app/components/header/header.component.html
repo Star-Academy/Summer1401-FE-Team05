@@ -4,14 +4,13 @@
     </div>
 
     <nav class="nav" [ngClass]="{open: isMobileNavOpen}">
-        <div class="search">
-            <input type="search" name="search" placeholder="جست&zwnj;و&zwnj;جو" />
-            <i class="fa-regular fa-magnifying-glass"></i>
-        </div>
+        <form class="search" (submit)="handleSubmit()">
+            <input type="search" name="search" placeholder="جست&zwnj;و&zwnj;جو" [(ngModel)]="searchText" />
+            <i class="fa-regular fa-magnifying-glass" (click)="handleSubmit()"></i>
+        </form>
         <ul class="main-nav">
             <li class="current-page"><a routerLink="/">خانه</a></li>
-            <li><a routerLink="/">دسته&zwnj;بندی&zwnj;ها</a></li>
-            <li><a routerLink="/">پشتیبانی</a></li>
+            <li><app-categories (newCloseMobileNavEventEmitter)="closeNav()"></app-categories></li>
         </ul>
     </nav>
 
@@ -23,7 +22,7 @@
         </ng-container>
 
         <ng-template #notLoggedInTemplate>
-            <a routerLink="/sign-in" class="sign-in-btn">ورود/ثبت‌نام</a>
+            <a routerLink="/sign-in" class="sign-in-btn">ورود/ثبت نام</a>
         </ng-template>
         <button class="hamburger" (click)="navButtonHandler()"><i class="fa-regular fa-bars"></i></button>
     </div>

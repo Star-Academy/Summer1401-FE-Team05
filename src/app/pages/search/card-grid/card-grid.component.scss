@@ -1,0 +1,9 @@
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-items: center;
+    grid-gap: 2rem;
+
+    padding-block: 10rem;
+    padding-inline: max(calc((100% - 120rem) / 2), 5rem);
+}

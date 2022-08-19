@@ -6,6 +6,12 @@
             <input type="text" name="username" [(ngModel)]="user.username" required />
         </label>
         <label class="sign-up-input-label">
+            نام <input type="text" name="firstName" [(ngModel)]="user.firstName" required />
+        </label>
+        <label class="sign-up-input-label">
+            نام خانوادگی <input type="text" name="lastName" [(ngModel)]="user.lastName" required />
+        </label>
+        <label class="sign-up-input-label">
             ایمیل
             <input dir="ltr" type="email" name="email" [(ngModel)]="user.email" required />
         </label>
@@ -20,7 +26,7 @@
 
         <button class="sign-up-submit-btn" type="submit">ثبت نام</button>
 
-        <span class="sign-up-link">
+        <span class="sign-in-link">
             اکانت دارید؟
             <a routerLink="/sign-in">اینجا وارد شوید !</a>
         </span>

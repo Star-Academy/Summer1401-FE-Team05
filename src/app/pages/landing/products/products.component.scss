@@ -1,115 +1,74 @@
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1.8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    max-inline-size: 80%;
+    padding-block: 10rem;
 
-    padding-block: 12rem;
-}
+    .sub-name {
+        margin-inline-start: var(--md-padding);
+        padding: var(--sm-padding);
 
-.game-card {
-    box-shadow: 0 0.4rem 0.5rem hsl(0deg 0% 0% / 20%);
+        border-inline-start: 0.3rem solid var(--brand-dark);
 
-    position: relative;
-    overflow: hidden;
+        font-size: 2rem;
+    }
 
-    display: block;
+    .control-btns {
+        display: flex;
+        justify-content: flex-end;
+        gap: 2rem;
 
-    inline-size: 36rem;
+        padding-inline: 2rem;
 
-    border: 0.1rem solid hsl(226deg 37% 54% / 60%);
-    border-radius: 0.7rem;
+        .cards-left,
+        .cards-right {
+            background-color: var(--surface4-dark);
+            color: var(--text2-dark);
 
-    cursor: pointer;
+            display: grid;
+            place-items: center;
 
-    &:hover {
-        .overview {
-            transform: translateY(0);
+            block-size: 4rem;
+            inline-size: 4rem;
+
+            border-radius: 50%;
+
+            font-size: 2rem;
         }
     }
 
-    &__img {
-        block-size: 80%;
-        inline-size: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
+    .scroll-cards {
+        overflow-x: scroll;
 
-    &__info {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.2rem;
+        grid-column: 1/-1;
+        gap: 2rem;
 
-        padding: 0.5rem 1rem 1rem;
+        scroll-behavior: smooth;
 
-        letter-spacing: 0.1rem;
+        padding-block: 2rem;
 
-        span {
-            padding: 0.3rem 0.5rem;
+        padding-inline: calc((100% - 25rem) / 2);
+        scroll-snap-type: x mandatory;
+    }
+}
 
-            border-radius: 0.3rem;
+@media (min-width: 30em) {
+    .cards-container {
+        padding-inline: max(calc((100% - 120rem) / 2), 5rem);
 
-            font-weight: 700;
-
-            &.green {
-                color: hsl(120deg 73% 75%);
-            }
-
-            &.orange {
-                color: hsl(39deg 100% 50%);
-            }
-
-            &.red {
-                color: hsl(0deg 100% 50%);
-            }
+        .sub-name {
+            margin: 0;
         }
-    }
-}
 
-.overview {
-    background-color: hsl(231deg 53% 20%);
-    color: hsl(0deg 0% 91%);
+        .control-btns {
+            padding-inline: 0;
+        }
 
-    position: absolute;
-    inset-block-end: 0;
+        .scroll-cards {
+            gap: calc(20rem / 3);
 
-    inset-inline: 0;
-    overflow-y: auto;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    max-block-size: 100%;
-
-    padding: 2rem;
-
-    transform: translateY(101%);
-
-    font-size: 1.2rem;
-
-    transition: transform 300ms ease-out;
-}
-
-.price-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .prices {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .price-off {
-        background-color: hsl(9deg 100% 64%);
-        color: hsl(0deg 0% 100%);
-
-        padding: 1rem;
-
-        border-radius: 0.7rem;
+            padding-inline: 0;
+        }
     }
 }

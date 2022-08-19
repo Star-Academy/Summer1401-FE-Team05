@@ -1,21 +1,18 @@
-<div class="container-center">
-    <div class="cards-container">
-        <a *ngFor="let card of cards" routerLink="/" class="game-card">
-            <img class="game-card__img" [src]="card.imgSrc" [alt]="card.alt" />
-            <div class="game-card__info">
-                <h3>{{ card.title }}</h3>
-                <span class="green">{{ card.points }}</span>
-            </div>
-            <div class="overview">
-                <p class="overview__title">{{ card.title }}</p>
-                <div class="price-container">
-                    <div class="prices">
-                        <del>{{ card.price }}</del>
-                        <span>{{ (card.price * (100 - card.percentOff)) / 100 }}</span>
-                    </div>
-                    <span class="price-off">{{ card.percentOff }}%</span>
-                </div>
-            </div>
-        </a>
+<div class="cards-container">
+    <h2 class="sub-name">{{ subIndex }}</h2>
+
+    <div class="control-btns">
+        <div class="cards-right" (click)="prev()">
+            <i class="fa-regular fa-angle-right"></i>
+        </div>
+        <div class="cards-left" (click)="next()">
+            <i class="fa-regular fa-angle-left"></i>
+        </div>
+    </div>
+
+    <div class="scroll-cards" #scrollCards>
+        <ng-container *ngFor="let game of someGame">
+            <app-card [game]="game"></app-card>
+        </ng-container>
     </div>
 </div>

@@ -1,6 +1,8 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {FormsModule} from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
+import {FetchMock} from 'src/app/mocks/fetch';
+import {LocalStorageMock} from 'src/app/mocks/local-storage';
 import {AuthService} from 'src/app/services/auth.service';
 
 import {SignInComponent} from './sign-in.component';
@@ -9,6 +11,8 @@ describe('SignInComponent', () => {
     let component: SignInComponent;
     let fixture: ComponentFixture<SignInComponent>;
     let host: HTMLElement;
+    let localStorageMock: LocalStorageMock;
+    let fetchMock: FetchMock;
     let authService: AuthService;
 
     beforeEach(async () => {
@@ -23,6 +27,15 @@ describe('SignInComponent', () => {
         component = fixture.componentInstance;
         fixture.detectChanges();
         host = fixture.nativeElement as HTMLElement;
+
+        localStorageMock = new LocalStorageMock();
+        spyOn(localStorage, 'getItem').and.callFake(localStorageMock.getItem.bind(localStorageMock));
+        spyOn(localStorage, 'setItem').and.callFake(localStorageMock.setItem.bind(localStorageMock));
+        spyOn(localStorage, 'removeItem').and.callFake(localStorageMock.removeItem.bind(localStorageMock));
+
+        fetchMock = new FetchMock();
+        spyOn(window, 'fetch').and.callFake(fetchMock.fetch.bind(fetchMock));
+
         authService = TestBed.inject(AuthService);
     });
 
@@ -47,7 +60,7 @@ describe('SignInComponent', () => {
         const loginMethodSpy = spyOn(authService, 'login');
 
         component.handleSubmit();
-
+        fixture.detectChanges();
         expect(loginMethodSpy).toHaveBeenCalled();
     });
 

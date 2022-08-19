@@ -13,20 +13,39 @@
 }
 
 :root {
-    --brand-hue: 270;
+    --brand-hue: 240;
     --brand-dark: hsl(var(--brand-hue) 50% 33.33%);
+    --brand-dark2: hsl(240deg 50% 50%);
     --text1-dark: hsl(var(--brand-hue) 20% 85%);
     --text2-dark: hsl(var(--brand-hue) 10% 65%);
     --surface1-dark: hsl(var(--brand-hue) 15% 10%);
     --surface2-dark: hsl(var(--brand-hue) 15% 15%);
     --surface3-dark: hsl(var(--brand-hue) 10% 20%);
     --surface4-dark: hsl(var(--brand-hue) 10% 25%);
+    --danger-dark: hsl(0deg 80% 65%);
     --surface-shadow-dark: var(--brand-hue) 50% 3%;
 
-    --mobile-inline-padding: 2rem;
+    --xs-font-size: 1.2rem;
+    --sm-font-size: 1.4rem;
+    --md-font-size: 1.8rem;
+    --lg-font-size: 2rem;
+    --xl-font-size: 2.4rem;
 
-    --mobile-header-block-padding: 1.5rem;
-    --mobile-nav-block-padding: 3rem;
+    --xs-gap: 0.5rem;
+    --sm-gap: 1rem;
+    --md-gap: 2rem;
+    --lg-gap: 3rem;
+    --xl-gap: 4rem;
+
+    --xs-padding: 0.5rem;
+    --sm-padding: 1rem;
+    --md-padding: 2rem;
+    --lg-padding: 4rem;
+    --xl-padding: 6rem;
+
+    --container-padding: max(calc((100% - 160rem) / 2), var(--md-padding));
+
+    --logo-flex: 0 0 12rem;
 
     --default-border-radius: 0.3rem;
 }
@@ -43,10 +62,40 @@
 }
 
 html {
+    scroll-behavior: smooth;
+
     font-family: Shabnam, sans-serif;
-    color-scheme: dark;
 
     font-size: 62.5%;
+    color-scheme: dark;
+}
+
+body {
+    popper-content {
+        /* stylelint-disable selector-class-pattern */
+        .ngxp__container {
+            box-shadow: none;
+
+            z-index: 1;
+
+            padding: 0;
+
+            border: 0;
+
+            > .ngxp__arrow {
+                &::before {
+                    background-color: var(--color-body-background);
+                }
+            }
+        }
+
+        &.no-arrow {
+            .ngxp__container > .ngxp__arrow {
+                display: none;
+            }
+        }
+        /* stylelint-enable selector-class-pattern */
+    }
 }
 
 input,
@@ -76,6 +125,10 @@ a {
 ul,
 ol {
     list-style: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 .container-center {

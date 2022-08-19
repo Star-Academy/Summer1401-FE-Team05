@@ -1,5 +1,28 @@
-<div class="container">
-    <p>profile works!</p>
-    <a routerLink="/">Home</a>
-    <button class="logout" (click)="logout()">خروج از حساب کاربری</button>
+<div class="profile-container">
+    <h1 class="main-header">حساب کاربری</h1>
+    <section class="account">
+        <h2 class="data-title">اطلاعات شما</h2>
+        <div class="avatar">
+            <img src="assets/images/placeholders/user-solid.svg" alt="" />
+        </div>
+        <div class="account-data">
+            <span>نام:</span>
+            <p>{{ user?.firstName }} {{ user?.lastName }}</p>
+            <span>تلفن:</span>
+            <p>{{ user?.phone }}</p>
+            <span>نام کاربری:</span>
+            <p>{{ user?.username }}</p>
+            <span>ایمیل:</span>
+            <p>{{ user?.email }}</p>
+        </div>
+        <button class="exit-account" (click)="logout()">خروج از حساب کاربری</button>
+    </section>
+    <section class="wishlist">
+        <h2 class="wishlist-title">اضافه به علاقه مندی ها</h2>
+        <div class="row-card">
+            <ng-container *ngFor="let cardGame of wishlist">
+                <app-row-card [cardGame]="cardGame" (newRefreshWishlistEventEmitter)="refreshWishlist()"></app-row-card>
+            </ng-container>
+        </div>
+    </section>
 </div>

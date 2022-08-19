@@ -1,16 +1,17 @@
 .header {
-    background-color: var(--surface1-dark);
+    background-color: var(--surface2-dark);
     color: var(--text1-dark);
 
     position: relative;
+    z-index: 999;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
 
-    padding-block: var(--mobile-header-block-padding);
-    padding-inline: var(--mobile-inline-padding);
+    padding-block: var(--md-padding);
+    padding-inline: var(--md-padding);
 
     font-size: 2rem;
 
@@ -21,25 +22,23 @@
     }
 
     .nav {
-        background-color: var(--surface1-dark);
+        background-color: var(--surface2-dark);
 
         position: absolute;
         inset-block-start: 100%;
-        inset-inline-start: -100%;
+        inset-inline-end: -100%;
 
         z-index: 1;
 
         display: flex;
         flex-direction: column;
-        gap: var(--mobile-nav-block-padding);
+        gap: var(--lg-gap);
 
         min-block-size: calc(100vh - 100%);
 
         inline-size: 100%;
 
-        padding-block: var(--mobile-nav-block-padding);
-
-        padding-inline: var(--mobile-inline-padding);
+        padding: var(--lg-padding) var(--md-padding);
 
         transition: transform 300ms ease;
 
@@ -54,6 +53,8 @@
                 inset-inline-start: 0;
 
                 transform: translate(-50%, -50%);
+
+                cursor: pointer;
             }
 
             input {
@@ -61,7 +62,7 @@
 
                 inline-size: 100%;
 
-                padding: 1rem 4rem 1rem 2rem;
+                padding: var(--sm-padding) var(--lg-padding) var(--sm-padding) var(--md-padding);
 
                 border-radius: var(--default-border-radius);
 
@@ -106,10 +107,10 @@
         .account {
             background-color: var(--surface2-dark);
 
-            padding: 0.5rem 2rem;
+            padding: var(--xs-padding) var(--md-padding);
 
             border: 0.1rem solid var(--text1-dark);
-            border-radius: 0.5rem;
+            border-radius: var(--default-border-radius);
 
             cursor: pointer;
         }
@@ -135,6 +136,8 @@
 
 @media (min-width: 60em) {
     .header {
+        padding-inline: max(calc((100% - 120rem) / 2), 2rem);
+
         .nav {
             position: static;
 
@@ -180,7 +183,7 @@
 
     padding: 0.8rem 1.5rem;
 
-    font-size: 2rem;
+    font-size: 1.6rem;
 
     white-space: nowrap;
 

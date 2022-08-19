@@ -1,13 +1,26 @@
-<div class="hero">
-    <div class="hero__container">
-        <h1>به NG Store خوش آمدید</h1>
+<div class="slideshow" [style.--active-index]="activeIndex">
+    <ol>
+        <ng-container *ngIf="!images; else screenshots">
+            <li *ngFor="let item of items; index as index" [class.active]="index === activeIndex">
+                <a routerLink="{{ item.url }}">
+                    <img [src]="item.src" alt="" />
+                </a>
+            </li>
+        </ng-container>
+        <ng-template #screenshots>
+            <li *ngFor="let image of images?.screenshots; index as index" [class.active]="index === activeIndex">
+                <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_med_2x/{{ image?.id }}.webp" alt="" />
+            </li>
+        </ng-template>
+        <div class="overlay">
+            <div class="controls">
+                <button (click)="changeActiveIndex(activeIndex - 1)"><i class="far fa-angle-right"></i></button>
+                <button (click)="changeActiveIndex(activeIndex + 1)"><i class="far fa-angle-left"></i></button>
+            </div>
 
-        <p>
-            NG Store فروشگاه آنلاین بازی و سرگرمی برای کامپیوترهای شخصی است. بازی محبوب خود را به آسانی و با سرعت بالا
-            دانلود و بازی کنید. آخرین به‌روزرسانی‌های بازی را به صورت رایگان دریافت کنید. با سازندگان بازی‌ در ارتباط
-            باشید و به آنها بازخورد بدهید.
-        </p>
-
-        <a routerLink="/" class="btn">نمایش دسته&zwnj;بندی&zwnj;ها</a>
-    </div>
+            <div class="bullets">
+                <i *ngFor="let _ of items; index as index" [class.active]="index === activeIndex"></i>
+            </div>
+        </div>
+    </ol>
 </div>

@@ -1,0 +1,36 @@
+.btns-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--lg-gap);
+
+    min-block-size: 5rem;
+    inline-size: 100%;
+
+    padding-block-end: 10rem;
+
+    button {
+        background-color: var(--surface4-dark);
+        color: var(--text1-dark);
+
+        block-size: 5rem;
+
+        inline-size: 10rem;
+
+        border-radius: 50%;
+
+        font-size: 1.6rem;
+
+        &:hover {
+            background-color: var(--surface3-dark);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+        }
+    }
+
+    .page-number {
+        font-size: 2rem;
+    }
+}

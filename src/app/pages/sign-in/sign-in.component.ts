@@ -12,14 +12,13 @@ import {AuthService} from '../../services/auth.service';
 })
 export class SignInComponent {
     @ViewChild('signInForm') private signInForm!: ElementRef<HTMLFormElement>;
+    public validity: boolean = true;
 
     public constructor(private router: Router, private authService: AuthService) {}
 
     private checkIsValid(): boolean {
         return this.signInForm.nativeElement.checkValidity();
     }
-
-    public validity: boolean = true;
 
     public user: User = {
         username: '',

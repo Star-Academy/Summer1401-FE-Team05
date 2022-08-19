@@ -1,15 +1,44 @@
 <footer class="footer">
-    <div class="footer__links">
-        <ul class="footer__links__column">
-            <li><strong>اطلاعات فروشگاه</strong></li>
-            <li><i class="fa-solid fa-location-dot"></i>&nbsp;<span>&nbsp;تهران</span></li>
-            <li><i class="fa-solid fa-circle-phone"></i>&nbsp;<span>&nbsp;021-4444-4444</span></li>
-        </ul>
-        <ul class="footer__links__column">
-            <li><strong>راهنمای خرید</strong></li>
-            <li><a routerLink="/">نحوه ثبت سفارش</a></li>
-            <li><a routerLink="/">شیوه های پرداخت</a></li>
+    <div class="footer-column">
+        <div class="footer-logo">
+            <img src="assets/logos/NG-Store-logo.svg" alt="NG Store Logo" />
+        </div>
+    </div>
+    <div class="footer-column">
+        <ul>
+            <li><p class="list-title">تماس با ما</p></li>
+            <li><a href="tel:021-4444-4444">021-4444-4444</a></li>
+            <li><a href="mailto:ng.store@gmail.com">ng.store@gmail.com</a></li>
+            <li>
+                <a
+                    href="https://www.google.com/maps/search/35.7306841609794,+51.43059251836481?sa=X&ved=2ahUKEwistuCzgrL5AhWHNcAKHaGdAJ4Q8gF6BAgCEAE"
+                >
+                    تهران خیابان بهشتی
+                </a>
+            </li>
         </ul>
     </div>
-    <p class="footer__note">تمامی حقوق مادی و معنوی این سایت متعلق به NGStore می‌باشد.</p>
+    <div class="footer-column">
+        <ul>
+            <li><p class="list-title">درباره ما</p></li>
+            <li><a routerLink="/">اخبار</a></li>
+            <li><a routerLink="/">بازی&zwnj;های رایگان</a></li>
+            <li><a routerLink="/">ارسال بازی جدید</a></li>
+            <li><a routerLink="/">قوانین و شرایط</a></li>
+            <li><a routerLink="/">سیاست&zwnj;های حریم خصوصی</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <ul>
+            <li><p class="list-title">راهنمایی و پشتیبانی</p></li>
+            <li><a routerLink="/">پرسش&zwnj;های متداول</a></li>
+            <li><a routerLink="/">راهنمای دانلود بازی</a></li>
+            <li><a routerLink="/">راهنمای فعال سازی بازی</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <button class="scroll-to-top" title="رفتن به بالا" (click)="goToUp()">
+            <i class="fa-solid fa-angle-up"></i>
+        </button>
+    </div>
 </footer>
